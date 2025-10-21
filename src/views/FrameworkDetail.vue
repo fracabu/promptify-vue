@@ -75,12 +75,13 @@ const hasApiKey = computed(() => {
 
 // Generate the prompt preview - exactly what will be sent to the API
 const generatePromptPreview = () => {
-  if (!framework.value || !userInput.value.trim()) {
+  const currentFramework = framework.value
+  if (!currentFramework || !userInput.value.trim()) {
     generatedPrompt.value = ''
     return
   }
 
-  const template = framework.value.template || ''
+  const template = currentFramework.template || ''
   
   // Replace {input} placeholder with actual user input
   generatedPrompt.value = template.replace(/{input}/g, userInput.value)
