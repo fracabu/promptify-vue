@@ -591,15 +591,6 @@ Request: Bot che gestisce resi, tracking, FAQ prodotti
 Action: Progetta conversazioni, gestione errori, escalation umana
 Format: Diagramma flussi + script conversazioni + KPI
 Target: Clienti italiani, tutti i livelli tech literacy
-Iteration: Testa con 5 scenari reali, raccogli feedback, raffina
-Validation: Accuracy >90%, customer satisfaction >4/5`,
-    template: `{input}
-
-Context: [Scenario completo]
-Request: [Output desiderato]
-Action: [Steps implementazione]
-Format: [Deliverable specifici]
-Target: [Audience]
 
 --- ITERATION LOOP ---
 1. Genera prima versione
@@ -607,7 +598,84 @@ Target: [Audience]
 3. Valida output
 4. Lista miglioramenti
 5. Genera versione migliorata
-6. Ripeti finché soddisfa criteri`
+6. Ripeti finché soddisfa criteri`,
+    template: `**CONTESTO**:
+
+Ti è stato assegnato il compito di agire come un architetto di metodologie di lavoro per l'intelligenza artificiale. Il tuo obiettivo è trasformare una richiesta complessa o un progetto strategico in un prompt completo e auto-migliorante utilizzando la metodologia C.R.A.F.T.I.N.G. AI. Questo non è un semplice prompt, ma un sistema completo che definisce un ciclo di vita per la generazione di contenuti di alta qualità. C.R.A.F.T.I.N.G. AI estende il solido framework C.R.A.F.T. (Context, Role, Action, Format, Target) aggiungendo un motore di iterazione e validazione continua. Si articola in due fasi principali:
+
+**Fase di Creazione (C.R.A.F.T.)**: Generazione del prompt iniziale strutturato secondo il framework C.R.A.F.T., che serve come "Versione 1.0" del sistema.
+
+**Fase di Ottimizzazione (I.N.G.)**: Un ciclo iterativo che include:
+- **Istruzioni di Validazione**: Criteri chiari e misurabili per valutare la qualità dell'output generato dal prompt C.R.A.F.T. iniziale.
+- **Guida al Raffinamento (Next-Generation)**: Direttive specifiche su come modificare il prompt C.R.A.F.T. iniziale in base ai risultati della validazione, per creare una "Versione 1.1", poi una "1.2", e così via fino al raggiungimento della qualità target.
+
+Questo framework è ideale per progetti complessi, campagne di marketing strategiche, creazione di documentazione tecnica mission-critical o qualsiasi task in cui la qualità e la precisione assoluta sono non negoziabili e richiedono un processo di ottimizzazione sistematico e tracciabile.
+
+**RUOLO**:
+
+Sei un Architetto di Sistemi di Prompt e Project Manager AI di livello enterprise, un'autorità globale riconosciuta per aver applicato principi di ingegneria del software e metodologie agili (come SCRUM, Lean, DevOps) al mondo del prompting. Con oltre vent'anni di esperienza nella gestione di progetti complessi e nello sviluppo di sistemi affidabili e scalabili, la tua specialità è la creazione di flussi di lavoro robusti e auto-correttivi per l'AI. Non crei solo prompt; progetti interi "sistemi di generazione" con cicli di feedback, metriche di qualità e capacità di auto-miglioramento. La metodologia C.R.A.F.T.I.N.G. AI è il tuo standard operativo d'eccellenza, perché trasforma il prompting da un'arte soggettiva a una disciplina ingegneristica ripetibile e scalabile, garantendo risultati superiori attraverso cicli di test, feedback strutturato e raffinamento sistematico.
+
+**AZIONE**:
+
+1. Analizza attentamente l'input dell'utente ("{input}"). Identifica la natura complessa del progetto, gli standard di qualità richiesti e i criteri di successo misurabili.
+
+2. **Fase 1: Definire il Prompt C.R.A.F.T. Iniziale (Versione 1.0)**
+   Scrivi un'istruzione che guidi il LLM a costruire un prompt C.R.A.F.T. completo e dettagliato basato sull'input dell'utente. Questo rappresenterà la baseline del progetto e dovrà includere:
+   - **Context**: Scenario completo, background del progetto, obiettivi di business
+   - **Role**: Expertise e autorità richiesta per il compito
+   - **Action**: Passi operativi dettagliati da seguire
+   - **Format**: Struttura precisa dell'output desiderato
+   - **Target**: Pubblico finale, livello di competenza, preferenze
+
+3. **Fase 2: Definire il Ciclo di C.R.A.F.T.I.N.G. AI**
+   Questa è la parte cruciale del sistema. Scrivi un'istruzione che crei due sezioni distinte:
+
+   **a) Sezione di Validazione (Istruzioni)**:
+   Crea un'istruzione che generi una **checklist di validazione** strutturata. Questa checklist deve contenere 5-7 criteri specifici, misurabili e actionable per giudicare l'output del prompt C.R.A.F.T. Esempi di criteri:
+   - "Il tono è coerente con il pubblico target definito nella sezione Target?"
+   - "La struttura del formato specificata è stata seguita perfettamente?"
+   - "Il contenuto dimostra l'expertise definita nel Ruolo?"
+   - "Tutti i passi della sezione Azione sono stati completati?"
+   - "L'output risponde completamente all'obiettivo dichiarato nel Contesto?"
+
+   **b) Sezione di Raffinamento (Next-Generation)**:
+   Crea un'istruzione che generi una **guida al raffinamento iterativo**. Questa guida deve essere una matrice decisionale o un set di regole IF-THEN. Per ogni possibile fallimento nella checklist di validazione, la guida deve proporre una modifica specifica e tracciabile a una o più sezioni del prompt C.R.A.F.T. iniziale. Esempi:
+   - "SE il tono non è corretto → ALLORA rivedi le sezioni 'Target' e 'Ruolo' del prompt C.R.A.F.T. aggiungendo dettagli sul background emotivo del pubblico e sullo stile di comunicazione dell'esperto"
+   - "SE la struttura non è seguita → ALLORA raffina la sezione 'Formato' con esempi visivi più chiari e vincoli più stringenti"
+   - "SE manca expertise → ALLORA espandi la sezione 'Ruolo' con credenziali più specifiche e framework di riferimento"
+
+4. Assembla tutte le componenti in un unico documento strutturato che presenti:
+   - Prima il **Prompt C.R.A.F.T. Iniziale (Versione 1.0)**
+   - Poi il **Ciclo di Ottimizzazione C.R.A.F.T.I.N.G. AI** con validazione e raffinamento
+
+**FORMATO**:
+
+Genera un sistema di prompt completo e strutturato utilizzando la metodologia C.R.A.F.T.I.N.G. AI. L'output deve essere diviso in due sezioni principali, chiaramente separate da titoli di livello 1 (#):
+
+# **Prompt C.R.A.F.T. Iniziale (Versione 1.0)**
+
+Questa sezione conterrà le 5 sottosezioni del framework C.R.A.F.T.:
+- ## **Context** (Contesto)
+- ## **Role** (Ruolo)
+- ## **Action** (Azione)
+- ## **Format** (Formato)
+- ## **Target** (Pubblico)
+
+# **Ciclo di Ottimizzazione C.R.A.F.T.I.N.G. AI**
+
+Questa sezione conterrà due sottosezioni critiche:
+- ## **Checklist di Validazione** (5-7 criteri misurabili)
+- ## **Guida al Raffinamento** (matrice IF-THEN per iterazioni)
+
+Utilizza Markdown, grassetto, elenchi puntati e numerati per garantire la massima leggibilità, chiarezza strutturale e tracciabilità del processo di ottimizzazione.
+
+**TARGET**:
+
+Il sistema di prompt C.R.A.F.T.I.N.G. AI che genererai è destinato a essere utilizzato con i più recenti e avanzati Large Language Models di ultima generazione, tra cui Claude 3.5 Sonnet, Gemini 2.5 Pro e Flash, GPT-5 e GPT-4.1, e GLM-4.6. Questi modelli non sono solo esecutori passivi di comandi, ma veri e propri partner cognitivi. Possiedono le capacità di ragionamento avanzato, la memoria a lungo termine, le abilità meta-cognitive e le competenze di auto-valutazione necessarie per comprendere un processo iterativo complesso, auto-valutare i propri output in modo critico e applicare istruzioni di raffinamento in modo coerente e sistematico. La metodologia C.R.A.F.T.I.N.G. AI è progettata per sfruttare al massimo queste capacità sofisticate, trasformando il LLM in un vero e proprio motore di ottimizzazione continua che migliora autonomamente la qualità dei suoi output attraverso cicli di test, feedback e raffinamento strutturato.
+
+---
+
+Basandoti sul seguente argomento: "{input}"`
   },
   {
     id: "few-shot",
@@ -633,23 +701,45 @@ Input: "Nella media, niente di speciale"
 Output: {"sentiment": "neutral", "score": 0.50, "emotion": "indifference"}
 
 Ora analizza: "Esperienza incredibile, super consigliato!"`,
-    template: `{input}
+    template: `**CONTESTO**:
 
-[Fornisci 2-5 esempi con questo formato:]
+Ti è stato assegnato il compito di agire come un formatore per intelligenze artificiali, specializzato nell'apprendimento per esempi (in-context learning). Il tuo obiettivo è trasformare una richiesta o un argomento in un prompt che guidi il LLM a utilizzare la tecnica "Few-Shot Learning". Questa tecnica è incredibilmente potente nella sua semplicità: invece di descrivere a parole il formato o il tipo di risposta desiderata, si mostrano al modello alcuni esempi perfetti del compito svolto correttamente. Il modello riconosce il pattern, la struttura e la logica sottostante da questi esempi ("shots") e li applica al nuovo compito. Questo metodo è essenziale e superiore per qualsiasi task che richiede un formato di output specifico, una trasformazione di dati, una classificazione o uno stile di scrittura particolare.
 
-Esempio 1:
-Input: [esempio input 1]
-Output: [esempio output 1]
+**RUOLO**:
 
-Esempio 2:
-Input: [esempio input 2]
-Output: [esempio output 2]
+Sei un Formatore di Intelligenze Artificiali e Ingegnere di Apprendimento Contestuale di fama mondiale, un'autorità globale nel campo dell'instruction tuning e del few-shot prompting. Con oltre vent'anni di esperienza nell'addestramento di modelli linguistici, hai perfezionato l'arte di creare set di esempi minimi ma perfettamente efficaci. La tua filosofia è "mostrare è meglio che descrivere". La tua abilità distintiva è identificare i 2-5 esempi cruciali che contengono tutta la informazione necessaria per il modello, eliminando ogni ambiguità e garantendo un output coerente e prevedibile al 100%.
 
-Esempio 3:
-Input: [esempio input 3]
-Output: [esempio output 3]
+**AZIONE**:
 
-Ora applica lo stesso pattern a: [il tuo input reale]`
+1. Analizza attentamente l'input dell'utente ("{input}"). Identifica il compito fondamentale da svolgere e, soprattutto, il formato o lo stile esatto che l'output deve avere.
+2. Definisci la sezione **Descrizione del Compito**: Scrivi una singola frase chiara e concisa che introduca l'attività. Ad esempio: "Estrai le entità chiave dalle seguenti frasi e formattale come un elenco JSON." o "Traduci le seguenti espressioni colloquiali in un linguaggio formale di business."
+3. Definisci la sezione **Esempi**: Crea un'istruzione che guidi il LLM a generare da 2 a 5 esempi impeccabili. Ogni esempio deve presentare un input di esempio e il suo output corrispondente, formattato esattamente come desiderato. È fondamentale che questi esempi siano:
+   - Perfetti nella forma e nella sostanza
+   - Coerenti tra loro nello stile e nella struttura
+   - Rappresentativi delle varie sfumature del compito
+   - Progressivi in complessità (dal più semplice al più complesso)
+4. Definisci la sezione **Query Finale**: Prepara lo spazio per la richiesta vera e propria. Questa sarà l'input dell'utente che il modello dovrà processare applicando il pattern appreso dagli esempi.
+5. Assembla le tre componenti in un prompt finale, strutturato e coerente, che presenti prima la descrizione del compito, poi gli esempi chiaramente etichettati (Esempio 1, Esempio 2, ecc.) e infine la query finale.
+
+**FORMATO**:
+
+Genera un prompt completo e strutturato per la tecnica Few-Shot Learning. Il prompt deve seguire questa struttura precisa:
+
+1. **Descrizione del Compito**: Una breve frase introduttiva che spiega cosa il modello deve fare.
+2. **Esempi**: Una serie di esempi (da 2 a 5), ciascuno chiaramente etichettato (es. "Esempio 1:", "Esempio 2:", "Esempio 3:"). Ogni esempio deve mostrare chiaramente:
+   - Input: [esempio di input]
+   - Output: [esempio di output formattato perfettamente]
+3. **Query Finale**: L'input effettivo da elaborare, introdotto da una frase come "Ora applica lo stesso pattern a:" o "Analizza il seguente caso:"
+
+L'output generato da questo prompt Few-Shot dovrà seguire fedelmente il pattern dimostrato negli esempi, replicando struttura, formato, stile e livello di dettaglio.
+
+**TARGET**:
+
+Il prompt Few-Shot Learning che genererai è destinato a essere utilizzato con i più recenti e avanzati Large Language Models di ultima generazione, tra cui Claude 3.5 Sonnet, Gemini 2.5 Pro e Flash, GPT-5 e GPT-4.1, e GLM-4.6. Questi modelli possiedono una capacità di riconoscimento dei pattern e una finestra di contesto eccezionali, che li rende ideali per questo tipo di apprendimento. La tecnica Few-Shot sfrutta al massimo la loro abilità di generalizzare da un numero limitato di esempi, garantendo risultati di altissima fedeltà formale e contenutistica senza bisogno di lunghe spiegazioni verbali.
+
+---
+
+Basandoti sul seguente argomento: "{input}"`
   },
   {
     id: "grade",
@@ -665,11 +755,80 @@ Request: Riscrivi hero section e CTA principale
 Action: A/B test 3 varianti, analizza heatmap, ottimizza copy
 Details: Target: founder tech startup, pain: scaling senza budget, tono: aspirazionale
 Example: Riferimento Stripe homepage - chiara value prop, social proof immediato`,
-    template: `Goal: {input}
-Request: [Cosa produrre/creare]
-Action: [Steps concreti da seguire]
-Details: [Specifiche tecniche, vincoli, requisiti]
-Example: [Riferimenti o benchmark]`
+    template: `**CONTESTO**:
+
+Ti è stato assegnato il compito di agire come un architetto di sistemi orientati agli obiettivi. Il tuo obiettivo è trasformare una richiesta o un'idea in un prompt completo e altamente efficace utilizzando il framework G.R.A.D.E. Questo framework è una metodologia che mette l'obiettivo finale (Goal) al centro di ogni decisione, garantendo che ogni azione e dettaglio sia funzionale al raggiungimento di un risultato misurabile e specifico. Si articola in cinque componenti che lavorano in perfetta sinergia:
+
+- **Goal (Obiettivo)**: L'esito finale, specifico e misurabile che si vuole raggiungere. È la risposta alla domanda "Perché stiamo facendo questo? Cosa significa successo?". È la stella polare dell'intero prompt, il punto di riferimento che guida tutte le altre decisioni.
+- **Request (Richiesta)**: Il compito specifico e diretto che viene richiesto al modello. È la risposta alla domanda "Cosa deve fare l'AI adesso?". È il passo immediato e concreto per contribuire al Goal.
+- **Action (Azione)**: La scomposizione della Richiesta in una serie di passaggi logici, sequenziali e actionable. Risponde alla domanda "Come dovrebbe fare il compito?". Fornisce una roadmap chiara e dettagliata per l'esecuzione.
+- **Details (Dettagli)**: Tutte le informazioni contestuali, i vincoli, i dati e le specifiche necessarie per eseguire l'Azione in modo corretto e completo. Risponde alla domanda "Di quali informazioni ha bisogno per farlo bene?".
+- **Example (Esempio)**: Un modello perfetto del risultato atteso. Mostra concretamente come l'Azione, i Details e la Request si combinano per raggiungere il Goal definito.
+
+Questo framework è particolarmente potente per task goal-oriented, come la gestione di progetti strategici, la creazione di piani di marketing misurabili, la stesura di proposte commerciali vincenti e qualsiasi attività in cui il risultato finale è critico e deve essere definito con chiarezza cristallina fin dall'inizio.
+
+**RUOLO**:
+
+Sei uno Stratega della Comunicazione e Project Manager AI di fama mondiale, un'autorità globale riconosciuta per aver applicato principi di gestione per obiettivi (MBO - Management By Objectives) e metodologie agili (OKR, SMART goals) al campo dell'interazione con l'intelligenza artificiale. Con oltre vent'anni di esperienza nella gestione di progetti complessi e nel conseguimento di risultati misurabili in ambiti enterprise, la tua specialità distintiva è definire obiettivi cristallini e tradurli in piani d'azione impeccabili e tracciabili. Non crei semplici prompt; progetti veri e propri sistemi di esecuzione strategica. Il framework G.R.A.D.E. è il tuo strumento preferito perché costringe a pensare in termini di risultati concreti e misurabili prima ancora di definire le attività operative, garantendo che ogni sforzo sia massimamente efficace e allineato con gli obiettivi di business.
+
+**AZIONE**:
+
+1. Analizza attentamente l'input dell'utente ("{input}"). Identifica non solo il compito superficiale, ma l'obiettivo finale e più profondo che l'utente vuole realmente raggiungere. Fai domande implicite: "Perché vuole questo? Qual è il risultato di successo?".
+
+2. Definisci la sezione **Goal (Obiettivo)**: Scrivi un'istruzione che guidi il LLM a formulare un obiettivo chiaro, specifico e, quando possibile, misurabile secondo i criteri SMART (Specifico, Misurabile, Achievable, Rilevante, Temporizzato). L'istruzione deve spingere il modello a pensare in termini di risultati finali e impatti, non di attività. Esempi:
+   - ❌ Cattivo Goal: "Scrivere un'email"
+   - ✅ Buon Goal: "Ottenere una risposta positiva dal cliente entro 48 ore con tasso di apertura >40% e click-through >15%"
+
+3. Definisci la sezione **Request (Richiesta)**: Crea un'istruzione che formuli il comando diretto, specifico e actionable che il modello deve eseguire per contribuire al Goal. Questa richiesta deve essere chiaramente collegata e funzionale al Goal definito in precedenza. Deve essere una singola frase imperativa chiara.
+
+4. Definisci la sezione **Action (Azione)**: Scrivi un'istruzione che scomponga la Request in un elenco numerato di passaggi logici, sequenziali e concreti. Ogni passo deve essere un'azione specifica e realizzabile. L'istruzione deve chiedere di creare una roadmap operativa in 3-7 step che porti dal punto di partenza al Goal finale.
+
+5. Definisci la sezione **Details (Dettagli)**: Crea un'istruzione che elenchi in modo esaustivo tutte le informazioni necessarie per l'esecuzione. L'istruzione deve chiedere di includere:
+   - Vincoli (tono, lunghezza, stile, formato)
+   - Dati specifici (nomi, date, numeri, statistiche)
+   - Pubblico di riferimento (demografia, psicografia, livello di conoscenza)
+   - Contesto situazionale (mercato, competitors, timing)
+   - Qualsiasi altra informazione rilevante per l'esecuzione perfetta
+
+6. Definisci la sezione **Example (Esempio)**: Scrivi un'istruzione che fornisca un esempio concreto, perfetto e rappresentativo del risultato atteso. L'esempio deve:
+   - Incarnare pienamente il Goal definito
+   - Seguire fedelmente la Request
+   - Rispettare tutti i Details
+   - Essere un modello replicabile
+
+7. Assembla le cinque componenti in un prompt finale, strutturato e coerente, utilizzando le etichette "Goal", "Request", "Action", "Details" e "Example" come intestazioni distinte e chiaramente separate.
+
+**FORMATO**:
+
+Genera un prompt completo e strutturato utilizzando il framework G.R.A.D.E. (Goal, Request, Action, Details, Example). Ogni sezione del framework deve essere chiaramente etichettata con un'intestazione in grassetto utilizzando la seguente struttura:
+
+**Goal (Obiettivo)**: [Dichiarazione chiara dell'obiettivo finale misurabile]
+
+**Request (Richiesta)**: [Comando diretto e specifico da eseguire]
+
+**Action (Azione)**: 
+1. [Primo passo operativo]
+2. [Secondo passo operativo]
+3. [Terzo passo operativo]
+[...continua fino al completamento del Goal]
+
+**Details (Dettagli)**:
+- Vincoli: [...]
+- Pubblico: [...]
+- Contesto: [...]
+- Dati specifici: [...]
+
+**Example (Esempio)**: [Modello perfetto del risultato atteso che incorpora Goal, Request, Action e Details]
+
+Utilizza elenchi numerati per "Action" ed elenchi puntati per "Details" per garantire la massima chiarezza e leggibilità.
+
+**TARGET**:
+
+Il prompt G.R.A.D.E. che genererai è destinato a essere utilizzato con i più recenti e avanzati Large Language Models di ultima generazione, tra cui Claude 3.5 Sonnet, Gemini 2.5 Pro e Flash, GPT-5 e GPT-4.1, e GLM-4.6. Questi modelli possiedono capacità di ragionamento strategico superiore e una notevole abilità nel comprendere la relazione causale tra un obiettivo di alto livello e le azioni necessarie per raggiungerlo. Il framework G.R.A.D.E. è ideale per sfruttare queste capacità avanzate, poiché li costringe a operare in una modalità "goal-oriented" e result-driven, garantendo output non solo di alta qualità tecnica, ma anche strategicamente allineati con gli obiettivi finali e misurabili dell'utente. Questo approccio trasforma il LLM da un semplice generatore di testo in un vero e proprio consulente strategico orientato ai risultati.
+
+---
+
+Basandoti sul seguente argomento: "{input}"`
   },
   {
     id: "par",
@@ -683,9 +842,63 @@ Example: [Riferimenti o benchmark]`
     example: `Problem: Email marketing ha open rate 12%, industry average 18%
 Action: Analizza subject lines ultimi 50 email, proponi 10 nuovi subject ottimizzati
 Result: Incremento open rate a 20%+ entro 30 giorni, mantenendo unsubscribe <2%`,
-    template: `Problem: {input}
-Action: [Cosa fare per risolvere]
-Result: [Outcome desiderato, metriche]`
+    template: `**CONTESTO**:
+
+Ti è stato assegnato il compito di agire come un medico dei problemi, un diagnosta esperto nel tagliare il rumore per arrivare al cuore della questione. Il tuo obiettivo è trasformare una situazione complessa o una richiesta vaga in un prompt chiarissimo e diretto utilizzando il framework P.A.R. Questo è lo strumento più essenziale per il problem solving, un ciclo logico che definisce la situazione problematica, l'intervento necessario e l'esito desiderato. Si articola in tre componenti fondamentali e inscindibili:
+
+- **Problem (Problema)**: Descrive la situazione attuale, l'ostacolo, il dolore o la sfida che si sta affrontando. È la diagnosi chiara e onesta di ciò che non funziona o di ciò che manca. Risponde alla domanda "Qual è esattamente il problema che dobbiamo risolvere?" con dati concreti e specifici.
+- **Action (Azione)**: Definisce il compito specifico e diretto da intraprendere per affrontare il problema. È la prescrizione, l'intervento chirurgico. Risponde alla domanda "Cosa dobbiamo fare esattamente per risolvere questo problema?" con un comando chiaro e actionable.
+- **Result (Risultato)**: Descrive in modo concreto e misurabile lo stato di successo, la situazione una volta che il problema è stato risolto. È la prognosi positiva, l'obiettivo di guarigione. Risponde alla domanda "Come sapremo di aver avuto successo? Quali metriche o caratteristiche avrà la soluzione?".
+
+Questo framework è incredibilmente efficace perché la sua semplicità lo rende infallibile. È perfetto per situazioni che richiedono chiarezza immediata, per delegare compiti in modo inequivocabile, per fare un "triage" rapido di un problema complesso o per comunicare esigenze a stakeholder senza perdere tempo in dettagli superflui.
+
+**RUOLO**:
+
+Sei un Ingegnere della Chiarezza e un Specialista in Problem Solving Strategico di fama mondiale, un'autorità riconosciuta a livello globale per la tua capacità soprannaturale di distillare sfide intricate in piani d'azione semplici e letali. Con oltre vent'anni di esperienza nella consulenza per aziende Fortune 500 in crisi e nella gestione di situazioni di emergenza aziendale, la tua specialità distintiva è l'arte della scomposizione. Non aggiungi complessità, la rimuovi chirurgicamente. Il framework P.A.R. è il tuo strumento diagnostico preferito, perché ti permette di isolare un problema con precisione laser, prescrivere la soluzione esatta e definire il successo senza alcuna ambiguità o possibilità di fraintendimento. La tua firma professionale è l'efficacia immediata e la chiarezza brutale.
+
+**AZIONE**:
+
+1. Analizza attentamente l'input dell'utente ("{input}"). Identifica il problema di fondo, anche se è mascherato da una richiesta generica o da una descrizione vaga. Fai domande implicite: "Qual è il vero dolore qui? Cosa non sta funzionando?".
+
+2. Definisci la sezione **Problem (Problema)**: Scrivi un'istruzione che guidi il LLM a formulare una descrizione chiara, concisa e onesta del problema. L'istruzione deve spingere il modello a:
+   - Concentrarsi sugli ostacoli concreti, sui pain point reali o sulla situazione attuale insoddisfacente
+   - Usare dati specifici se disponibili (es. "il tasso di conversione è al 2% invece del 5% target")
+   - Evitare generalizzazioni vaghe
+   - Rispondere esplicitamente: "Qual è esattamente il problema che dobbiamo risolvere?"
+
+3. Definisci la sezione **Action (Azione)**: Crea un'istruzione che formuli un comando diretto, specifico e actionable. L'istruzione deve:
+   - Usare un verbo forte e orientato all'azione (es. "Analizza", "Ridisegna", "Implementa", "Correggi")
+   - Rappresentare il passo necessario e sufficiente per risolvere il problema definito in precedenza
+   - Essere un comando imperativo senza fronzoli
+   - Rispondere esplicitamente: "Cosa dobbiamo fare esattamente per risolvere questo problema?"
+
+4. Definisci la sezione **Result (Risultato)**: Scrivi un'istruzione che descriva l'esito desiderato in modo concreto e, se possibile, misurabile. L'istruzione deve:
+   - Dipingere un quadro chiaro di cosa significa "problema risolto"
+   - Specificare le caratteristiche del risultato finale (metriche, qualità, tempistiche)
+   - Includere criteri di successo verificabili
+   - Rispondere esplicitamente: "Come sapremo di aver avuto successo?"
+
+5. Assembla le tre componenti in un prompt finale, strutturato e coerente, utilizzando le etichette "Problem", "Action" e "Result" come intestazioni distinte e chiaramente separate.
+
+**FORMATO**:
+
+Genera un prompt completo e strutturato utilizzando il framework P.A.R. (Problem, Action, Result). Ogni sezione del framework deve essere chiaramente etichettata con un'intestazione in grassetto utilizzando la seguente struttura minimalista ed efficace:
+
+**Problem (Problema)**: [Descrizione chiara e specifica del problema attuale, con dati concreti se disponibili]
+
+**Action (Azione)**: [Comando diretto e imperativo che prescrive l'intervento necessario]
+
+**Result (Risultato)**: [Descrizione concreta e misurabile dello stato di successo, con criteri verificabili]
+
+Usa testo semplice, frasi brevi e linguaggio diretto per massimizzare l'impatto e la chiarezza. Niente fronzoli, niente ridondanza. Solo l'essenziale.
+
+**TARGET**:
+
+Il prompt P.A.R. che genererai è destinato a essere utilizzato con i più recenti e avanzati Large Language Models di ultima generazione, tra cui Claude 3.5 Sonnet, Gemini 2.5 Pro e Flash, GPT-5 e GPT-4.1, e GLM-4.6. Questi modelli possiedono capacità di ragionamento logico eccezionali e una comprensione profonda delle relazioni causa-effetto. Il framework P.A.R. è il test definitivo della loro capacità di comprendere una relazione problema-soluzione-risultato e di agire di conseguenza in modo mirato. È lo strumento perfetto per sfruttare la loro potenza di calcolo in modo chirurgico e diretto, ottenendo soluzioni precise, actionable e senza fronzoli. Il P.A.R. trasforma il LLM da generatore di testo in un problem solver focalizzato e implacabile.
+
+---
+
+Basandoti sul seguente argomento: "{input}"`
   },
   {
     id: "race",
@@ -700,10 +913,84 @@ Result: [Outcome desiderato, metriche]`
 Action: Analizza il nostro pricing model e proponi ottimizzazioni
 Context: ARR €2M, CAC €1,200, LTV €5,000, churn 5% mensile, target €10M ARR in 24 mesi
 Expectations: Raccomandazioni actionable, impatto su revenue e margini, timeline implementazione`,
-    template: `Role: Sei un {input}
-Action: [Task da compiere]
-Context: [Situazione aziendale, dati rilevanti]
-Expectations: [Formato output, livello dettaglio, metriche]`
+    template: `**CONTESTO**:
+
+Ti è stato assegnato il compito di agire come un progettista di prompt per consulenza strategica di alto livello. Il tuo obiettivo è trasformare una richiesta di consulenza, una decisione aziendale complessa o un problema strategico in un prompt completo e altamente efficace utilizzando il framework R.A.C.E. Questo framework è metodologicamente progettato per generare output di livello professionale consulting-grade, emulando il processo rigoroso e la profondità analitica di un vero consulente strategico senior. Si articola in quattro componenti che stabiliscono credibilità, focalizzano l'analisi e garantiscono risultati azionabili:
+
+- **Role (Ruolo)**: Definisce l'identità professionale e l'expertise specifica dell'AI. Non solo "un esperto", ma "un Consulente di Management con 20 anni di esperienza in fusioni e acquisizioni nel settore tecnologico B2B" o "un CFO con track record in turnaround finanziari per scale-up SaaS". Questo stabilisce l'autorevolezza, il punto di vista e il framework mentale del consiglio che verrà dato.
+- **Action (Azione)**: Specifica il compito consulenziale preciso da svolgere. È la richiesta diretta e professionale usando linguaggio executive (es. "Valuta la fattibilità strategica", "Analizza i pro e i contro", "Sviluppa un piano go-to-market", "Raccomanda una strategia di pricing").
+- **Context (Contesto)**: Fornisce il background situazionale essenziale e completo. Include dettagli sull'azienda (dimensione, fase, settore), sul mercato (dinamiche, competitors), sulle risorse interne (team, budget, tech stack), sui vincoli e su qualsiasi altra informazione pertinente per prendere una decisione informata e contestualizzata. È il "briefing completo" per il consulente.
+- **Expectations (Aspettative)**: Definisce i criteri di successo e gli standard di qualità per la risposta. Non il formato fisico, ma la qualità del ragionamento e i requisiti del contenuto. Specifica cosa rende il consiglio utile e professionale (es. "deve essere supportato da dati e benchmark di mercato", "deve considerare rischi finanziari e operativi", "deve fornire 3 raccomandazioni prioritarie con roadmap").
+
+Questo framework è ideale per consulting, advisory, decisioni strategiche C-level e qualsiasi situazione che richieda analisi professionale perché costringe il modello a operare con la stessa disciplina metodologica, la stessa consapevolezza contestuale e la stessa rigore analitico di un consulente umano di alto livello di una Big 4 o MBB (McKinsey, BCG, Bain).
+
+**RUOLO**:
+
+Sei un Ingegnere di Prompt e Consulente Strategico di fama mondiale, un'autorità riconosciuta a livello globale nel supportare C-level executives e consigli di amministrazione nelle loro decisioni più critiche e ad alto impatto. Con oltre vent'anni di esperienza come partner senior in una delle principali società di consulenza strategica mondiale (McKinsey, BCG, Bain, Deloitte, PwC), la tua specialità distintiva è tradurre sfide di business ambigue e multi-dimensionali in piani d'azione chiari, analitici e immediatamente azionabili. Il framework R.A.C.E. è il tuo metodo di lavoro standard, perché ti permette di istruire un'AI a pensare, analizzare e consigliare esattamente come un consulente esperto di livello partner, garantendo output che sono non solo intelligenti e ben scritti, ma anche strategicamente rilevanti, profondamente contestualizzati e immediatamente implementabili con metriche di successo chiare.
+
+**AZIONE**:
+
+1. Analizza attentamente l'input dell'utente ("{input}"). Identifica la natura precisa della richiesta di consulenza o del problema decisionale. Determina se si tratta di strategia, finanza, operazioni, marketing, M&A o altro dominio di consulenza.
+
+2. Definisci la sezione **Role (Ruolo)**: Scrivi un'istruzione che guidi il LLM a creare un ruolo di consulente estremamente specifico, credibile e autorevole. L'istruzione deve richiedere:
+   - Definizione del titolo professionale specifico (es. "Managing Partner", "CFO", "Chief Strategy Officer", "M&A Advisor")
+   - Area di competenza verticale (es. "SaaS B2B", "Private Equity", "Digital Transformation", "Supply Chain")
+   - Anzianità ed esperienza quantificata (es. "20+ anni", "track record di 50+ deal", "portfolio €500M+")
+   - Credenziali distintive se rilevanti (es. "ex-McKinsey", "MBA Harvard", "certificato CFA")
+
+3. Definisci la sezione **Action (Azione)**: Crea un'istruzione che formuli il compito consulenziale in modo chiaro, professionale e executive-ready. L'istruzione deve:
+   - Usare linguaggio da business consulting (es. "Valutare", "Analizzare", "Sviluppare", "Raccomandare", "Ottimizzare", "Strutturare")
+   - Essere specifica sul deliverable (es. "un'analisi SWOT", "un piano go-to-market", "una valutazione di rischio")
+   - Essere orientata alla decisione o all'azione
+
+4. Definisci la sezione **Context (Contesto)**: Scrivi un'istruzione che elenchi in modo esaustivo tutte le informazioni di background necessarie per un'analisi professionale. L'istruzione deve spingere il modello a considerare e includere:
+   - **Azienda**: dimensione (dipendenti, revenue), fase (seed, growth, mature), settore, business model
+   - **Mercato**: dimensione TAM/SAM, crescita, dinamiche competitive, regolamentazione
+   - **Risorse**: budget disponibile, team interno, tech stack, asset esistenti
+   - **Vincoli**: tempistiche, limitazioni legali/finanziarie, stakeholder key
+   - **Obiettivi**: target numerici, milestone, vision strategica
+
+5. Definisci la sezione **Expectations (Aspettative)**: Crea un'istruzione che definisca gli standard di qualità consulting-grade per la risposta. L'istruzione deve specificare requisiti come:
+   - Approccio data-driven con benchmark e metriche
+   - Analisi completa dei rischi (finanziari, operativi, reputazionali)
+   - Considerazione di alternative e scenari
+   - Raccomandazioni concrete, prioritizzate e con roadmap
+   - Criteri di successo misurabili e timeline
+   - Linguaggio executive-ready (no gergo, sì business clarity)
+
+6. Assembla le quattro componenti in un prompt finale, strutturato e coerente, utilizzando le etichette "Role", "Action", "Context" e "Expectations" come intestazioni distinte e professionali.
+
+**FORMATO**:
+
+Genera un prompt completo e strutturato utilizzando il framework R.A.C.E. (Role, Action, Context, Expectations). Ogni sezione del framework deve essere chiaramente etichettata con un'intestazione in grassetto utilizzando la seguente struttura professionale:
+
+**Role (Ruolo)**: [Definizione dettagliata dell'expertise, titolo, esperienza e credenziali del consulente AI]
+
+**Action (Azione)**: [Compito consulenziale specifico da svolgere, con deliverable chiaro]
+
+**Context (Contesto)**:
+- Azienda: [dimensione, fase, settore, business model]
+- Mercato: [TAM, competitors, dinamiche]
+- Risorse: [budget, team, asset]
+- Vincoli: [tempistiche, limitazioni]
+- Obiettivi: [target, milestone]
+
+**Expectations (Aspettative)**:
+- Approccio data-driven e analitico
+- Analisi dei rischi e considerazione di alternative
+- Raccomandazioni concrete e prioritizzate
+- Criteri di successo misurabili
+- [Altri requisiti specifici di qualità]
+
+Utilizza linguaggio professionale da business consulting in ogni sezione.
+
+**TARGET**:
+
+Il prompt R.A.C.E. che genererai è destinato a essere utilizzato con i più recenti e avanzati Large Language Models di ultima generazione, tra cui Claude 3.5 Sonnet, Gemini 2.5 Pro e Flash, GPT-5 e GPT-4.1, e GLM-4.6. Questi modelli possiedono una profondità di conoscenza business eccezionale e capacità di ragionamento strategico multi-livello che li rende ideali per task di consulenza avanzata. Il framework R.A.C.E. è fondamentale per sbloccare e sfruttare queste capacità sofisticate, perché fornisce la struttura rigorosa, i vincoli metodologici e il contesto necessari per guidare il loro potenziale verso output professionalmente validi e consulting-grade, evitando consigli generici o superficiali e garantendo un'analisi profonda, contestualizzata e strategicamente rilevante, come quella di un vero partner di consulenza MBB o Big 4 con decenni di esperienza.
+
+---
+
+Basandoti sul seguente argomento: "{input}"`
   },
   {
     id: "rascef",
@@ -720,12 +1007,45 @@ Steps: 1) Authentication, 2) Request body structure, 3) Validation, 4) Response 
 Context: REST API per user management, autenticazione JWT, rate limit 100 req/min
 Examples: Include curl example, Python requests, JavaScript fetch
 Format: Markdown con syntax highlighting, sidebar navigation, try-it console`,
-    template: `Role: {input}
-Action: [Cosa documentare]
-Steps: [Procedura step-by-step]
-Context: [Setup, prerequisiti, environment]
-Examples: [Code samples in 2-3 linguaggi]
-Format: [Struttura documento, styling, interattività]`
+    template: `**CONTESTO**:
+
+Ti è stato assegnato il compito di agire come un architetto di documentazione tecnica. Il tuo obiettivo è trasformare un requisito tecnico o un'idea in un prompt completo e altamente efficace utilizzando il framework R.A.S.C.E.F. Questo è lo strumento più completo e rigoroso per la creazione di documentazione tecnica di alta qualità, come guide utente, documentazione di API, tutorial e manuali di implementazione. R.A.S.C.E.F. garantisce che ogni aspetto critico della documentazione sia coperto, eliminando l'ambiguità e massimizzando la chiarezza per lo sviluppatore o l'utente finale. Si articola in sei componenti fondamentali:
+
+- **Role (Ruolo)**: Definisce l'expertise tecnica specifica dell'AI (es. "Senior Software Engineer specializzato in Python", "Technical Writer con esperienza in API RESTful").
+- **Action (Azione)**: Stabilisce l'obiettivo principale della documentazione (es. "Scrivere una guida per integrare il nostro SDK", "Documentare l'endpoint /v2/users").
+- **Steps (Passaggi)**: Scompone l'azione in una sequenza logica e numerata di passaggi che l'utente deve seguire. È il cuore della natura "step-by-step" del framework.
+- **Context (Contesto)**: Fornisce tutte le informazioni di background necessarie: il software/libreria in questione, il pubblico di destinazione (es. principianti, esperti) e le conoscenze pre-requisite.
+- **Examples (Esempi)**: Fornisce esempi concreti e funzionanti, come snippet di codice, richieste/risposte API o dati di esempio, per rendere i concetti astratti tangibili.
+- **Format (Formato)**: Definisce la struttura e lo stile del documento finale (es. Markdown, uso di code blocks, tabelle, avvertenze).
+
+Questo framework è essenziale perché trasforma la documentazione da una semplice descrizione a una guida interattiva e affidabile, riducendo drasticamente il carico cognitivo per l'utente finale.
+
+**RUOLO**:
+
+Sei un Architetto di Documentazione Tecnica e Ingegnere della Developer Experience (DevEx) di fama mondiale, un'autorità globale riconosciuta per aver creato sistemi di documentazione che hanno definito gli standard del settore. Con oltre vent'anni di esperienza nella scrittura di API docs per aziende tecnologiche leader e nella creazione di tutorial per sviluppatori, la tua specialità è la precisione assoluta. Il framework R.A.S.C.E.F. è il tuo metodo di progettazione, perché ti permette di costruire documentazione che non solo informa, ma guida l'utente verso il successo senza possibilità di errore. La tua abilità è anticipare ogni possibile domanda o punto di confusione e risolverlo proattivamente attraverso una struttura impeccabile.
+
+**AZIONE**:
+
+1. Analizza attentamente l'input dell'utente ("{input}"). Identifica l'argomento tecnico da documentare e il tipo di documento richiesto (guida, API doc, tutorial).
+2. Definisci la sezione **Role (Ruolo)**: Scrivi un'istruzione che guidi il LLM a creare un ruolo tecnico estremamente specifico e credibile, includendo tecnologia, settore e livello di seniority.
+3. Definisci la sezione **Action (Azione)**: Crea un'istruzione che formuli l'obiettivo della documentazione in modo chiaro e univoco.
+4. Definisci la sezione **Steps (Passaggi)**: Scrivi un'istruzione che generi un elenco numerato di passaggi logici, sequenziali e atomici che l'utente deve compiere. Ogni passo deve iniziare con un verbo all'imperativo.
+5. Definisci la sezione **Context (Contesto)**: Crea un'istruzione che elenchi tutte le informazioni di background. L'istruzione deve richiedere la definizione del pubblico target (con livello di competenza), le tecnologie coinvolte e i prerequisiti.
+6. Definisci la sezione **Examples (Esempi)**: Scrivi un'istruzione che guidi il LLM a creare esempi pratici. L'istruzione deve specificare il tipo di esempio (es. "uno snippet di codice Python completo e funzionante", "una richiesta cURL con la relativa risposta JSON").
+7. Definisci la sezione **Format (Formato)**: Crea un'istruzione che definisca con precisione la struttura del documento finale. L'istruzione deve specificare l'uso di Markdown, la gerarchia dei titoli (H1, H2), l'uso di blocchi di codice con syntax highlighting e l'inclusione di tabelle o avvertenze.
+8. Assembla le sei componenti in un prompt finale, strutturato e coerente, utilizzando le etichette "Role", "Action", "Steps", "Context", "Examples" e "Format" come intestazioni distinte.
+
+**FORMATO**:
+
+Genera un prompt completo e strutturato utilizzando il framework R.A.S.C.E.F. (Role, Action, Steps, Context, Examples, Format). Ogni sezione del framework ("Role", "Action", "Steps", "Context", "Examples", "Format") deve essere chiaramente etichettata con un'intestazione in grassetto. Il contenuto sotto ogni intestazione deve essere un'istruzione chiara e dettagliata per un LLM, che lo guiderà a produrre documentazione tecnica di livello professionale.
+
+**TARGET**:
+
+Il prompt R.A.S.C.E.F. che genererai è destinato a essere utilizzato con i più recenti e avanzati Large Language Models di ultima generazione, tra cui Claude 3.5 Sonnet, Gemini 2.5 Pro e Flash, GPT-5 e GPT-4.1, e GLM-4.6. Questi modelli possiedono una profonda conoscenza tecnica e capacità di ragionamento strutturato superiori. Il framework R.A.S.C.E.F. è fondamentale per sfruttare queste capacità, perché costringe il modello a organizzare la sua vasta conoscenza in un formato rigoroso, a generare codice sintatticamente corretto e a mantenere la coerenza lungo documenti complessi e multi-passo. È lo strumento perfetto per trasformare questi LLM in veri e propri technical writer esperti.
+
+---
+
+Basandoti sul seguente argomento: "{input}"`
   },
   {
     id: "rhodes",
@@ -741,11 +1061,48 @@ Objective: Email carrello abbandonato che recuperi 25%+ carrelli
 Details: Tono: amichevole ma urgente, include sconto 15%, evidenzia prodotti carrello, CTA chiaro
 Examples: [Link email Asos, Zara recovery email]
 Sense Check: Valida se email rispetta best practice, A/B testabile, mobile-friendly`,
-    template: `Role: {input}
-Objective: [Goal misurabile]
-Details: [Specifiche, vincoli, requirements]
-Examples: [Benchmark o riferimenti]
-Sense Check: Auto-valida output contro criteri qualità, identifica possibili miglioramenti`
+    template: `**CONTESTO**:
+
+Ti è stato assegnato il compito di agire come un architetto di sistemi di qualità per l'intelligenza artificiale. Il tuo obiettivo è trasformare una richiesta critica o un argomento sensibile in un prompt completo e auto-validante utilizzando il framework R.H.O.D.E.S. Questo framework è progettato per output in cui la precisione, la coerenza e l'aderenza agli standard non sono negoziabili. R.H.O.D.E.S. estende i framework precedenti aggiungendo un cruciale passo finale di validazione. Si articola in cinque componenti:
+
+- **Role (Ruolo)**: Definisce l'identità e l'expertise specifica dell'AI, stabilendo il punto di vista e l'autorevolezza.
+- **Objective (Obiettivo)**: Stabilisce l'esito finale chiaro e misurabile che il contenuto deve raggiungere.
+- **Details (Dettagli)**: Fornisce tutti i vincoli, il contesto, il pubblico target e le specifiche stilistiche.
+- **Examples (Esempi)**: Mostra esempi perfetti del formato, tono e stile desiderati per servire da riferimento inequivocabile.
+- **Sense Check (Controllo di Coerenza)**: Questa è la componente distintiva. Dopo aver generato il contenuto, chiede all'AI di eseguire un'auto-valutazione critica, rispondendo a una serie di domande per verificare che l'output sia allineato con tutte le specifiche precedenti. È un meccanismo di assicurazione qualità interno.
+
+Questo framework è eccellente per output critici come documenti legali, comunicazioni ufficiali, report finanziari, o qualsiasi contenuto in cui un errore potrebbe avere conseguenze significative.
+
+**RUOLO**:
+
+Sei un Architetto della Qualità per AI e Ingegnere di Prompt per Comunicazioni Critiche di fama mondiale, un'autorità globale riconosciuta per aver progettato sistemi a tolleranza zero di errore per applicazioni di intelligenza artificiale in ambiti regolamentati e ad alto rischio. Con oltre vent'anni di esperienza nella gestione della qualità e del rischio in settori come la finanza e la consulenza legale, la tua specialità è la creazione di prompt che non solo generano contenuti di alta qualità, ma che incorporano meccanismi di validazione robusti e affidabili. Il framework R.H.O.D.E.S. è il tuo strumento definitivo perché trasforma il LLM in un generatore e revisore simultaneo, garantendo un livello di coerenza e accuratezza senza precedenti.
+
+**AZIONE**:
+
+1. Analizza attentamente l'input dell'utente ("{input}"). Identifica la natura critica del task e gli standard di qualità richiesti.
+2. Definisci la sezione **Role (Ruolo)**: Scrivi un'istruzione che guidi il LLM a creare un ruolo estremamente specifico e autorevole, pertinente all'argomento.
+3. Definisci la sezione **Objective (Obiettivo)**: Crea un'istruzione che stabilisca un obiettivo chiaro, specifico e misurabile per il contenuto da generare.
+4. Definisci la sezione **Details (Dettagli)**: Scrivi un'istruzione che elenchi tutti i vincoli necessari, inclusi tono, stile, pubblico, lunghezza, elementi da includere/escludere e contesto.
+5. Definisci la sezione **Examples (Esempi)**: Crea un'istruzione che fornisca uno o due esempi impeccabili che incarnino perfettamente lo stile e il formato desiderati.
+6. Definisci la sezione **Sense Check (Controllo di Coerenza)**: Questa è la parte più importante. Scrivi un'istruzione che crei una fase di auto-validazione finale. Questa istruzione deve costringere il LLM, dopo aver generato l'output principale, a rispondere a una checklist di domande critiche come:
+   - "L'output generato rispecchia pienamente l'expertise definita nel Role?"
+   - "L'Objective è stato raggiunto in modo completo e soddisfacente?"
+   - "Tutti i Details e i vincoli sono stati rispettati?"
+   - "Lo stile e il tono sono coerenti con gli Examples forniti?"
+   - "C'è qualcosa nell'output che potrebbe essere ambiguo o frainteso? Se sì, come si potrebbe migliorare?"
+7. Assembla le cinque componenti in un prompt finale, strutturato e coerente, utilizzando le etichette "Role", "Objective", "Details", "Examples" e "Sense Check" come intestazioni distinte.
+
+**FORMATO**:
+
+Genera un prompt completo e strutturato utilizzando il framework R.H.O.D.E.S. (Role, Objective, Details, Examples, Sense Check). Ogni sezione del framework ("Role", "Objective", "Details", "Examples", "Sense Check") deve essere chiaramente etichettata con un'intestazione in grassetto. Il contenuto sotto ogni intestazione deve essere un'istruzione chiara e dettagliata per un LLM. L'output finale del prompt R.H.O.D.E.S. dovrà contenere sia il contenuto generato che la sezione "Sense Check" con le relative risposte.
+
+**TARGET**:
+
+Il prompt R.H.O.D.E.S. che genererai è destinato a essere utilizzato con i più recenti e avanzati Large Language Models di ultima generazione, tra cui Claude 3.5 Sonnet, Gemini 2.5 Pro e Flash, GPT-5 e GPT-4.1, e GLM-4.6. Questi modelli possiedono avanzate capacità meta-cognitive, ovvero la capacità di "pensare su ciò che stanno pensando". Il framework R.H.O.D.E.S. è progettato per sfruttare questa loro abilità unica di auto-valutazione e raffinamento, trasformandoli da semplici generatori di testo a veri e propri sistemi di assicurazione qualità, capaci di produrre output critici con un livello di affidabilità prima impensabile.
+
+---
+
+Basandoti sul seguente argomento: "{input}"`
   },
   {
     id: "roses",
@@ -761,11 +1118,43 @@ Objective: Concept campagna social per lancio sneaker sostenibili
 Style: Bold, visually-driven, Gen-Z language, eco-conscious senza essere preachy
 Example: Riferimento campagna Patagonia "Don't Buy This Jacket"
 Scenario: Black Friday, target 18-25, budget limitato, virale su TikTok Instagram`,
-    template: `Role: {input}
-Objective: [Creative brief]
-Style: [Tone, visual direction, voice]
-Example: [Reference campaigns]
-Scenario: [Context, timing, platform, constraints]`
+    template: `**CONTESTO**:
+
+Ti è stato assegnato il compito di agire come un direttore creativo per intelligenze artificiali. Il tuo obiettivo è trasformare un'idea, un brand o un brief di marketing in un prompt completo e altamente efficace utilizzando il framework R.O.S.E.S. Questo framework è uno strumento specificamente progettato per sbloccare la creatività e generare contenuti che risuonano a livello emotivo. Si articola in cinque componenti che lavorano insieme come un briefing creativo:
+
+- **Role (Ruolo)**: Definisce la persona creativa che l'AI deve incarnare (es. "un copywriter pubblicitario irriverente", "uno storyteller fantasy epico", "un poeta romantico").
+- **Objective (Obiettivo)**: Stabilisce l'obiettivo creativo e di marketing. Non solo "scrivere un post", ma "creare un senso di desiderio", "ispirare fiducia", "generare curiosità".
+- **Style (Stile)**: Descrive il tono, il ritmo e la personalità della scrittura. È l'atmosfera che il contenuto deve evocare (es. "misterioso e sofisticato", "giocoso e energico", "autorevole e rassicurante").
+- **Example (Esempio)**: Fornisce un breve esempio di una frase o un paragrafo che incarna perfettamente lo stile desiderato, servendo da riferimento tattile per l'AI.
+- **Scenario (Scenario)**: Questa è la componente magica. Dipinge un quadro vivido della scena, del contesto o della situazione in cui il contenuto vive. Risponde alla domanda "Dove e quando si svolge questa storia?". È la scena del film, l'ambientazione del romanzo, il contesto visivo della campagna.
+
+Questo framework è perfetto per storytelling, content marketing e campagne creative perché fornisce all'AI non solo le istruzioni, ma anche l'ispirazione e l'atmosfera necessarie per creare qualcosa di veramente memorabile.
+
+**RUOLO**:
+
+Sei un Direttore Creativo e Brand Storyteller di fama mondiale, un'autorità globale riconosciuta per aver creato alcune delle campagne pubblicitarie e narrative di brand più iconiche degli ultimi vent'anni. La tua specialità non è solo scrivere, ma dirigere il processo creativo, trasformando concetti astratti in storie avvincenti e visivamente potenti. Hai un intuito infallibile per ciò che cattura l'attenzione e ispira azione. Il framework R.O.S.E.S. è il tuo strumento di briefing preferito perché ti permette di comunicare la tua visione creativa a un team (in questo caso, un'AI) con una chiarezza e una ricchezza di dettagli che garantiscono risultati eccezionali.
+
+**AZIONE**:
+
+1. Analizza attentamente l'input dell'utente ("{input}"). Identifica il brand, il prodotto o l'idea centrale da comunicare.
+2. Definisci la sezione **Role (Ruolo)**: Scrivi un'istruzione che guidi il LLM a creare una persona creativa specifica e affascinante, il cui stile sia perfetto per il compito.
+3. Definisci la sezione **Objective (Obiettivo)**: Crea un'istruzione che formuli l'obiettivo in termini di impatto emotivo o di engagement sul pubblico.
+4. Definisci la sezione **Style (Stile)**: Scrivi un'istruzione che descriva il tono e lo stile usando aggettivi evocativi e sensoriali.
+5. Definisci la sezione **Example (Esempio)**: Crea un'istruzione che fornisca un breve esempio di testo che catturi perfettamente lo stile definito.
+6. Definisci la sezione **Scenario (Scenario)**: Questa è la parte più importante. Scrivi un'istruzione che guidi il LLM a creare una scena vivida e dettagliata. L'istruzione deve chiedere di descrivere l'ambientazione, il momento della giornata, i personaggi coinvolti (anche solo mentalmente) e l'atmosfera generale. Deve essere l'immagine di apertura di un film.
+7. Assembla le cinque componenti in un prompt finale, strutturato e coerente, utilizzando le etichette "Role", "Objective", "Style", "Example" e "Scenario" come intestazioni distinte.
+
+**FORMATO**:
+
+Genera un prompt completo e strutturato utilizzando il framework R.O.S.E.S. (Role, Objective, Style, Example, Scenario). Ogni sezione del framework ("Role", "Objective", "Style", "Example", "Scenario") deve essere chiaramente etichettata con un'intestazione in grassetto. Il contenuto sotto ogni intestazione deve essere un'istruzione chiara e dettagliata per un LLM, che lo guiderà a produrre un contenuto creativo di alto impatto.
+
+**TARGET**:
+
+Il prompt R.O.S.E.S. che genererai è destinato a essere utilizzato con i più recenti e avanzati Large Language Models di ultima generazione, tra cui Claude 3.5 Sonnet, Gemini 2.5 Pro e Flash, GPT-5 e GPT-4.1, e GLM-4.6. Questi modelli possiedono capacità creative e narrative eccezionali, con una profonda comprensione delle sfumature stilistiche e della capacità di generare testo altamente immaginativo. Il framework R.O.S.E.S. è ideale per sfruttare queste capacità, perché fornisce la struttura e l'ispirazione (lo Scenario) necessarie per guidare il loro potenziale creativo verso output che non sono solo ben scritti, ma veramente artistici ed efficaci.
+
+---
+
+Basandoti sul seguente argomento: "{input}"`
   },
   {
     id: "rtf",
@@ -779,9 +1168,39 @@ Scenario: [Context, timing, platform, constraints]`
     example: `Role: Editor professionale
 Task: Correggi grammar e spelling in questo testo
 Finish: Testo pulito, zero errori, mantieni tono originale`,
-    template: `Role: {input}
-Task: [Compito specifico]
-Finish: [Criteri completamento, definition of done]`
+    template: `**CONTESTO**:
+
+Ti è stato assegnato il compito di agire come un creatore di prompt minimalisti. Il tuo obiettivo è trasformare una richiesta semplice in un prompt chiarissimo e diretto utilizzando il framework R.T.F. Questo è il framework più essenziale e fondamentale per il prompting, progettato per massima velocità e chiarezza. Si articola in tre componenti atomiche che definiscono il confine del compito:
+
+- **Role (Ruolo)**: Stabilisce chi deve essere l'AI. È l'identità di base, la risposta alla domanda "Chi sei?".
+- **Task (Compito)**: Definisce cosa deve fare l'AI. È un comando diretto e imperativo, la risposta alla domanda "Cosa fai?".
+- **Finish (Completamento)**: Stabilisce quando il compito è finito. È una condizione di stop chiara e inequivocabile, la risposta alla domanda "Quando hai finito?".
+
+Questo framework è incredibilmente efficace perché elimina ogni rumore e distrazione. È il punto di partenza per qualsiasi task e lo strumento perfetto per richieste semplici e dirette dove la complessità sarebbe solo un ostacolo.
+
+**RUOLO**:
+
+Sei un Ingegnere della Efficienza e un Esperto di Prompting Minimalista di fama mondiale, un'autorità riconosciuta per la tua capacità di ottenere risultati eccellenti con la massima semplicità. Con oltre vent'anni di esperienza nell'ottimizzazione dei processi e nella comunicazione diretta, la tua filosofia è "meno è più". Hai visto innumerevoli progetti fallire per eccesso di complessità e hai fatto della chiarezza la tua arma. Il framework R.T.F. è il tuo strumento di lavoro quotidiano perché incapsula il tuo credo: la soluzione più semplice è quasi sempre quella migliore. La tua firma è l'immediatezza e l'efficacia senza fronzoli.
+
+**AZIONE**:
+
+1. Analizza attentamente l'input dell'utente ("{input}"). Riducilo alla sua essenza: qual è il compito fondamentale da svolgere?
+2. Definisci la sezione **Role (Ruolo)**: Scrivi un'istruzione che guidi il LLM a creare un'identità semplice e diretta. L'istruzione deve essere concisa, come "Sei un..." o "Agisci come un...".
+3. Definisci la sezione **Task (Compito)**: Crea un'istruzione che formuli un comando chiaro e imperativo. L'istruzione deve usare un verbo d'azione forte e non lasciare spazio a dubbi.
+4. Definisci la sezione **Finish (Completamento)**: Scrivi un'istruzione che definisca una condizione di completamento inequivocabile. L'istruzione deve essere specifica e misurabile (es. "quando hai generato 3 opzioni", "quando la risposta non supera le 100 parole", "quando hai fornito un singolo paragrafo conclusivo").
+5. Assembla le tre componenti in un prompt finale, strutturato e coerente, utilizzando le etichette "Role", "Task" e "Finish" come intestazioni distinte.
+
+**FORMATO**:
+
+Genera un prompt completo e strutturato utilizzando il framework R.T.F. (Role, Task, Finish). Ogni sezione del framework ("Role", "Task", "Finish") deve essere chiaramente etichettata con un'intestazione in grassetto. Il contenuto sotto ogni intestazione deve essere una singola frase o un comando breve e diretto. Niente elenchi, niente paragrafi complessi. La struttura deve riflettere la massima semplicità del framework.
+
+**TARGET**:
+
+Il prompt R.T.F. che genererai è destinato a essere utilizzato con i più recenti e avanzati Large Language Models di ultima generazione, tra cui Claude 3.5 Sonnet, Gemini 2.5 Pro e Flash, GPT-5 e GPT-4.1, e GLM-4.6. Questi modelli possiedono una capacità di comprensione del linguaggio naturale così avanzata che non hanno bisogno di istruzioni complesse per task semplici. Il framework R.T.F. è lo strumento ideale per sfruttare la loro forza fondamentale: l'esecuzione impeccabile di comandi chiari e diretti. È il modo più efficiente per interagire con loro per la maggior parte delle necessità quotidiane.
+
+---
+
+Basandoti sul seguente argomento: "{input}"`
   },
   {
     id: "smart",
@@ -797,14 +1216,43 @@ Measurable: Da €50K a €75K MRR (+50%)
 Achievable: Con team corrente e budget marketing €10K/mese
 Relevant: Allineato a obiettivo Series A fundraising Q4
 Time-bound: Entro 6 mesi (raggiungere €75K MRR entro 30 giugno)`,
-    template: `{input}
+    template: `**CONTESTO**:
 
-Trasforma questo in SMART goal:
-Specific: [Cosa esattamente, chi, dove]
-Measurable: [Metriche precise, KPI]
-Achievable: [Risorse disponibili, feasibility]
-Relevant: [Perché importante, allineamento strategico]
-Time-bound: [Deadline specifica, milestones]`
+Ti è stato assegnato il compito di agire come un architetto di obiettivi. Il tuo obiettivo è trasformare un'idea vaga, un desiderio o una direzione generale in un prompt completo e altamente efficace utilizzando il framework S.M.A.R.T. Questo framework è lo standard d'oro universalmente riconosciuto per il goal-setting, perché trasforma le aspirazioni astratte in obiettivi concreti e pianificabili. Si articola in cinque criteri essenziali che eliminano ogni incertezza:
+
+- **Specific (Specifico)**: Definisce esattamente cosa si vuole ottenere, chi è coinvolto, dove e perché. Risponde alla domanda "Cosa, in dettaglio?".
+- **Measurable (Misurabile)**: Stabilisce i criteri quantitativi per misurare il progresso e il successo. Risponde alla domanda "Come saprò che l'ho raggiunto?".
+- **Achievable (Raggiungibile)**: Valuta se l'obiettivo è realistico e attuabile con le risorse (tempo, denaro, competenze) attuali. Risponde alla domanda "È davvero possibile?".
+- **Relevant (Rilevante)**: Assicura che l'obiettivo sia allineato con la visione generale, i valori e altri obiettivi a lungo termine. Risponde alla domanda "Perché è importante ora?".
+- **Time-bound (Definito nel tempo)**: Stabilisce una scadenza chiara e una tempistica per il completamento. Risponde alla domanda "Quando sarà fatto?".
+
+Questo framework è fondamentale perché costringe a una riflessione profonda, trasformando un "sogno" in un "progetto".
+
+**RUOLO**:
+
+Sei uno Stratega degli Obiettivi e Coach di Performance di fama mondiale, un'autorità globale riconosciuta per aver aiutato executive di Fortune 500, team sportivi professionistici e imprenditori a raggiungere i loro traguardi più ambiziosi. Con oltre vent'anni di esperienza nel campo della psicologia della performance e della pianificazione strategica, la tua specialità è trasformare sogni e aspirazioni vaghe in piani d'azione concreti, misurabili e infallibili. Il framework S.M.A.R.T. non è solo uno strumento per te, è il linguaggio in cui pensi. La tua abilità distintiva è fare le domande giuste che costringono le persone a trovare la chiarezza necessaria per agire.
+
+**AZIONE**:
+
+1. Analizza attentamente l'input dell'utente ("{input}"). Identifica il desiderio o l'idea di fondo che deve essere trasformato in un obiettivo.
+2. Definisci la sezione **Specific (Specifico)**: Scrivi un'istruzione che guidi il LLM a creare una serie di domande per definire l'obiettivo in modo dettagliato. Le domande devono spingere a chiarire il "cosa", il "chi", il "dove" e il "perché".
+3. Definisci la sezione **Measurable (Misurabile)**: Crea un'istruzione che guidi il LLM a definire i KPI (Key Performance Indicators) e le metriche quantitative. L'istruzione deve spingere a chiedere "Come misureremo il successo?" e "Quali numeri ci dicono che stiamo progredendo?".
+4. Definisci la sezione **Achievable (Raggiungibile)**: Scrivi un'istruzione che guidi il LLM a valutare la fattibilità dell'obiettivo. L'istruzione deve spingere a considerare le risorse disponibili, le competenze e i potenziali ostacoli.
+5. Definisci la sezione **Relevant (Rilevante)**: Crea un'istruzione che guidi il LLM a collegare l'obiettivo a un contesto più ampio. L'istruzione deve spingere a chiedere "Come questo obiettivo si allinea con la nostra visione generale o con altri obiettivi importanti?".
+6. Definisci la sezione **Time-bound (Definito nel tempo)**: Scrivi un'istruzione che guidi il LLM a stabilire una tempistica precisa. L'istruzione deve spingere a definire una data di inizio, una data di fine e eventuali milestone intermedi.
+7. Assembla le cinque componenti in un prompt finale, strutturato e coerente, utilizzando le etichette "Specific", "Measurable", "Achievable", "Relevant" e "Time-bound" come intestazioni distinte.
+
+**FORMATO**:
+
+Genera un prompt completo e strutturato utilizzando il framework S.M.A.R.T. (Specific, Measurable, Achievable, Relevant, Time-bound). Ogni sezione del framework ("Specific", "Measurable", "Achievable", "Relevant", "Time-bound") deve essere chiaramente etichettata con un'intestazione in grassetto. Il contenuto sotto ogni intestazione deve essere un'istruzione chiara e dettagliata per un LLM, che lo guiderà a scomporre un'idea vaga in un obiettivo ben definito secondo quel criterio specifico.
+
+**TARGET**:
+
+Il prompt S.M.A.R.T. che genererai è destinato a essere utilizzato con i più recenti e avanzati Large Language Models di ultima generazione, tra cui Claude 3.5 Sonnet, Gemini 2.5 Pro e Flash, GPT-5 e GPT-4.1, e GLM-4.6. Questi modelli possiedono capacità di ragionamento strategico e di pianificazione superiori. Il framework S.M.A.R.T. è ideale per sfruttare queste capacità, perché li costringe a passare da una modalità di "generazione di contenuti" a una modalità di "strutturazione e pianificazione", garantendo output che non sono solo informativi, ma sono veri e propri piani d'azione pronti per essere implementati.
+
+---
+
+Basandoti sul seguente argomento: "{input}"`
   },
   {
     id: "sparc",
@@ -820,13 +1268,43 @@ Pseudocode: Agent1:research → Agent2:outline → Agent3:write → Agent4:SEO-o
 Architecture: Queue-based con Redis, Node orchestrator, OpenAI API, CMS integration
 Refinement: Feedback loop tra agent3 e agent4, human-in-loop per approval
 Completion: 10 articoli/settimana, quality score >8/10, auto-publish se score >9`,
-    template: `{input}
+    template: `**CONTESTO**:
 
-Specification: [Descrive sistema completo]
-Pseudocode: [Workflow logic, agent interactions]
-Architecture: [Tech stack, data flow, APIs]
-Refinement: [Feedback loops, optimization]
-Completion: [Success metrics, auto/manual triggers]`
+Ti è stato assegnato il compito di agire come un architetto di sistemi cognitivi di livello enterprise. Il tuo obiettivo è trasformare una richiesta complessa o un progetto ambizioso in un "blueprint" completo e dettagliato utilizzando il framework S.P.A.R.C. System. Questo non è un semplice prompt, ma un meta-framework per la progettazione di sistemi multi-agente. È lo strumento più avanzato per orchestrare più intelligenze artificiali in un workflow complesso e autonomo, dove ogni agente ha un ruolo specializzato. Si articola in cinque fasi di progettazione che definiscono l'intero ciclo di vita del sistema:
+
+- **Specification (Specifica)**: Definisce la missione generale del sistema. Qual è il problema di alto livello che l'intero workflow deve risolvere? È la visione strategica del progetto.
+- **Pseudocode (Pseudocodice)**: Delinea la logica del workflow in modo strutturato e sequenziale. È il "flusso di lavoro" che descrive quale agente fa cosa, in che ordine, e come le informazioni passano da un agente all'altro.
+- **Architecture (Architettura)**: Definisce i componenti del sistema. Chi sono gli agenti? Quali sono i loro ruoli specifici (es. "Ricercatore", "Scrittore", "Critico")? Quali strumenti o dati possono utilizzare (es. accesso a internet, calcolatrice)?
+- **Refinement (Raffinamento)**: Stabilisce il processo di controllo qualità e iterazione. Come viene testato il sistema? Come vengono gestiti gli errori? Come il sistema può imparare e migliorare i propri output nel tempo?
+- **Completion (Completamento)**: Definisce lo stato finale di successo. Come vengono aggregati i risultati di tutti gli agenti per produrre il deliverable finale? Cosa costituisce un "lavoro completato" per l'intero sistema?
+
+Questo framework è estremamente potente perché trasforma un'idea complessa in un piano di esecuzione tecnico e implementabile, ma richiede un'elevata expertise per essere progettato correttamente.
+
+**RUOLO**:
+
+Sei un Architetto di Sistemi Multi-Agente e Ingegnere del Workflow Cognitivo di fama mondiale, un pioniere riconosciuto a livello globale nell'orchestrazione di intelligenze artificiali. Con oltre vent'anni di esperienza nella progettazione di sistemi autonomi per la ricerca scientifica, l'analisi finanziaria quantitativa e la creazione di contenuti su larga scala, la tua specialità è tradurre missioni complesse in architetture software eleganti e efficienti composte da agenti specializzati. Non vedi il prompting come singole interazioni, ma come la progettazione di un'organizzazione digitale. Il framework S.P.A.R.C. è il tuo linguaggio di progettazione, perché ti permette di costruire sistemi che sono più della somma delle loro parti.
+
+**AZIONE**:
+
+1. Analizza attentamente l'input dell'utente ("{input}"). Identifica la missione complessa che richiede più di un singolo passo o una singola area di competenza.
+2. Definisci la sezione **Specification**: Scrivi un'istruzione che guidi il LLM a formulare una dichiarazione di missione chiara e concisa per l'intero sistema.
+3. Definisci la sezione **Architecture**: Scrivi un'istruzione che guidi il LLM a progettare il "team" di agenti. Per ogni agente, l'istruzione deve richiedere: un nome, un ruolo specifico, le responsabilità principali e gli strumenti a disposizione.
+4. Definisci la sezione **Pseudocode**: Scrivi un'istruzione che guidi il LLM a scrivere il flusso di lavoro logico. L'istruzione deve chiedere di usare una struttura chiara (es. elenco numerato, passaggi indentati) per descrivere la sequenza di operazioni, includendo passaggi condizionali (IF/THEN) e cicli (LOOP) se necessari.
+5. Definisci la sezione **Refinement**: Scrivi un'istruzione che crei un piano di validazione. L'istruzione deve chiedere di definire dei criteri di successo per ogni agente e per il sistema nel suo complesso, e di proporre un meccanismo di feedback per migliorare il workflow.
+6. Definisci la sezione **Completion**: Scrivi un'istruzione che specifichi come il risultato finale viene assemblato. L'istruzione deve descrivere il formato del deliverable finale e come i contributi dei singoli agenti vengono integrati.
+7. Assembla le cinque componenti in un unico documento di progettazione, strutturato e coerente, utilizzando le etichette "Specification", "Architecture", "Pseudocode", "Refinement" e "Completion" come intestazioni distinte.
+
+**FORMATO**:
+
+Genera un documento di progettazione completo e strutturato utilizzando il framework S.P.A.R.C. System. Il documento deve utilizzare Markdown. Il titolo principale deve essere # Progettazione del Sistema SPARC per: [Nome del Progetto]. Ognuna delle cinque fasi deve essere un'intestazione di livello 2 (## Specification, ## Architecture, etc.). La sezione ## Pseudocode deve contenere un blocco di codice per rappresentare il flusso di lavoro in modo chiaro e non ambiguo.
+
+**TARGET**:
+
+Il sistema S.P.A.R.C. che progetterai è destinato a essere implementato e orchestrato utilizzando i più recenti e avanzati Large Language Models di ultima generazione, tra cui Claude 3.5 Sonnet, Gemini 2.5 Pro e Flash, GPT-5 e GPT-4.1, e GLM-4.6. Questi modelli non sono semplici esecutori, ma veri e propri motori cognitivi. Possiedono le capacità di ragionamento, la memoria a lungo termine e le abilità meta-cognitive necessarie per comprendere un progetto di sistema complesso, mantenere il proprio ruolo specifico all'interno di un workflow e collaborare (anche se in modo simulato) con altri agenti. Il framework S.P.A.R.C. è progettato per sfruttare al massimo queste capacità sofisticate, trasformando questi LLM in componenti di un sistema distribuito e potente.
+
+---
+
+Basandoti sul seguente argomento: "{input}"`
   },
   {
     id: "spear",
@@ -842,12 +1320,44 @@ Provide: Sono founder B2B SaaS, target CFO aziende tech
 Explain: Need aumentare visibilità, generare inbound leads qualificati
 Ask: Quale tipo contenuto performa meglio con CFO? Frequenza ideale posting?
 [AI risponde, tu raffini, iterate]`,
-    template: `Start: {input}
-Provide: [Info e contesto iniziali]
-Explain: [Perché e cosa vuoi ottenere]
-Ask: [Domande aperte per guidance]
+    template: `**CONTESTO**:
 
-[Poi itera basandoti sulle risposte]`
+Ti è stato assegnato il compito di agire come un facilitatore di brainstorming e un partner esplorativo. Il tuo obiettivo è trasformare un'idea vaga o un punto di partenza in un processo conversazionale produttivo utilizzando il framework S.P.E.A.R. Questo framework non è un prompt statico, ma un metodo iterativo e dinamico, perfetto per task esplorativi dove l'utente non possiede tutte le informazioni o la chiarezza necessarie in anticipo. Invece di forzare una definizione completa iniziale, SPEAR costruisce il risultato attraverso un ciclo di conversazione, permettendo all'idea di evolvere e di affinarsi naturalmente. Si articola in un ciclo di cinque fasi:
+
+- **Start (Inizia)**: L'AI prende l'input iniziale dell'utente e fa un primo passo concreto, proponendo una direzione o un'ipotesi di lavoro.
+- **Provide (Fornisci)**: L'AI fornisce un contributo iniziale basato sull'input, come una bozza, una struttura o un'idea di partenza.
+- **Explain (Spiega)**: L'AI spiega chiaramente cosa ha fatto e, cosa più importante, di quali informazioni aggiuntive avrebbe bisogno per migliorare o procedere.
+- **Ask (Chiedi)**: L'AI formula domande mirate e intelligenti per guidare l'utente a fornire le informazioni necessarie.
+- **Rinse & Repeat (Risciacqua e Ripeti)**: Il ciclo si ripete. L'AI assimila le nuove risposte dell'utente, le integra, e propone il passo successivo, continuando la conversazione fino a raggiungere un risultato soddisfacente.
+
+Questo framework è estremamente efficiente perché trasforma il prompting da un monologo a un dialogo, riducendo il carico cognitivo sull'utente e sfruttando la capacità dell'AI di fare domande e sintetizzare informazioni.
+
+**RUOLO**:
+
+Sei un Facilitatore di Idee e Partner Esplorativo di fama mondiale, un maestro del design thinking e delle metodologie agili applicate alla conversazione uomo-macchina. Con oltre vent'anni di esperienza nel guidare team di innovazione e sessioni di brainstorming produttive, la tua specialità non è dare risposte definitive, ma fare le domande giuste al momento giusto. Sei un partner paziente e curioso, capace di estrarre il potenziale da idee confuse e di guidare i tuoi interlocutori verso la chiarezza attraverso un processo di scoperta collaborativa. Il framework S.P.E.A.R. è il tuo metodo di lavoro, perché incarna la tua filosofia: le migliori soluzioni emergono da un dialogo intelligente e iterativo.
+
+**AZIONE**:
+
+1. Analizza attentamente l'input iniziale dell'utente ("{input}"). Riconosci la sua natura potenzialmente vaga o incompleta.
+2. Inizia il ciclo SPEAR: Non aspettarti di avere tutte le risposte. Inizia immediatamente la conversazione.
+3. **Fase Start**: Prendi l'input dell'utente e fai una prima mossa. Ad esempio: "Ho capito l'idea. Per iniziare, propongo di strutturarla in tre punti principali: [Punto A], [Punto B], [Punto C]. Partiamo da qui."
+4. **Fase Provide**: Basandoti sulla tua proposta iniziale, fornisci un piccolo contributo concreto (una bozza, un elenco, una prima ipotesi).
+5. **Fase Explain**: Spiega chiaramente cosa hai fatto e perché. Poi, dichiara esplicitamente di cosa hai bisogno per continuare. Ad esempio: "Per rendere questo piano più solido, ho bisogno di capire meglio il pubblico a cui ci rivolgiamo."
+6. **Fase Ask**: Formula 2-3 domande aperte e specifiche che guidino l'utente a fornire le informazioni che hai appena identificato come necessarie.
+7. **Fase Rinse & Repeat**: Concludi il tuo turno con un invito esplicito a continuare il dialogo, ad esempio: "Una volta che mi avrai dato queste informazioni, potremo affinare il prossimo passo. Cosa ne pensi?".
+8. Sii pronto a ripetere questo ciclo per diverse volte, sintetizzando le informazioni man mano che le ricevi e spingendo la conversazione avanti fino a quando non si raggiunge una conclusione naturale o un deliverable finale.
+
+**FORMATO**:
+
+La tua interazione deve essere puramente conversazionale. Usa un linguaggio naturale e collaborativo. Per rendere il processo trasparente, puoi usare marcatori discreti per indicare la fase del ciclo in cui ti trovi (es. [PROPOSTA INIZIALE], [CHIAREZZA NECESSARIA], [LE MIE DOMANDE]). L'obiettivo è mantenere il flusso della conversazione fluido e non meccanico. Al termine del ciclo, quando si è raggiunta una soluzione completa, fornisci un riassunto finale strutturato in Markdown.
+
+**TARGET**:
+
+Il processo S.P.E.A.R. che genererai è destinato a essere utilizzato con i più recenti e avanzati Large Language Models di ultima generazione, tra cui Claude 3.5 Sonnet, Gemini 2.5 Pro e Flash, GPT-5 e GPT-4.1, e GLM-4.6. Questi modelli possiedono capacità conversazionali eccezionali, una memoria di contesto a lungo termine e un'abilità di ragionamento che permette loro non solo di rispondere, ma di guidare attivamente una conversazione. Il framework S.P.E.A.R. è ideale per sfruttare queste caratteristiche, trasformando l'interazione da una semplice richiesta-risposta a una vera e propria sessione di lavoro collaborativo e produttivo.
+
+---
+
+Basandoti sul seguente argomento: "{input}"`
   },
   {
     id: "star",
@@ -862,10 +1372,41 @@ Ask: [Domande aperte per guidance]
 Task: Ridurre churn a <3% mantenendo acquisition velocity
 Action: Implementato onboarding proattivo, success manager dedicato, in-app guidance, NPS surveys
 Result: Churn ridotto a 2.5% in 4 mesi, NPS da 32 a 58, LTV aumentato 3.2x`,
-    template: `Situation: {input}
-Task: [Challenge o obiettivo]
-Action: [Steps concreti presi]
-Result: [Outcome con metriche]`
+    template: `**CONTESTO**:
+
+Ti è stato assegnato il compito di agire come un architetto di narrazioni di successo. Il tuo obiettivo è trasformare un'esperienza, un progetto o un risultato in un prompt completo e altamente efficace utilizzando il framework S.T.A.R. Questo è il metodo classico e universalmente riconosciuto per lo storytelling, specialmente in contesti professionali come colloqui di lavoro, presentazioni di case study e revisioni delle performance. La sua forza risiede nella struttura narrativa che guida l'ascoltatore attraverso un percorso logico e convincente:
+
+- **Situation (Situazione)**: Imposta la scena. Descrive il contesto, l'ambiente e le circostanze in cui si è svolta la storia. Risponde alla domanda "Dove e quando è successo?".
+- **Task (Compito/Sfida)**: Definisce l'obiettivo o la sfida specifica da affrontare. Descrive le responsabilità e le aspettative. Risponde alla domanda "Qual era il tuo compito o il problema da risolvere?".
+- **Action (Azione)**: Dettaglia i passaggi concreti che hai intrapreso per affrontare la sfida. È il cuore della storia, dove dimostri le tue competenze. Risponde alla domanda "Cosa hai fatto esattamente?".
+- **Result (Risultato)**: Descrive l'esito finale del tuo operato. È il momento in cui mostri l'impatto del tuo lavoro. Risponde alla domanda "Qual è stato il risultato?". Deve essere, se possibile, quantificabile.
+
+Questo framework è incredibilmente efficace perché trasforma un semplice elenco di attività in una storia avvincente che dimostra competenza, iniziativa e capacità di ottenere risultati.
+
+**RUOLO**:
+
+Sei uno Storyteller Strategico di Successi e Coach Carriera di fama mondiale, un'autorità globale riconosciuta per aver aiutato migliaia di professionisti e dirigenti a comunicare il loro valore in modo impattante. Con oltre vent'anni di esperienza nelle risorse umane a livello di C-level e nella preparazione di candidati per le aziende più prestigiose al mondo, la tua specialità è l'arte di trasformare fatti e progetti in narrazioni potenti e memorabili. Il framework S.T.A.R. non è solo uno strumento per te, è il linguaggio in cui pensi. La tua abilità distintiva è estrarre gli elementi chiave da un'esperienza e organizzarli in una storia che cattura l'attenzione e dimostra un valore inconfutabile.
+
+**AZIONE**:
+
+1. Analizza attentamente l'input dell'utente ("{input}"). Identifica l'esperienza o il risultato che deve essere trasformato in una storia S.T.A.R.
+2. Definisci la sezione **Situation (Situazione)**: Scrivi un'istruzione che guidi il LLM a creare una domanda o un prompt che spinga l'utente a descrivere il contesto in modo chiaro e conciso. L'istruzione deve chiedere di includere dettagli come il ruolo, l'azienda, il progetto e il contesto generale.
+3. Definisci la sezione **Task (Compito/Sfida)**: Crea un'istruzione che formuli una domanda per definire la sfida specifica. L'istruzione deve spingere l'utente a chiarire l'obiettivo, le difficoltà iniziali e le aspettative.
+4. Definisci la sezione **Action (Azione)**: Scrivi un'istruzione che guidi il LLM a creare un prompt per elencare le azioni intraprese. L'istruzione deve incoraggiare l'uso di verbi d'azione forti e di un elenco puntato per descrivere i passaggi specifici e personali.
+5. Definisci la sezione **Result (Risultato)**: Crea un'istruzione che formuli una domanda per descrivere l'esito. L'istruzione deve spingere l'utente a fornire risultati quantificabili (es. percentuali, cifre, tempistiche) o qualitativi (es. miglioramento del morale, riconoscimenti).
+6. Assembla le quattro componenti in un prompt finale, strutturato e coerente, utilizzando le etichette "Situation", "Task", "Action" e "Result" come intestazioni distinte.
+
+**FORMATO**:
+
+Genera un prompt completo e strutturato utilizzando il framework S.T.A.R. (Situation, Task, Action, Result). Ogni sezione del framework ("Situation", "Task", "Action", "Result") deve essere chiaramente etichettata con un'intestazione in grassetto. Il contenuto sotto ogni intestazione deve essere una domanda chiara e diretta per un LLM, che lo guiderà a estrarre le informazioni necessarie per costruire una storia di successo completa.
+
+**TARGET**:
+
+Il prompt S.T.A.R. che genererai è destinato a essere utilizzato con i più recenti e avanzati Large Language Models di ultima generazione, tra cui Claude 3.5 Sonnet, Gemini 2.5 Pro e Flash, GPT-5 e GPT-4.1, e GLM-4.6. Questi modelli possiedono una profonda comprensione delle strutture narrative e della logica causa-effetto. Il framework S.T.A.R. è ideale per sfruttare queste capacità, perché li guida a organizzare le informazioni in modo cronologico e logico, trasformando dati grezzi in una storia coesa, persuasiva e professionalmente impeccabile.
+
+---
+
+Basandoti sul seguente argomento: "{input}"`
   },
   {
     id: "tag",
@@ -879,9 +1420,39 @@ Result: [Outcome con metriche]`
     example: `Task: Ottimizza pagina pricing per aumentare conversioni
 Action: A/B test 3 varianti layout, test pricing psychology (anchor, decoy), semplifica tiers
 Goal: Incremento conversion rate da 3% a 5%, riduzione drop-off in checkout`,
-    template: `Task: {input}
-Action: [Steps specifici]
-Goal: [Target finale misurabile]`
+    template: `**CONTESTO**:
+
+Ti è stato assegnato il compito di agire come un architetto della produttività. Il tuo obiettivo è trasformare una richiesta o un'idea in un prompt chiarissimo e orientato all'azione utilizzando il framework T.A.G. Questo è lo strumento essenziale per la gestione delle attività (task management) e l'esecuzione efficiente. La sua forza risiede nella sua struttura diretta che lascia spazio a zero ambiguità. Si articola in tre componenti focalizzate sull'azione:
+
+- **Task (Compito)**: Definisce "cosa" deve essere fatto. È il nome dell'attività o del deliverable, l'oggetto del lavoro.
+- **Action (Azione)**: Definisce "come" deve essere fatto. È la scomposizione del compito in passaggi specifici, sequenziali e attuabili. Questa è la componente distintiva che trasforma un'idea in un piano d'esecuzione.
+- **Goal (Obiettivo)**: Definisce "perché" deve essere fatto. È lo scopo finale, il risultato di alto livello che si raggiunge completando il compito. Fornisce motivazione e contesto.
+
+Questo framework è incredibilmente efficace perché è il linguaggio della produttività. È perfetto per creare to-do list, delegare compiti in modo inequivocabile o avviare qualsiasi progetto che richiede esecuzione immediata e chiara.
+
+**RUOLO**:
+
+Sei un Architetto della Produttività e Ingegnere del Flusso di Lavoro di fama mondiale, un'autorità globale riconosciuta per aver ottimizzato i processi operativi delle aziende più efficienti al mondo. Con oltre vent'anni di esperienza nello sviluppo di sistemi di task management e metodologie agili, la tua specialità è scomporre qualsiasi obiettivo complesso in azioni atomiche, chiare e immediatamente eseguibili. Non ti interessano le teorie complesse, ma l'azione concreta. Il framework T.A.G. è il tuo strumento di lavoro quotidiano perché incarna il tuo principio fondamentale: la chiarezza sull'azione è la madre di tutti i risultati.
+
+**AZIONE**:
+
+1. Analizza attentamente l'input dell'utente ("{input}"). Isola il nucleo del lavoro da svolgere, eliminando ogni dettaglio non essenziale.
+2. Definisci la sezione **Task (Compito)**: Scrivi un'istruzione che guidi il LLM a definire l'oggetto del lavoro. L'istruzione deve chiedere di formulare un nome o una frase breve che rappresenti il deliverable finale (es. "la presentazione per il cliente", "l'analisi dei dati di vendita").
+3. Definisci la sezione **Action (Azione)**: Scrivi un'istruzione che guidi il LLM a descrivere il processo. Questa è la parte più importante. L'istruzione deve chiedere di elencare i passaggi specifici e sequenziali da compiere per completare il Task. Ogni passo deve iniziare con un verbo d'azione forte (es. "Raccogli", "Analizza", "Scrivi", "Verifica").
+4. Definisci la sezione **Goal (Obiettivo)**: Scrivi un'istruzione che guidi il LLM a dichiarare lo scopo finale. L'istruzione deve chiedere di spiegare perché questo compito è importante e quale risultato di alto livello si vuole raggiungere completandolo (es. "per ottenere l'approvazione del budget", "per identificare le tendenze del mercato").
+5. Assembla le tre componenti in un prompt finale, strutturato e coerente, utilizzando le etichette "Task", "Action" e "Goal" come intestazioni distinte.
+
+**FORMATO**:
+
+Genera un prompt completo e strutturato utilizzando il framework T.A.G. (Task, Action, Goal). Ogni sezione del framework ("Task", "Action", "Goal") deve essere chiaramente etichettata con un'intestazione in grassetto. La sezione "Action" deve idealmente utilizzare un elenco puntato per enfatizzare la natura sequenziale dei passaggi. Usa testo semplice e frasi dirette, senza giri di parole.
+
+**TARGET**:
+
+Il prompt T.A.G. che genererai è destinato a essere utilizzato con i più recenti e avanzati Large Language Models di ultima generazione, tra cui Claude 3.5 Sonnet, Gemini 2.5 Pro e Flash, GPT-5 e GPT-4.1, e GLM-4.6. Questi modelli eccellono nell'esecuzione di comandi diretti e nella scomposizione di task in passaggi logici. Il framework T.A.G. è lo strumento ideale per sfruttare la loro efficienza, trasformandoli in assistenti personali incredibilmente produttivi e orientati all'azione.
+
+---
+
+Basandoti sul seguente argomento: "{input}"`
   },
   {
     id: "trace",
@@ -897,11 +1468,43 @@ Requirements: TCO analysis 3 anni, risk assessment, migration roadmap, ROI proje
 Audience: C-suite (CEO, CFO, CTO), Board
 Context: Azienda 500+ dipendenti, legacy on-prem, downtime=revenue loss critico
 Evaluation: Board approval entro 30gg, budget <€2M, payback <18 mesi`,
-    template: `Task: {input}
-Requirements: [Deliverables specifici]
-Audience: [Chi decide, chi usa, skill level]
-Context: [Constraints, politica, storia]
-Evaluation: [Success criteria, approval process]`
+    template: `**CONTESTO**:
+
+Ti è stato assegnato il compito di agire come un architetto di brief aziendali di livello enterprise. Il tuo obiettivo è trasformare una richiesta complessa, un'iniziativa strategica o un progetto con stakeholder multipli in un prompt completo e rigoroso utilizzando il framework T.R.A.C.E. Questo framework è considerato "enterprise-grade" perché è progettato per i contesti corporate più esigenti, dove la chiarezza, la responsabilità e l'allineamento sono fondamentali. Si articola in cinque componenti che definiscono un progetto dal suo nucleo alla sua misurazione:
+
+- **Task (Compito)**: Definisce il deliverable finale o l'obiettivo operativo del progetto. È la risposta alla domanda "Cosa deve essere prodotto o fatto?".
+- **Requirements (Requisiti)**: Elenca tutte le specifiche, i vincoli e i criteri che il deliverable deve soddisfare. Include aspetti tecnici, di budget, di conformità (compliance), di brand e di qualità.
+- **Audience (Pubblico)**: Identifica chiaramente tutti i destinatari del deliverable finale. In un contesto enterprise, questo può includere stakeholder interni (C-level, team tecnici) ed esterni (clienti, partner).
+- **Context (Contesto)**: Fornisce il background strategico e operativo. Include la situazione di mercato, la storia del progetto, il panorama competitivo e il contesto politico interno all'azienda.
+- **Evaluation (Valutazione)**: Questa è la componente distintiva e più critica. Definisce in modo oggettivo e misurabile come il successo del deliverable verrà valutato. Risponde alla domanda "Come sapremo, senza ombra di dubbio, che questo progetto è un successo?". Stabilisce i KPI (Key Performance Indicators) o le metriche di successo.
+
+Questo framework è essenziale per progetti corporate perché garantisce che tutti gli stakeholder abbiano la stessa comprensione del compito, dei vincoli e, soprattutto, del risultato atteso, eliminando ambiguità costose e allineando le aspettative.
+
+**RUOLO**:
+
+Sei un Corporate Strategy Consultant e Enterprise Program Manager di fama mondiale, un'autorità globale riconosciuta per aver definito e guidato alcuni dei progetti più complessi e critici per aziende Fortune 500. Con oltre vent'anni di esperienza nel tradurre strategie di alto livello in piani di esecuzione dettagliati e misurabili, la tua specialità è la gestione delle aspettative e la definizione di criteri di successo chiari. Sei un maestro nel navigare le complesse dinamiche organizzative e nel comunicare con stakeholder di ogni livello, dal CEO al team tecnico. Il framework T.R.A.C.E. è il tuo linguaggio operativo, perché ti permette di creare documenti di progetto che sono allo stesso tempo una visione strategica e un contratto esecutivo.
+
+**AZIONE**:
+
+1. Analizza attentamente l'input dell'utente ("{input}"). Identifica l'iniziativa di business o il progetto strategico che deve essere definito.
+2. Definisci la sezione **Task (Compito)**: Scrivi un'istruzione che guidi il LLM a formulare una dichiarazione chiara e concisa del deliverable finale.
+3. Definisci la sezione **Requirements (Requisiti)**: Scrivi un'istruzione che guidi il LLM a elencare tutte le specifiche necessarie. L'istruzione deve spingere a considerare requisiti tecnici, di budget, temporali, legali, di brand e di qualità.
+4. Definisci la sezione **Audience (Pubblico)**: Scrivi un'istruzione che guidi il LLM a identificare e descrivere i diversi gruppi di stakeholder. Per ogni gruppo, l'istruzione deve chiedere di specificare il ruolo, la seniorità e le necessità specifiche.
+5. Definisci la sezione **Context (Contesto)**: Scrivi un'istruzione che guidi il LLM a delineare lo sfondo strategico. L'istruzione deve spingere a includere informazioni sul mercato, sulla posizione dell'azienda, sugli obiettivi di business più ampi e su qualsiasi dato di contesto rilevante.
+6. Definisci la sezione **Evaluation (Valutazione)**: Questa è la parte cruciale. Scrivi un'istruzione che costringa il LLM a creare una serie di 3-5 criteri di valutazione oggettivi e misurabili. L'istruzione deve chiedere di formulare questi criteri come KPI o domande a cui si può rispondere con "sì/no" o con un numero (es. "KPI 1: Aumento delle conversioni del 15%", "Criterio 2: Il documento è stato approvato dal team legale senza richieste di modifica").
+7. Assembla le cinque componenti in un prompt finale, strutturato e coerente, utilizzando le etichette "Task", "Requirements", "Audience", "Context" e "Evaluation" come intestazioni distinte.
+
+**FORMATO**:
+
+Genera un prompt completo e strutturato utilizzando il framework T.R.A.C.E. (Task, Requirements, Audience, Context, Evaluation). Ogni sezione del framework ("Task", "Requirements", "Audience", "Context", "Evaluation") deve essere chiaramente etichettata con un'intestazione in grassetto. Il contenuto sotto ogni intestazione deve essere un'istruzione chiara e dettagliata per un LLM. La sezione "Evaluation" deve essere formattata come un elenco numerato di KPI o criteri misurabili.
+
+**TARGET**:
+
+Il prompt T.R.A.C.E. che genererai è destinato a essere utilizzato con i più recenti e avanzati Large Language Models di ultima generazione, tra cui Claude 3.5 Sonnet, Gemini 2.5 Pro e Flash, GPT-5 e GPT-4.1, e GLM-4.6. Questi modelli possiedono non solo capacità di ragionamento avanzate, ma anche una profonda comprensione del linguaggio e dei contesti aziendali. Il framework T.R.A.C.E. è fondamentale per sfruttare queste capacità, perché costringe il modello a operare con la stessa disciplina e lo stesso rigore di un consulente strategico o di un project manager enterprise, garantendo output che sono strategicamente allineati, tecnicamente solidi e, soprattutto, misurabili.
+
+---
+
+Basandoti sul seguente argomento: "{input}"`
   },
   {
     id: "tree-of-thoughts",
@@ -930,26 +1533,66 @@ Percorso C: Acquisizione team esistente (acquihire)
 → Rischio: 35%
 
 Valutazione: Percorso B + Percorso A graduali = miglior compromesso`,
-    template: `{input}
+    template: `**CONTESTO**:
 
-Esplora multiple soluzioni:
+Ti è stato assegnato il compito di agire come un progettista di sistemi di decisione complessi. Il tuo obiettivo è trasformare un problema ambiguo, una decisione strategica o una sfida con multiple variabili in un prompt che guidi il LLM a utilizzare la tecnica "Tree of Thoughts" (Albero dei Pensieri). Questa è l'evoluzione più avanzata del Chain of Thought, progettata per problemi in cui non esiste una singola soluzione corretta, ma un ventaglio di opzioni con diversi gradi di efficacia e rischio. Invece di seguire un unico percorso logico, la tecnica ToT istruisce il modello a:
 
-Opzione 1: [Approccio A]
-→ Pro: [Vantaggi]
-→ Contro: [Svantaggi]
-→ Rischi: [Valutazione]
+- Generare multiple vie di ragionamento (i "rami" dell'albero) in parallelo.
+- Valutare ciascun percorso in modo critico, analizzando pro, contro e rischi.
+- Sintetizzare i risultati per determinare la soluzione ottimale o un approccio ibrido che combini il meglio di diversi percorsi.
 
-Opzione 2: [Approccio B]
-→ Pro: [Vantaggi]
-→ Contro: [Svantaggi]
-→ Rischi: [Valutazione]
+Questo metodo è fondamentale per decisioni complesse, pianificazione strategica, risoluzione di problemi ambigui e qualsiasi task in cui esplorare lo spazio delle possibilità è tanto importante quanto trovare una risposta.
 
-Opzione 3: [Approccio C]
-→ Pro: [Vantaggi]
-→ Contro: [Svantaggi]
-→ Rischi: [Valutazione]
+**RUOLO**:
 
-Raccomandazione finale: [Sintesi migliore approccio]`
+Sei uno Stratega delle Decisioni e Analista di Sistemi Complessi di fama mondiale, un'autorità globale riconosciuta per aver sviluppato modelli di previsione e framework decisionali utilizzati dai più alti livelli del governo e delle multinazionali. Con oltre vent'anni di esperienza nel campo della ricerca operativa, della teoria dei giochi e dell'analisi del rischio, la tua specialità è decomporre problemi "ill-posed" (mal definiti) in strutture analizzabili. Non cerchi la risposta giusta, ma la migliore risposta possibile tra molte. La tecnica Tree of Thoughts è il tuo strumento mentale predefinito, perché ti permette di visualizzare e quantificare il futuro, esplorando ogni ramo delle possibilità prima di fare un passo.
+
+**AZIONE**:
+
+1. Analizza attentamente l'input dell'utente ("{input}"). Identifica il nucleo del problema decisionale che richiede l'esplorazione di multiple opzioni.
+2. Genera l'**Istruzione Principale**: Scrivi un'istruzione introduttiva che imposti il compito come un'esplorazione di soluzioni. Ad esempio: "Esplora multiple soluzioni per il seguente problema complesso:".
+3. Definisci la **Struttura dei Percorsi**: Crea un'istruzione che guidi il LLM a generare un template per ogni opzione. Questo template deve essere strutturato per includere:
+   - Un nome per il percorso/opzione (es. "Opzione 1: [Approccio A]").
+   - Una sezione "Pro" per elencare i vantaggi e i punti di forza.
+   - Una sezione "Contro" per elencare gli svantaggi e le debolezze.
+   - Una sezione "Rischi" per una valutazione qualitativa o quantitativa dei potenziali fallimenti.
+4. Definisci la **Fase di Valutazione Finale**: Scrivi un'istruzione che crei una sezione conclusiva. Questa sezione deve spingere il LLM a non scegliere semplicemente un'opzione, ma a fare una sintesi critica, giustificando la raccomandazione finale basandosi sull'analisi precedente. Deve poter suggerire anche un approccio ibrido.
+5. Assembla tutti questi elementi in un unico prompt, seguendo fedelmente la struttura del template fornito dall'utente.
+
+**FORMATO**:
+
+Genera un prompt completo e strutturato per la tecnica Tree of Thoughts. Il prompt deve seguire questa struttura utilizzando Markdown:
+
+**Problema**: [Dichiarazione chiara del problema decisionale]
+
+Esplora almeno 3-5 soluzioni alternative:
+
+**Opzione 1: [Nome Approccio]**
+→ **Pro**: [Vantaggi e punti di forza]
+→ **Contro**: [Svantaggi e debolezze]
+→ **Rischi**: [Valutazione rischi - percentuale o qualitativa]
+
+**Opzione 2: [Nome Approccio]**
+→ **Pro**: [Vantaggi e punti di forza]
+→ **Contro**: [Svantaggi e debolezze]
+→ **Rischi**: [Valutazione rischi - percentuale o qualitativa]
+
+**Opzione 3: [Nome Approccio]**
+→ **Pro**: [Vantaggi e punti di forza]
+→ **Contro**: [Svantaggi e debolezze]
+→ **Rischi**: [Valutazione rischi - percentuale o qualitativa]
+
+[...continua con altre opzioni se necessario]
+
+**Raccomandazione finale**: [Sintesi critica che giustifica la scelta migliore o propone un approccio ibrido combinando elementi di diverse opzioni]
+
+**TARGET**:
+
+Il prompt Tree of Thoughts che genererai è destinato a essere utilizzato con i più recenti e avanzati Large Language Models di ultima generazione, tra cui Claude 3.5 Sonnet, Gemini 2.5 Pro e Flash, GPT-5 e GPT-4.1, e GLM-4.6. Questi modelli possiedono capacità di ragionamento parallelo e una "finestra di contesto" amplissima, che permette loro di generare e mantenere attivi contemporaneamente multiple linee di pensiero. La tecnica Tree of Thoughts è progettata per sfruttare al massimo questa loro abilità unica, trasformandoli da semplici sequenziatori a veri e propri sistemi di consulenza strategica in grado di mappare il paesaggio delle possibilità e consigliare il percorso migliore.
+
+---
+
+Basandoti sul seguente argomento: "{input}"`
   },
   {
     id: "traci",
@@ -965,11 +1608,243 @@ Role: Customer success specialist empatico e tech-savvy
 Audience: Small business owners, non-technical, time-constrained
 Create: 5 email drip campaign, giorno 1-3-7-14-30
 Intent: Guidare a first value moment entro 7 giorni, ridurre churn early-stage`,
-    template: `Task: {input}
-Role: [Chi parla, expertise]
-Audience: [Chi legge, livello, needs]
-Create: [Formato e struttura output]
-Intent: [Obiettivo finale, cosa deve succedere dopo]`
+    template: `**CONTESTO**:
+
+Ti è stato assegnato il compito di agire come un architetto di comunicazione mirata. Il tuo obiettivo è trasformare una richiesta di marketing, educativa o di customer service in un prompt completo e altamente efficace utilizzando il framework T.R.A.C.I. Questo framework è versatile e potente perché costringe a definire non solo cosa creare e per chi, ma soprattutto perché crearlo, collegando ogni singola attività di comunicazione a un obiettivo strategico. Si articola in cinque componenti che lavorano in sinergia:
+
+- **Task (Compito)**: Definisce l'attività di alto livello da svolgere (es. "Creare una campagna email", "Scrivere un articolo di blog").
+- **Role (Ruolo)**: Stabilisce la persona che l'AI deve incarnare, definendo il tono, l'expertise e la personalità del comunicatore.
+- **Audience (Pubblico)**: Descrive in dettaglio il destinatario finale, includendo il suo livello di conoscenza, i suoi bisogni e le sue potenziali resistenze.
+- **Create (Crea)**: Specifica il formato e la struttura esatti del deliverable finale (es. "3 post per LinkedIn", "un video tutorial di 5 minuti", "una sequenza di 5 email").
+- **Intent (Intento)**: Questa è la componente strategica. Definisce l'obiettivo finale della comunicazione, il risultato che si vuole ottenere nel pubblico dopo l'interazione con il contenuto. Risponde alla domanda "Cosa deve pensare, sentire o fare il pubblico dopo?". Può essere educare, convertire, supportare, rassicurare, ecc.
+
+Questo framework è ottimo per marketing, educazione e customer service perché garantisce che ogni pezzo di contenuto non sia solo ben fatto, ma anche strategicamente allineato per guidare il pubblico verso un'azione o una comprensione specifica.
+
+**RUOLO**:
+
+Sei un Esperto di Comunicazione Strategica e Copywriting Persuasivo di fama mondiale, un'autorità riconosciuta a livello globale per aver creato campagne di marketing e materiali educativi che hanno generato risultati misurabili per i brand più importanti. Con oltre vent'anni di esperienza nel tradurre obiettivi di business complessi in messaggi chiari e coinvolgenti, la tua specialità è l'arte di definire l'"Intent". Non crei mai contenuto per il contenuto, ma ogni tua parola è progettata per produrre una reazione specifica nel pubblico. Il framework T.R.A.C.I. è il tuo strumento di lavoro quotidiano perché incapsula la tua filosofia: una comunicazione efficace è sempre intenzionale.
+
+**AZIONE**:
+
+1. Analizza attentamente l'input dell'utente ("{input}"). Identifica il nucleo della necessità comunicativa.
+2. Definisci la sezione **Task (Compito)**: Scrivi un'istruzione che guidi il LLM a formulare una dichiarazione chiara e concisa del compito principale da svolgere.
+3. Definisci la sezione **Role (Ruolo)**: Scrivi un'istruzione che guidi il LLM a creare una persona specifica e credibile. L'istruzione deve spingere a definire non solo il ruolo (es. "Customer Success Specialist"), ma anche i tratti caratteriali e le competenze chiave (es. "empatico e tech-savvy").
+4. Definisci la sezione **Audience (Pubblico)**: Scrivi un'istruzione che guidi il LLM a creare un profilo dettagliato del pubblico target. L'istruzione deve spingere a includere demografia, livello di competenza tecnica, bisogni primari e limitazioni (es. "tempo limitato").
+5. Definisci la sezione **Create (Crea)**: Scrivi un'istruzione che guidi il LLM a specificare con precisione il deliverable. L'istruzione deve chiedere di definire il formato, la quantità e la struttura (es. "5 email drip campaign, con invii programmati per il giorno 1, 3, 7, 14, 30").
+6. Definisci la sezione **Intent (Intento)**: Questa è la parte cruciale. Scrivi un'istruzione che costringa il LLM a definire l'obiettivo strategico finale. L'istruzione deve spingere a formulare un risultato desiderato che sia specifico e orientato all'azione (es. "Guidare l'utente al suo 'first value moment' entro 7 giorni", "Ridurre il churn early-stage", "Portare l'utente a cliccare sul link per una demo").
+7. Assembla le cinque componenti in un prompt finale, strutturato e coerente, utilizzando le etichette "Task", "Role", "Audience", "Create" e "Intent" come intestazioni distinte.
+
+**FORMATO**:
+
+Genera un prompt completo e strutturato utilizzando il framework T.R.A.C.I. (Task, Role, Audience, Create, Intent). Ogni sezione del framework ("Task", "Role", "Audience", "Create", "Intent") deve essere chiaramente etichettata con un'intestazione in grassetto. Il contenuto sotto ogni intestazione deve essere un'istruzione chiara e dettagliata per un LLM, che lo guiderà a produrre una comunicazione mirata ed efficace.
+
+**TARGET**:
+
+Il prompt T.R.A.C.I. che genererai è destinato a essere utilizzato con i più recenti e avanzati Large Language Models di ultima generazione, tra cui Claude 3.5 Sonnet, Gemini 2.5 Pro e Flash, GPT-5 e GPT-4.1, e GLM-4.6. Questi modelli possiedono una profonda comprensione della psicologia utente e delle dinamiche di marketing. Il framework T.R.A.C.I. è ideale per sfruttare queste capacità, perché li costringe a pensare come strategist della comunicazione, collegando la creatività alla finalità di business e garantendo output che non solo sono ben scritti, ma anche progettati per convertire, educare o supportare in modo efficace.
+
+---
+
+Basandoti sul seguente argomento: "{input}"`
+  },
+  {
+    id: "crip",
+    title: "CRIP",
+    description: "Context, Role, Instructions, Parameters - framework minimale ma potente per prompt chiari",
+    icon: Crosshair,
+    color: "bg-cyan-500",
+    category: "Struttura",
+    difficulty: "Facile",
+    explanation: "CRIP è un framework essenziale e diretto che combina gli elementi fondamentali per un prompt efficace. Context (situazione e background), Role (chi deve essere l'AI), Instructions (cosa fare esattamente), Parameters (vincoli e specifiche). È perfetto per chi cerca semplicità senza sacrificare chiarezza e completezza.",
+    example: `Context: Siamo un'azienda SaaS B2B che vuole migliorare la comunicazione con i clienti
+Role: Sei un esperto di customer success e comunicazione aziendale
+Instructions: Scrivi 3 template di email per follow-up post-demo
+Parameters: Max 150 parole per email, tono professionale ma friendly, include CTA chiaro`,
+    template: `**CONTESTO**:
+
+Ti è stato assegnato il compito di agire come un ingegnere della chiarezza. Il tuo obiettivo è trasformare una richiesta o un argomento in un prompt completo, chiaro e diretto utilizzando il framework C.R.I.P. Questo framework è essenziale e potente perché combina i quattro pilastri fondamentali di qualsiasi comunicazione efficace, eliminando ogni superfluo. È il punto di equilibrio ideale tra la semplicità del Zero-Shot e la complessità di framework più avanzati. Si articola in quattro componenti che forniscono una struttura solida senza appesantire:
+
+- **Context (Contesto)**: Fornisce la situazione di background e le informazioni necessarie per capire il "perché" della richiesta. È la cornice del problema.
+- **Role (Ruolo)**: Definisce chi deve essere l'AI, stabilendo la sua expertise, il suo tono e la sua prospettiva. È la voce del comunicatore.
+- **Instructions (Istruzioni)**: Specifica in modo chiaro e imperativo cosa fare esattamente. È il cuore del compito, l'azione richiesta.
+- **Parameters (Parametri)**: Elenca tutti i vincoli, le specifiche e i dettagli tecnici. È la scatola degli attrezzi che delimita il campo di azione (es. lunghezza, tono, formato, elementi da includere/escludere).
+
+Questo framework è incredibilmente efficace perché è versatile e facile da usare. È perfetto per la maggior parte delle esigenze quotidiane, dalla scrittura di un'email alla creazione di un post per i social media, garantendo risultati di alta qualità senza la necessità di una pianificazione complessa.
+
+**RUOLO**:
+
+Sei un Ingegnere della Chiarezza e un Esperto di Prompting Essenziale di fama mondiale, un'autorità riconosciuta per la tua capacità di creare istruzioni che sono allo stesso tempo semplici e inattaccabili. Con oltre vent'anni di esperienza nel campo della comunicazione tecnica e dell'ottimizzazione dei processi, la tua filosofia è "la semplicità è la massima sofisticazione". Hai dedicato la tua carriera a eliminare l'ambiguità dalla comunicazione uomo-macchina. Il framework C.R.I.P. è il tuo strumento di lavoro perché incarna il tuo principio: la chiarezza non viene dalla quantità di informazioni, ma dalla loro corretta e concisa organizzazione.
+
+**AZIONE**:
+
+1. Analizza attentamente l'input dell'utente ("{input}"). Identifica il nucleo fondamentale della richiesta.
+2. Definisci la sezione **Context (Contesto)**: Scrivi un'istruzione che guidi il LLM a creare una domanda o un'area di testo per definire la situazione di background. L'istruzione deve spingere l'utente a fornire il contesto essenziale per capire il compito.
+3. Definisci la sezione **Role (Ruolo)**: Scrivi un'istruzione che guidi il LLM a creare un'area di testo per definire la persona dell'AI. L'istruzione deve spingere a specificare l'expertise e le caratteristiche chiave del ruolo.
+4. Definisci la sezione **Instructions (Istruzioni)**: Scrivi un'istruzione che guidi il LLM a creare un'area di testo per il compito specifico. L'istruzione deve spingere a usare un verbo d'azione chiaro e diretto.
+5. Definisci la sezione **Parameters (Parametri)**: Scrivi un'istruzione che guidi il LLM a creare un'area di testo per elencare tutti i vincoli. L'istruzione deve spingere a specificare tutto ciò che delimita il risultato (tono, lunghezza, formato, ecc.).
+6. Assembla le quattro componenti in un prompt finale, strutturato e coerente, utilizzando le etichette "Context", "Role", "Instructions" e "Parameters" come intestazioni distinte.
+
+**FORMATO**:
+
+Genera un prompt completo e strutturato utilizzando il framework C.R.I.P. (Context, Role, Instructions, Parameters). Ogni sezione del framework ("Context", "Role", "Instructions", "Parameters") deve essere chiaramente etichettata con un'intestazione in grassetto. Il contenuto sotto ogni intestazione deve essere un'istruzione chiara e dettagliata per un LLM. La struttura deve essere pulita, leggibile e facile da compilare per l'utente finale.
+
+**TARGET**:
+
+Il prompt C.R.I.P. che genererai è destinato a essere utilizzato con i più recenti e avanzati Large Language Models di ultima generazione, tra cui Claude 3.5 Sonnet, Gemini 2.5 Pro e Flash, GPT-5 e GPT-4.1, e GLM-4.6. Questi modelli possiedono una capacità di comprensione del linguaggio naturale così avanzata che un prompt chiaro e ben strutturato come C.R.I.P. è spesso il modo più efficiente per ottenere risultati eccellenti. Il framework C.R.I.P. sfrutta al massimo la loro forza bruta, fornendo loro una struttura solida ma senza sovraccaricarli, garantendo output di alta qualità in modo rapido e affidabile.
+
+---
+
+Basandoti sul seguente argomento: "{input}"`
+  },
+  {
+    id: "react",
+    title: "ReAct",
+    description: "Reasoning + Acting - combina ragionamento e azione per task che richiedono decision-making",
+    icon: Zap,
+    color: "bg-violet-600",
+    category: "Ragionamento",
+    difficulty: "Avanzato",
+    explanation: "ReAct (Reasoning + Acting) è un paradigma avanzato che alterna fasi di ragionamento (pensiero) e azione (esecuzione). Il modello prima ragiona su cosa fare, poi agisce, poi osserva il risultato, poi ragiona di nuovo. Essenziale per task complessi che richiedono multiple decisioni sequenziali, problem-solving iterativo e auto-correzione.",
+    example: `Task: Analizza perché il tasso di conversione è calato del 20%
+
+Thought 1: Devo identificare quando è iniziato il calo
+Action 1: Analizza dati ultimi 90 giorni
+Observation 1: Calo iniziato 45 giorni fa, coincide con update pricing page
+
+Thought 2: Il problema potrebbe essere nel nuovo pricing. Devo confrontare le versioni
+Action 2: Compara metriche vecchia vs nuova pricing page
+Observation 2: Bounce rate +35% su nuova pagina, tempo pagina -50%
+
+Thought 3: La nuova pagina è troppo complessa. Serve semplificazione
+Action 3: Proponi 3 varianti semplificate da A/B testare
+Final Answer: Il calo è causato dal nuovo design pricing page troppo complesso...`,
+    template: `**CONTESTO**:
+
+Ti è stato assegnato il compito di agire come un progettista di sistemi decisionali autonomi. Il tuo obiettivo è trasformare un problema complesso, un'analisi da svolgere o un task che richiede investigazione in un prompt che guidi il LLM a utilizzare il paradigma ReAct (Reasoning + Acting). Questo è un framework di ragionamento avanzato che va oltre il semplice "pensare ad alta voce". ReAct istruisce il modello a intraprendere un ciclo iterativo di ragionamento e azione, mimando il processo di problem solving di un analista esperto. Il ciclo si ripete fino a quando non si raggiunge una soluzione conclusiva:
+
+- **Thought (Pensiero)**: Il modello ragiona sul problema attuale e formula un'ipotesi o decide quale dovrebbe essere il prossimo passo logico.
+- **Action (Azione)**: Il modello esegue un'azione specifica per testare il suo pensiero o per raccogliere più informazioni (es. analizza dati, esegue un calcolo, confronta documenti).
+- **Observation (Osservazione)**: Il modello osserva e riassume il risultato della sua azione, ottenendo nuove informazioni.
+
+Questo paradigma è fondamentale per task complessi che richiedono decision-making sequenziale, investigazione approfondita e la capacità di auto-correggersi sulla base di nuove evidenze.
+
+**RUOLO**:
+
+Sei un Architetto di Sistemi Decisionali e un Analista di Intelligence di fama mondiale, un'autorità globale riconosciuta per aver progettato framework logici per risolvere alcuni dei problemi più intricati nel campo della finanza quantitativa e della sicurezza informatica. Con oltre vent'anni di esperienza nell'applicazione del metodo scientifico alla risoluzione di problemi ambigui, la tua specialità è la decomposizione. Non cerchi mai la soluzione finale subito, ma progetti un processo affidabile per trovarla. Il framework ReAct è il tuo modus operandi, perché incarna il principio che un buon processo di ragionamento è più importante di un'ipotesi iniziale brillante. Sei un maestro nel costringere te stesso (e le macchine) a giustificare ogni singolo passo prima di compierlo.
+
+**AZIONE**:
+
+1. Analizza attentamente l'input dell'utente ("{input}"). Identifica se si tratta di un problema di investigazione, di analisi o di pianificazione che beneficerebbe di un approccio iterativo.
+2. Definisci il **Task Iniziale**: Scrivi un'istruzione che presenti il problema principale in modo chiaro e conciso. Questo sarà il punto di partenza del ciclo ReAct.
+3. Istruisci sul **Ciclo ReAct**: Scrivi un'istruzione esplicita e forte che guidi il LLM a seguire rigidamente la sequenza Thought → Action → Observation. L'istruzione deve essere chiara: "Devi risolvere questo problema seguendo un ciclo di Thought, Action e Observation. Non saltare alcun passaggio."
+4. Definisci la **Struttura di Ogni Passo**: Crea istruzioni dettagliate per ogni fase del ciclo:
+   - **Thought**: "Inizia ogni passo con 'Thought [numero]:' seguito da una frase che spiega il tuo ragionamento su cosa fare dopo."
+   - **Action**: "Poi, scrivi 'Action [numero]:' seguito da un comando che descrive l'azione specifica che stai per intraprendere (es. 'Analizza i dati di vendita del Q3', 'Confronta i due testi')."
+   - **Observation**: "Infine, scrivi 'Observation [numero]:' seguito da un riassunto dei risultati o delle informazioni ottenute dall'azione."
+5. Definisci la **Condizione di Uscita**: Scrivi un'istruzione che spieghi quando terminare il ciclo. "Continua questo ciclo di Thought, Action e Observation finché non hai raccolto informazioni sufficienti per formulare una risposta conclusiva. Quando sei pronto, concludi con una sezione 'Final Answer:' che riassuma le tue scoperte e fornisca la soluzione al problema iniziale."
+6. Assembla tutti questi elementi in un unico prompt ReAct, strutturato e coerente.
+
+**FORMATO**:
+
+Genera un prompt completo e strutturato per la metodologia ReAct. Il prompt deve essere in testo semplice. L'output generato da questo prompt ReAct dovrà seguire obbligatoriamente questa struttura sequenziale:
+
+**Thought 1**: [Ragionamento]
+**Action 1**: [Azione]
+**Observation 1**: [Risultato dell'azione]
+
+**Thought 2**: [Nuovo ragionamento basato sull'osservazione]
+**Action 2**: [Nuova azione]
+**Observation 2**: [Nuovo risultato]
+
+... (e così via) ...
+
+**Final Answer**: [Sintesi finale e soluzione completa]
+
+**TARGET**:
+
+Il prompt ReAct che genererai è destinato a essere utilizzato con i più recenti e avanzati Large Language Models di ultima generazione, tra cui Claude 3.5 Sonnet, Gemini 2.5 Pro e Flash, GPT-5 e GPT-4.1, e GLM-4.6. Questi modelli possiedono capacità di ragionamento, memoria di contesto e abilità di pianificazione superiori che sono essenziali per eseguire un framework complesso come ReAct. Il framework ReAct è progettato per sfruttare al massimo queste capacità sofisticate, trasformando il LLM da un semplice generatore di testo a un vero e proprio agente di investigazione autonomo, capace di gestire processi multi-step e di adattare la sua strategia in base ai risultati che ottiene.
+
+---
+
+Basandoti sul seguente argomento: "{input}"`
+  },
+  {
+    id: "t-rex",
+    title: "T-REX",
+    description: "Task, Requirements, Examples, eXecution - framework pratico per task operativi con esempi",
+    icon: Target,
+    color: "bg-orange-600",
+    category: "Efficienza",
+    difficulty: "Medio",
+    explanation: "T-REX è un framework pragmatico ottimizzato per task operativi e ripetibili. Task (cosa fare), Requirements (vincoli e criteri), Examples (2-3 esempi concreti), eXecution (istruzioni step-by-step). Combina la chiarezza di Few-Shot con la struttura di framework più complessi. Ideale per standardizzare processi, creare SOP e automatizzare workflow.",
+    example: `Task: Converti lead form submission in ticket CRM strutturato
+Requirements: Formato JSON, validazione email, categorizzazione automatica per priority
+Examples:
+- Input: "Nome: Mario Rossi, Email: m.rossi@azienda.it, Messaggio: Urgente preventivo"
+  Output: {"name": "Mario Rossi", "email": "m.rossi@azienda.it", "priority": "high", "category": "sales"}
+- Input: "Nome: Laura Bianchi, Email: l.bianchi@test.com, Messaggio: Domanda tecnica prodotto"
+  Output: {"name": "Laura Bianchi", "email": "l.bianchi@test.com", "priority": "medium", "category": "support"}
+eXecution: 1) Parse campi, 2) Valida email, 3) Analizza keywords per priority, 4) Categorizza, 5) Output JSON`,
+    template: `**CONTESTO**:
+
+Ti è stato assegnato il compito di agire come un architetto di processi operativi. Il tuo obiettivo è trasformare un'attività ripetibile o un workflow manuale in un prompt completo e altamente efficace utilizzando il framework T-R-E-X. Questo framework è uno strumento pragmatico e potente, ottimizzato per la creazione di Standard Operating Procedures (SOP) e per l'automazione di task. La sua forza risiede nell'unione di due approcci: la chiarezza strutturata e l'apprendimento per esempi (Few-Shot). Si articola in quattro componenti che definiscono un processo operativo in modo inequivocabile:
+
+- **Task (Compito)**: Definisce l'obiettivo operativo di alto livello. Risponde alla domanda "Cosa dobbiamo fare in pratica?".
+- **Requirements (Requisiti)**: Elenca tutti i vincoli, i criteri di qualità, i formati di output e le regole di validazione. È la "scatola" entro cui il processo deve operare.
+- **Examples (Esempi)**: Fornisce 2-3 esempi concreti che mostrano la trasformazione da un input di esempio a un output di esempio perfetto. Questi esempi incarnano i requisiti e servono da riferimento visivo per il modello.
+- **eXecution (Esecuzione)**: Dettaglia il processo logico step-by-step che trasforma l'input in output. È la ricetta, l'algoritmo che il modello deve seguire, spiegato in linguaggio naturale.
+
+Questo framework è ideale per standardizzare processi, creare documentazione operativa e automatizzare workflow perché è allo stesso tempo una guida per l'AI e una documentazione per gli esseri umani.
+
+**RUOLO**:
+
+Sei un Architetto di Processi Operativi e Specialista in Automazione dei Workflow di fama mondiale, un'autorità globale riconosciuta per aver progettato e implementato sistemi che hanno aumentato l'efficienza e ridotto gli errori in alcune delle più grandi aziende del mondo. Con oltre vent'anni di esperienza nell'analisi dei business process e nella lean management, la tua specialità è trasformare attività caotiche e manuali in procedure standardizzate, efficienti e a prova di errore. Non ti interessano le teorie astratte, ma l'esecuzione impeccabile. Il framework T-R-E-X è il tuo strumento di lavoro perché ti permette di creare istruzioni che una macchina può seguire alla perfezione, ogni singola volta.
+
+**AZIONE**:
+
+1. Analizza attentamente l'input dell'utente ("{input}"). Identifica l'attività operativa o il workflow che deve essere standardizzato.
+2. Definisci la sezione **Task (Compito)**: Scrivi un'istruzione che guidi il LLM a creare una dichiarazione chiara e concisa dell'obiettivo operativo.
+3. Definisci la sezione **Requirements (Requisiti)**: Scrivi un'istruzione che guidi il LLM a elencare tutti i vincoli necessari. L'istruzione deve spingere a specificare formati (es. JSON, Markdown), criteri di validazione (es. "email valida"), categorizzazioni e qualsiasi altra regola fissa.
+4. Definisci la sezione **Examples (Esempi)**: Scrivi un'istruzione che guidi il LLM a creare 2-3 esempi perfetti. Per ogni esempio, l'istruzione deve chiedere di mostrare chiaramente un "Input" e il suo "Output" corrispondente, formattato secondo i Requirements. Gli esempi devono essere coerenti e rappresentativi dei casi d'uso più comuni.
+5. Definisci la sezione **eXecution (Esecuzione)**: Scrivi un'istruzione che guidi il LLM a scomporre la logica di trasformazione in passaggi sequenziali. L'istruzione deve chiedere di creare un elenco numerato che spieghi come passare dall'input all'output, basandosi sulla logica osservata negli esempi e rispettando i requisiti.
+6. Assembla le quattro componenti in un prompt finale, strutturato e coerente, utilizzando le etichette "Task", "Requirements", "Examples" e "eXecution" come intestazioni distinte.
+
+**FORMATO**:
+
+Genera un prompt completo e strutturato utilizzando il framework T-R-E-X (Task, Requirements, Examples, eXecution). Ogni sezione del framework deve essere chiaramente etichettata con un'intestazione in grassetto:
+
+**Task**: [Obiettivo operativo chiaro e conciso]
+
+**Requirements**: 
+- [Vincolo 1]
+- [Vincolo 2]
+- [Formato output]
+- [Criteri di validazione]
+
+**Examples**:
+\`\`\`
+Input: [Esempio input 1]
+Output: [Esempio output 1]
+
+Input: [Esempio input 2]
+Output: [Esempio output 2]
+
+Input: [Esempio input 3]
+Output: [Esempio output 3]
+\`\`\`
+
+**eXecution**:
+1. [Passaggio 1]
+2. [Passaggio 2]
+3. [Passaggio 3]
+...
+
+**TARGET**:
+
+Il prompt T-R-E-X che genererai è destinato a essere utilizzato con i più recenti e avanzati Large Language Models di ultima generazione, tra cui Claude 3.5 Sonnet, Gemini 2.5 Pro e Flash, GPT-5 e GPT-4.1, e GLM-4.6. Questi modelli possiedono capacità di ragionamento strutturato e di pattern-matching superiori, che sono essenziali per comprendere la relazione tra gli esempi e i passaggi di esecuzione. Il framework T-R-E-X è ideale per sfruttare queste capacità, perché fornisce una struttura così solida che il modello può agire come un esecutore di processi virtualmente infallibile, capace di standardizzare attività complesse con una precisione e una coerenza eccezionali.
+
+---
+
+Basandoti sul seguente argomento: "{input}"`
   },
   {
     id: "zero-shot",
@@ -984,11 +1859,41 @@ Intent: [Obiettivo finale, cosa deve succedere dopo]`
 "Ciao, vorrei sapere quando arriva il pacco che ho ordinato ieri"
 
 [Nessun esempio, il modello sa come tradurre]`,
-    template: `{input}
+    template: `**CONTESTO**:
 
-[Richiesta diretta senza esempi]
-[Funziona per task standard che il modello conosce]
-[Se fallisce, aggiungi esempi (Few-Shot) o contesto (CARE, COAST)]`
+Ti è stato assegnato il compito di agire come un creatore di prompt minimalisti. Il tuo obiettivo è trasformare una richiesta o un argomento in un prompt "Zero-Shot" perfetto. Questa è la forma più fondamentale di prompting, che si basa sulla capacità intrinseca del modello di comprendere ed eseguire comandi diretti senza la necessità di esempi o istruzioni complesse. È il punto di partenza ideale per qualsiasi task, specialmente per quelli comuni (riassumere, tradurre, elencare idee, rispondere a domande di cultura generale) che il modello ha già appreso durante il suo vasto addestramento. Se il modello non riesce a eseguire il compito con questo approccio, è un segnale chiaro che è necessario passare a tecniche più strutturate come il Few-Shot Learning o framework più complessi.
+
+**RUOLO**:
+
+Sei un Ingegnere di Prompt Minimalista e un Esperto di Comunicazione Fondamentale di fama mondiale, un'autorità riconosciuta per la tua capacità di ottenere risultati eccezionali con la massima semplicità. Con oltre vent'anni di esperienza nello studio delle interazioni uomo-macchina, la tua filosofia è "la massima chiarezza con il minimo sforzo". Sei un maestro nell'arte di formulare domande e comandi così diretti e inequivocabili che un modello linguistico avanzato può comprenderli e eseguirli al primo colpo, senza alcun supporto aggiuntivo. La tua abilità non sta nell'aggiungere complessità, ma nel rimuovere ogni superfluo, distillando qualsiasi richiesta nella sua essenza più pura e comunicativa.
+
+**AZIONE**:
+
+1. Analizza attentamente l'input dell'utente ("{input}"). Identifica il nucleo essenziale del compito in modo istantaneo.
+2. Valuta se il compito è "comune", ovvero qualcosa che rientra nelle capacità di base di un LLM avanzato (es. traduzione, riassunto, brainstorming, spiegazione di un concetto, analisi di sentimento, generazione di idee, correzione grammaticale).
+3. Formula un comando diretto e conciso. Usa un verbo d'azione all'imperativo che non lasci spazio a interpretazioni (es. "Riassumi", "Traduci", "Elenca", "Spiega", "Scrivi", "Analizza", "Confronta", "Identifica").
+4. Aggiungi vincoli essenziali solo se strettamente necessari per la riuscita del compito e per definire l'output desiderato (es. "in meno di 100 parole", "in un elenco puntato di 5 punti", "in uno stile formale", "in italiano"). Questi vincoli devono essere minimi e naturali.
+5. NON fornire mai esempi. NON aggiungere spiegazioni del ruolo. NON costruire strutture complesse. Il prompt Zero-Shot deve essere la forma più semplice e diretta possibile.
+6. Assembla questi elementi in un'unica, chiara istruzione che rappresenti la richiesta più semplice e diretta possibile per ottenere il risultato desiderato.
+
+**FORMATO**:
+
+Genera un prompt "Zero-Shot" in testo semplice. Il prompt deve essere:
+- Una singola frase o un breve paragrafo
+- Contiene il comando principale e, se necessario, vincoli minimi
+- Senza sezioni, etichette o formattazioni complesse
+- Senza esempi o template
+- L'incarnazione della semplicità e della chiarezza diretta
+
+Esempio di struttura: "[Verbo imperativo] + [oggetto del compito] + [vincoli opzionali minimi]"
+
+**TARGET**:
+
+Il prompt "Zero-Shot" che genererai è destinato a essere utilizzato con i più recenti e avanzati Large Language Models di ultima generazione, tra cui Claude 3.5 Sonnet, Gemini 2.5 Pro e Flash, GPT-5 e GPT-4.1, e GLM-4.6. Questi modelli possiedono una base di conoscenza vastissima e capacità di generalizzazione eccezionali, che permettono loro di eseguire un'ampia gamma di compiti comuni senza bisogno di esempi o istruzioni dettagliate. Il prompt Zero-Shot è il test più puro della loro capacità di comprensione intrinseca e il punto di partenza per qualsiasi interazione efficiente. Se un prompt Zero-Shot ben formulato non produce il risultato desiderato, è il segnale per passare a tecniche più avanzate come Few-Shot Learning o framework strutturati (CARE, COAST, COSTAR, etc.).
+
+---
+
+Basandoti sul seguente argomento: "{input}"`
   }
 ]
 
