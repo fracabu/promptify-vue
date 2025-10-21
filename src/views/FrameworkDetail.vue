@@ -61,7 +61,7 @@ const modelsByProvider = computed(() => {
 // Auto-select first model when provider changes
 const updateDefaultModel = () => {
   const models = modelsByProvider.value
-  if (models && models.length > 0) {
+  if (models && models.length > 0 && models[0]) {
     selectedModel.value = models[0].value
   }
 }
