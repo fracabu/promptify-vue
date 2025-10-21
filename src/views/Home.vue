@@ -162,8 +162,8 @@ const formatTitle = (title: string) => {
     </div>
 
     <!-- Come Funziona Section -->
-    <div id="how-it-works" class="py-20 px-4 bg-gradient-to-b from-background via-purple-50/20 to-background dark:via-purple-950/10">
-      <div class="container mx-auto max-w-5xl">
+    <div id="how-it-works" class="py-20 px-4 pb-32 bg-gradient-to-b from-background via-purple-50/20 to-background dark:via-purple-950/10">
+      <div class="container mx-auto max-w-6xl">
         <h2 class="text-5xl md:text-7xl font-bold text-center mb-6 bg-clip-text text-transparent bg-gradient-to-r from-purple-600 via-blue-600 to-orange-600 dark:from-purple-400 dark:via-blue-400 dark:to-orange-400 animate-fade-in">
           Come Funziona
         </h2>
@@ -171,12 +171,12 @@ const formatTitle = (title: string) => {
           Usa Promptify in 3 semplici passaggi per trasformare i tuoi prompt in risultati professionali
         </p>
 
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-20">
           <!-- Step 1 -->
           <div class="relative group">
             <div class="absolute -inset-1 bg-gradient-to-r from-purple-600 to-blue-600 rounded-2xl blur opacity-25 group-hover:opacity-75 transition duration-300"></div>
-            <div class="relative bg-background border border-border rounded-2xl p-8 h-full">
-              <div class="w-12 h-12 bg-gradient-to-br from-purple-600 to-blue-600 rounded-xl flex items-center justify-center mb-4 text-white font-bold text-xl">
+            <div class="relative bg-background border-2 border-purple-200/50 dark:border-purple-800/50 rounded-2xl p-8 h-full shadow-lg hover:shadow-2xl transition-shadow">
+              <div class="w-14 h-14 bg-gradient-to-br from-purple-600 to-blue-600 rounded-xl flex items-center justify-center mb-5 text-white font-bold text-2xl shadow-lg">
                 1
               </div>
               <h3 class="text-xl font-bold mb-3 text-foreground">Scegli il Framework</h3>
@@ -194,8 +194,8 @@ const formatTitle = (title: string) => {
           <!-- Step 2 -->
           <div class="relative group">
             <div class="absolute -inset-1 bg-gradient-to-r from-blue-600 to-orange-600 rounded-2xl blur opacity-25 group-hover:opacity-75 transition duration-300"></div>
-            <div class="relative bg-background border border-border rounded-2xl p-8 h-full">
-              <div class="w-12 h-12 bg-gradient-to-br from-blue-600 to-orange-600 rounded-xl flex items-center justify-center mb-4 text-white font-bold text-xl">
+            <div class="relative bg-background border-2 border-blue-200/50 dark:border-blue-800/50 rounded-2xl p-8 h-full shadow-lg hover:shadow-2xl transition-shadow">
+              <div class="w-14 h-14 bg-gradient-to-br from-blue-600 to-orange-600 rounded-xl flex items-center justify-center mb-5 text-white font-bold text-2xl shadow-lg">
                 2
               </div>
               <h3 class="text-xl font-bold mb-3 text-foreground">Configura le API</h3>
@@ -209,20 +209,21 @@ const formatTitle = (title: string) => {
           </div>
 
           <!-- Step 3 -->
+                    <!-- Step 3 -->
           <div class="relative group">
-            <div class="absolute -inset-1 bg-gradient-to-r from-orange-600 to-pink-600 rounded-2xl blur opacity-25 group-hover:opacity-75 transition duration-300"></div>
-            <div class="relative bg-background border border-border rounded-2xl p-8 h-full">
-              <div class="w-12 h-12 bg-gradient-to-br from-orange-600 to-pink-600 rounded-xl flex items-center justify-center mb-4 text-white font-bold text-xl">
+            <div class="absolute -inset-1 bg-gradient-to-r from-orange-600 to-purple-600 rounded-2xl blur opacity-25 group-hover:opacity-75 transition duration-300"></div>
+            <div class="relative bg-background border-2 border-orange-200/50 dark:border-orange-800/50 rounded-2xl p-8 h-full shadow-lg hover:shadow-2xl transition-shadow">
+              <div class="w-14 h-14 bg-gradient-to-br from-orange-600 to-purple-600 rounded-xl flex items-center justify-center mb-5 text-white font-bold text-2xl shadow-lg">
                 3
               </div>
-              <h3 class="text-xl font-bold mb-3 text-foreground">Testa e Genera</h3>
+              <h3 class="text-xl font-bold mb-3 text-foreground">Genera e Copia</h3>
               <p class="text-muted-foreground mb-4">
-                Inserisci il tuo input, scegli il modello AI e clicca su "Testa Framework". Il prompt ottimizzato viene generato automaticamente e inviato all'AI per risultati professionali.
+                Inserisci il tuo prompt e clicca su Genera. L'AI ottimizzerà il tuo prompt seguendo il framework scelto. Puoi copiare il risultato o continuare a perfezionarlo.
               </p>
-              <Button3D variant="purple" size="sm" class="w-full">
-                <Play class="h-4 w-4" />
-                <span>Testa Framework</span>
-              </Button3D>
+              <div class="flex gap-2 items-center text-purple-600 dark:text-purple-400">
+                <Icon3D icon="Sparkles" size={20} />
+                <span class="text-sm font-medium">Prompt professionale pronto!</span>
+              </div>
             </div>
           </div>
         </div>

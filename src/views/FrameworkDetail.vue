@@ -13,6 +13,7 @@ import Button3D from '../components/ui/Button3D.vue'
 import Textarea from '../components/ui/Textarea.vue'
 import Select from '../components/ui/Select.vue'
 import Alert from '../components/ui/Alert.vue'
+import Progress from '../components/ui/Progress.vue'
 import { ArrowLeft, Play, Copy, Check, AlertCircle } from 'lucide-vue-next'
 
 const route = useRoute()
@@ -32,6 +33,8 @@ const suggestion = ref('')
 const copied = ref(false)
 const generatedPrompt = ref('')
 const promptCopied = ref(false)
+const progress = ref(0)
+const progressInterval = ref<number | null>(null)
 
 const providers = [
   { value: 'openai', label: 'OpenAI' },
@@ -87,6 +90,50 @@ const generatePromptPreview = () => {
   generatedPrompt.value = template.replace(/{input}/g, userInput.value)
 }
 
+// Simulate progress based on estimated API response time
+const startProgressSimulation = () => {
+  progress.value = 0
+  
+  // Clear any existing interval
+  if (progressInterval.value) {
+    clearInterval(progressInterval.value)
+  }
+  
+  // Estimated times by provider (in seconds)
+  const estimatedTimes = {
+    openai: 15,   // OpenAI typically 10-20s
+    gemini: 12,   // Gemini usually faster
+    zai: 18       // ZAI might be slower
+  }
+  
+  const estimatedTime = estimatedTimes[selectedProvider.value] || 15
+  const incrementInterval = 100 // Update every 100ms
+  const totalIncrements = (estimatedTime * 1000) / incrementInterval
+  const incrementAmount = 95 / totalIncrements // Go up to 95%, never 100% until done
+  
+  progressInterval.value = window.setInterval(() => {
+    if (progress.value < 95) {
+      // Slow down as we get closer to 95%
+      const slowdownFactor = 1 - (progress.value / 100) * 0.5
+      progress.value += incrementAmount * slowdownFactor
+    }
+  }, incrementInterval)
+}
+
+const stopProgressSimulation = () => {
+  if (progressInterval.value) {
+    clearInterval(progressInterval.value)
+    progressInterval.value = null
+  }
+  // Complete the progress
+  progress.value = 100
+  
+  // Reset after a short delay
+  setTimeout(() => {
+    progress.value = 0
+  }, 1000)
+}
+
 const handleTest = async () => {
   if (!framework.value || !userInput.value.trim()) return
 
@@ -95,6 +142,9 @@ const handleTest = async () => {
   result.value = ''
   generatedPrompt.value = ''
   isLoading.value = true
+
+  // Start progress simulation
+  startProgressSimulation()
 
   // Generate prompt preview
   generatePromptPreview()
@@ -120,6 +170,7 @@ const handleTest = async () => {
   } catch (err: any) {
     error.value = err.message || 'Errore durante il test'
   } finally {
+    stopProgressSimulation()
     isLoading.value = false
   }
 }
@@ -285,6 +336,25 @@ const copyResult = async () => {
           <span v-if="isLoading">Testing...</span>
           <span v-else>Testa Framework</span>
         </Button3D>
+
+        <!-- Progress Bar -->
+        <div v-if="isLoading" class="mt-6 animate-fade-in">
+          <div class="flex items-center justify-between mb-3">
+            <div class="flex items-center gap-3">
+              <div class="flex-shrink-0 w-2 h-2 bg-purple-600 rounded-full animate-pulse"></div>
+              <p class="text-sm font-medium text-muted-foreground">
+                Generazione in corso con {{ selectedProvider === 'openai' ? 'OpenAI' : selectedProvider === 'gemini' ? 'Google Gemini' : 'ZAI' }}...
+              </p>
+            </div>
+            <span class="text-sm font-semibold text-purple-600 dark:text-purple-400">
+              {{ Math.round(progress) }}%
+            </span>
+          </div>
+          <Progress variant="purple" :value="progress" :showPercentage="false" />
+          <p class="text-xs text-muted-foreground mt-2 text-center">
+            {{ progress < 30 ? '🚀 Invio richiesta...' : progress < 60 ? '🤔 Elaborazione AI...' : progress < 90 ? '✨ Quasi pronto...' : '🎯 Finalizzazione...' }}
+          </p>
+        </div>
 
         <!-- Generated Prompt Preview -->
         <div v-if="generatedPrompt" class="mt-6">
