@@ -79,6 +79,7 @@ const cardClasses = computed(() => {
   user-select: none;
   display: block;
   min-height: 120px;
+  height: 100%;
 }
 
 .card-shadow {
@@ -87,7 +88,6 @@ const cardClasses = computed(() => {
   left: 0;
   width: 100%;
   height: 100%;
-  min-height: inherit;
   border-radius: 16px;
   will-change: transform;
   transform: translateY(2px);
@@ -100,14 +100,14 @@ const cardClasses = computed(() => {
   left: 0;
   width: 100%;
   height: 100%;
-  min-height: inherit;
   border-radius: 16px;
 }
 
 .card-front {
   display: block;
   position: relative;
-  min-height: inherit;
+  min-height: 120px;
+  height: 100%;
   border-radius: 16px;
   color: hsl(var(--card-foreground));
   will-change: transform;
