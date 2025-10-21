@@ -7,7 +7,6 @@ import { frameworks, getDifficultyColor, getDifficultyStyles, getDifficultyIcon 
 import Header from '../components/Header.vue'
 import Footer from '../components/Footer.vue'
 import Card from '../components/ui/Card.vue'
-import Card3D from '../components/ui/Card3D.vue'
 import Badge from '../components/ui/Badge.vue'
 import Button from '../components/ui/Button.vue'
 import Button3D from '../components/ui/Button3D.vue'
@@ -62,7 +61,7 @@ const modelsByProvider = computed(() => {
 // Auto-select first model when provider changes
 const updateDefaultModel = () => {
   const models = modelsByProvider.value
-  if (models.length > 0) {
+  if (models && models.length > 0) {
     selectedModel.value = models[0].value
   }
 }
@@ -102,7 +101,7 @@ const handleTest = async () => {
   try {
     const response = await testFramework({
       framework: framework.value.id,
-      frameworkName: framework.value.name,
+      frameworkName: framework.value.title,
       frameworkExplanation: framework.value.explanation,
       input: userInput.value,
       template: framework.value.template,
@@ -194,7 +193,7 @@ const copyResult = async () => {
             </div>
             <p class="text-xl text-muted-foreground mb-3">{{ framework.description }}</p>
             <div class="flex space-x-2">
-              <Badge :variant="getDifficultyColor(framework.difficulty)" :class="['font-medium', getDifficultyStyles(framework.difficulty)]">
+              <Badge variant="outline" :class="['font-medium', getDifficultyStyles(framework.difficulty)]">
                 <span class="mr-1">{{ getDifficultyIcon(framework.difficulty) }}</span>
                 {{ framework.difficulty }}
               </Badge>

@@ -116,8 +116,8 @@ const getColorHsl = computed(() => {
 
 <template>
   <div class="icon-3d">
-    <span class="icon-shadow" :style="{ background: getColorHsl.shadow }"></span>
-    <span class="icon-edge" :style="{ background: getColorHsl.edge }"></span>
+    <span class="icon-shadow" :style="{ background: getColorHsl?.shadow }"></span>
+    <span class="icon-edge" :style="{ background: getColorHsl?.edge }"></span>
     <div :class="['icon-front', props.color, sizeClasses]">
       <div :class="iconSizes">
         <slot />

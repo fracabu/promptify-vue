@@ -77,8 +77,9 @@ const handleKeydown = (event: KeyboardEvent) => {
       break
     case 'Enter':
       event.preventDefault()
-      if (searchResults.value[selectedIndex.value]) {
-        navigateToFramework(searchResults.value[selectedIndex.value].id)
+      const selectedResult = searchResults.value[selectedIndex.value]
+      if (selectedResult) {
+        navigateToFramework(selectedResult.id)
       }
       break
     case 'Escape':
