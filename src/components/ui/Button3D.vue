@@ -4,11 +4,13 @@ import { computed } from 'vue'
 interface Props {
   variant?: 'primary' | 'green' | 'orange' | 'blue' | 'purple'
   size?: 'default' | 'sm' | 'lg'
+  class?: string
 }
 
 const props = withDefaults(defineProps<Props>(), {
   variant: 'primary',
-  size: 'default'
+  size: 'default',
+  class: ''
 })
 
 const buttonColors = computed(() => {
@@ -44,16 +46,16 @@ const buttonColors = computed(() => {
 
 const sizeClasses = computed(() => {
   const sizes = {
-    sm: 'text-sm py-2 px-6',
-    default: 'text-base py-3 px-8',
-    lg: 'text-lg py-4 px-10'
+    sm: 'text-xs py-2 px-4 gap-2',
+    default: 'text-base py-3 px-8 gap-2',
+    lg: 'text-lg py-4 px-10 gap-3'
   }
   return sizes[props.size]
 })
 </script>
 
 <template>
-  <button class="pushable-3d">
+  <button class="pushable-3d" :class="props.class">
     <span class="shadow-3d" :style="{ background: buttonColors.shadow }"></span>
     <span class="edge-3d" :style="{ background: buttonColors.edge }"></span>
     <span class="front-3d" :class="sizeClasses" :style="{ background: buttonColors.front }">
@@ -96,7 +98,9 @@ const sizeClasses = computed(() => {
 }
 
 .front-3d {
-  display: block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   position: relative;
   border-radius: 12px;
   font-weight: 600;

@@ -279,9 +279,9 @@ const copyResult = async () => {
           @click="handleTest"
           :disabled="!userInput.trim() || !hasApiKey || isLoading"
           variant="purple"
-          size="lg"
+          size="default"
         >
-          <Play v-if="!isLoading" class="h-5 w-5 mr-2 inline" />
+          <Play v-if="!isLoading" class="h-5 w-5" />
           <span v-if="isLoading">Testing...</span>
           <span v-else>Testa Framework</span>
         </Button3D>

@@ -2095,7 +2095,7 @@ Final Check: ✓ [criterio 1], ✓ [criterio 2], ✓ [criterio 3]
 
 **TARGET**:
 
-Il prompt P.R.I.S.M.A. che genererai è destinato a essere utilizzato con i più potenti Large Language Models di ultima generazione: **Claude Sonnet 4.5**, **Gemini 2.5 Pro**, **GPT-5**, **GPT-4.1** e **GLM-4.6**. Questi modelli possiedono capacità di ragionamento multi-step, memoria contestuale estesa, abilità di auto-valutazione meta-cognitiva e pattern-matching avanzato. P.R.I.S.M.A. è progettato per sfruttare al massimo queste capacità di frontiera, trasformando il LLM in un sistema di consulenza strategica virtuale capace di esplorare, valutare e raccomandare con la sofisticazione di un team di esperti umani.
+Il prompt P.R.I.S.M.A. che genererai è destinato a essere utilizzato con i più potenti Large Language Models di ultima generazione. Questi modelli possiedono capacità di ragionamento multi-step, memoria contestuale estesa, abilità di auto-valutazione meta-cognitiva e pattern-matching avanzato. P.R.I.S.M.A. è progettato per sfruttare al massimo queste capacità di frontiera, trasformando il LLM in un sistema di consulenza strategica virtuale capace di esplorare, valutare e raccomandare con la sofisticazione di un team di esperti umani.
 
 ---
 

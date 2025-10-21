@@ -184,8 +184,8 @@ const formatTitle = (title: string) => {
                 Inserisci il tuo input, scegli il modello AI e clicca su "Testa Framework". Il prompt ottimizzato viene generato automaticamente e inviato all'AI per risultati professionali.
               </p>
               <Button3D variant="purple" size="sm" class="w-full">
-                <Play class="h-4 w-4 mr-2" />
-                Testa Framework
+                <Play class="h-4 w-4" />
+                <span>Testa Framework</span>
               </Button3D>
             </div>
           </div>
