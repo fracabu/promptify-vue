@@ -40,13 +40,8 @@ const clearCategory = () => {
   selectedCategory.value = null
 }
 
-const getDifficultyVariant = (difficulty: string) => {
-  switch (difficulty) {
-    case 'Facile': return 'outline'
-    case 'Medio': return 'outline'
-    case 'Avanzato': return 'outline'
-    default: return 'outline'
-  }
+const getDifficultyVariant = (difficulty: string): "outline" => {
+  return 'outline'
 }
 
 const getDifficultyStyles = (difficulty: string) => {

@@ -3,7 +3,7 @@ import { ref, computed } from 'vue'
 import { useRoute, RouterLink } from 'vue-router'
 import { useApiKeysStore, type ApiProvider } from '../stores/apiKeys'
 import { testFramework } from '../utils/apiCalls'
-import { frameworks, getDifficultyColor, getDifficultyStyles, getDifficultyIcon } from '../data/frameworks'
+import { frameworks, getDifficultyStyles, getDifficultyIcon } from '../data/frameworks'
 import Header from '../components/Header.vue'
 import Footer from '../components/Footer.vue'
 import Card from '../components/ui/Card.vue'
@@ -70,7 +70,7 @@ const updateDefaultModel = () => {
 updateDefaultModel()
 
 const hasApiKey = computed(() => {
-  return apiKeysStore.getKey(selectedProvider.value).length > 0
+  return apiKeysStore.getKey(selectedProvider.value)?.length > 0
 })
 
 // Generate the prompt preview - exactly what will be sent to the API
