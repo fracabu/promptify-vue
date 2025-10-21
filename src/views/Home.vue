@@ -188,7 +188,16 @@ const formatTitle = (title: string) => {
             class="animate-scale-in"
             :style="`animation-delay: ${index * 0.05}s; opacity: 0; animation-fill-mode: forwards;`"
           >
-            <Card3D clickable variant="default" class="h-full min-h-[200px]">
+            <Card3D clickable variant="default" class="h-full min-h-[200px] relative overflow-visible">
+              <!-- Sticker "NEW" nell'angolo in alto a destra -->
+              <div 
+                v-if="['calibro', 'bcm', 'prisma'].includes(framework.id)" 
+                class="absolute -top-2 -right-2 z-20 bg-gradient-to-br from-orange-400 to-pink-500 text-white font-bold text-xs px-3 py-2 rounded-full shadow-xl transform rotate-12 border-2 border-white"
+                style="box-shadow: 0 4px 15px rgba(251, 146, 60, 0.5);"
+              >
+                ⭐ NEW
+              </div>
+              
               <div class="p-6 h-full flex flex-col">
                 <div class="flex items-start space-x-4 mb-4">
                   <Icon3D :color="framework.color" size="md" class="flex-shrink-0">

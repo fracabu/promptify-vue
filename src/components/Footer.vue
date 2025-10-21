@@ -10,20 +10,34 @@ const currentYear = new Date().getFullYear()
     <div class="container px-4 py-8">
       <div class="flex flex-col items-center space-y-4">
         <!-- Brand -->
-        <RouterLink to="/" class="flex items-center space-x-2">
-          <div class="relative h-8 w-8 flex items-center justify-center bg-purple-600 rounded-lg">
-            <svg viewBox="0 0 24 24" class="h-5 w-5 text-white" fill="currentColor">
-              <path d="M12 2L2 7v10c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V7l-10-5zm0 10.99h7c-.53 4.12-3.28 7.79-7 8.94V12H5V9h7V2.99c3.72 1.15 6.47 4.82 7 8.94v.06h-7z"/>
+        <RouterLink to="/" class="flex items-center space-x-1">
+          <div class="relative h-[60px] w-[60px] flex items-center justify-center flex-shrink-0">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 10 100 55" fill="none" class="h-full w-full rotate-[30deg]">
+              <!-- Chat bubble outline -->
+              <path d="M 20 25 Q 20 15 30 15 L 70 15 Q 80 15 80 25 L 80 55 Q 80 65 70 65 L 45 65 L 30 80 L 30 65 Q 20 65 20 55 Z" 
+                    fill="none" 
+                    stroke="currentColor"
+                    class="text-purple-600 dark:text-purple-400"
+                    stroke-width="5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"/>
+              
+              <!-- Typing indicator dots -->
+              <g id="typingDots">
+                <circle cx="35" cy="40" r="3.5" class="text-orange-600 dark:text-orange-400" fill="currentColor" />
+                <circle cx="50" cy="40" r="3.5" class="text-orange-600 dark:text-orange-400" fill="currentColor" />
+                <circle cx="65" cy="40" r="3.5" class="text-orange-600 dark:text-orange-400" fill="currentColor" />
+              </g>
             </svg>
           </div>
-          <span class="text-xl font-bold">
+          <span class="text-xl font-bold font-mono tracking-tight">
             <span class="text-foreground">Prompt</span>
             <span class="text-purple-600 dark:text-purple-400">ify</span>
           </span>
         </RouterLink>
 
         <p class="text-sm text-muted-foreground text-center max-w-md">
-          La piattaforma professionale per scoprire e testare i framework AI più efficaci
+          La piattaforma professionale per scoprire e padroneggiare i framework di prompt engineering più efficaci
         </p>
 
         <!-- Bottom bar -->
