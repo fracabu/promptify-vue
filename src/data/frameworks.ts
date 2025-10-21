@@ -2226,9 +2226,31 @@ export const getFrameworksByMacroCategory = (macroCategoryId: string) => {
 
 export const getDifficultyColor = (difficulty: string) => {
   switch (difficulty) {
-    case "Facile": return "bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-300"
-    case "Medio": return "bg-yellow-100 text-yellow-800 dark:bg-yellow-900 dark:text-yellow-300"
-    case "Avanzato": return "bg-red-100 text-red-800 dark:bg-red-900 dark:text-red-300"
-    default: return "bg-gray-100 text-gray-800 dark:bg-gray-900 dark:text-gray-300"
+    case "Facile": return "outline"
+    case "Medio": return "outline"
+    case "Avanzato": return "outline"
+    default: return "outline"
+  }
+}
+
+export const getDifficultyStyles = (difficulty: string) => {
+  switch (difficulty) {
+    case "Facile": 
+      return "border-emerald-500/50 text-emerald-700 dark:text-emerald-400 bg-emerald-50/50 dark:bg-emerald-950/30"
+    case "Medio": 
+      return "border-amber-500/50 text-amber-700 dark:text-amber-400 bg-amber-50/50 dark:bg-amber-950/30"
+    case "Avanzato": 
+      return "border-rose-500/50 text-rose-700 dark:text-rose-400 bg-rose-50/50 dark:bg-rose-950/30"
+    default: 
+      return "border-slate-500/50 text-slate-700 dark:text-slate-400 bg-slate-50/50 dark:bg-slate-950/30"
+  }
+}
+
+export const getDifficultyIcon = (difficulty: string) => {
+  switch (difficulty) {
+    case "Facile": return "○"
+    case "Medio": return "◐"
+    case "Avanzato": return "●"
+    default: return "○"
   }
 }

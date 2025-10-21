@@ -28,9 +28,14 @@ const currentYear = new Date().getFullYear()
 
         <!-- Bottom bar -->
         <div class="w-full pt-4 border-t">
-          <p class="text-sm text-muted-foreground text-center flex items-center justify-center">
-            © {{ currentYear }} Promptify. Creato con <Heart class="h-4 w-4 mx-1 text-red-500" /> per la community AI
-          </p>
+          <div class="flex flex-col items-center space-y-2">
+            <p class="text-sm text-muted-foreground text-center flex items-center justify-center flex-wrap gap-1">
+              © {{ currentYear }} Promptify. Creato con <Heart class="h-4 w-4 text-red-500" /> per la community AI
+            </p>
+            <p class="text-xs text-muted-foreground/70 text-center">
+              Sviluppato da <span class="font-medium">Claude Sonnet 4.5</span>, <span class="font-medium">GLM 4.6</span> e <span class="font-medium">Gemini 2.5 Pro</span>
+            </p>
+          </div>
         </div>
       </div>
     </div>

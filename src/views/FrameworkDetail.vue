@@ -3,7 +3,7 @@ import { ref, computed } from 'vue'
 import { useRoute, RouterLink } from 'vue-router'
 import { useApiKeysStore, type ApiProvider } from '../stores/apiKeys'
 import { testFramework } from '../utils/apiCalls'
-import { frameworks, getDifficultyColor } from '../data/frameworks'
+import { frameworks, getDifficultyColor, getDifficultyStyles, getDifficultyIcon } from '../data/frameworks'
 import Header from '../components/Header.vue'
 import Footer from '../components/Footer.vue'
 import Card from '../components/ui/Card.vue'
@@ -182,7 +182,7 @@ const copyResult = async () => {
       <!-- Framework Header -->
       <div class="mb-8 animate-fade-in">
         <div class="flex items-start space-x-4 mb-4">
-          <div :class="`${framework.color} p-4 rounded-xl animate-float`">
+          <div :class="`${framework.color} p-4 rounded-xl`">
             <component :is="framework.icon" class="h-8 w-8 text-white" />
           </div>
           <div class="flex-1">
@@ -194,7 +194,8 @@ const copyResult = async () => {
             </div>
             <p class="text-xl text-muted-foreground mb-3">{{ framework.description }}</p>
             <div class="flex space-x-2">
-              <Badge :variant="getDifficultyColor(framework.difficulty)">
+              <Badge :variant="getDifficultyColor(framework.difficulty)" :class="['font-medium', getDifficultyStyles(framework.difficulty)]">
+                <span class="mr-1">{{ getDifficultyIcon(framework.difficulty) }}</span>
                 {{ framework.difficulty }}
               </Badge>
               <Badge variant="outline">{{ framework.category }}</Badge>

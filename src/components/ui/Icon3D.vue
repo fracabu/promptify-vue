@@ -140,9 +140,7 @@ const getColorHsl = computed(() => {
   width: 100%;
   height: 100%;
   border-radius: 10px;
-  will-change: transform;
   transform: translateY(2px);
-  transition: transform 600ms cubic-bezier(.3, .7, .4, 1);
 }
 
 .icon-edge {
@@ -161,19 +159,6 @@ const getColorHsl = computed(() => {
   position: relative;
   border-radius: 10px;
   color: white;
-  will-change: transform;
   transform: translateY(-3px);
-  transition: transform 600ms cubic-bezier(.3, .7, .4, 1);
-}
-
-/* Subtle hover effect */
-.icon-3d:hover .icon-front {
-  transform: translateY(-4px);
-  transition: transform 250ms cubic-bezier(.3, .7, .4, 1.5);
-}
-
-.icon-3d:hover .icon-shadow {
-  transform: translateY(3px);
-  transition: transform 250ms cubic-bezier(.3, .7, .4, 1.5);
 }
 </style>

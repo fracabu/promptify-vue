@@ -30,17 +30,21 @@ const router = createRouter({
       component: () => import('../views/GuideDetail.vue')
     }
   ],
-  scrollBehavior(to, _from, savedPosition) {
+  scrollBehavior(to, from, savedPosition) {
     if (savedPosition) {
       return savedPosition
     } else if (to.hash) {
-      return {
-        el: to.hash,
-        behavior: 'smooth'
+      // Solo se arriviamo da una navigazione interna (from esiste)
+      // Non fare scroll su reload/primo caricamento
+      if (from.name) {
+        return {
+          el: to.hash,
+          behavior: 'smooth'
+        }
       }
-    } else {
-      return { top: 0 }
     }
+    // Sempre torna in cima per navigazioni normali o reload
+    return { top: 0 }
   }
 })
 

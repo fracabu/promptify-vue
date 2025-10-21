@@ -16,36 +16,42 @@ const cardColors = computed(() => {
     default: {
       shadow: 'hsl(0deg 0% 0% / 0.25)',
       edge: 'linear-gradient(to left, hsl(220deg 13% 69%) 0%, hsl(220deg 13% 85%) 8%, hsl(220deg 13% 85%) 92%, hsl(220deg 13% 69%) 100%)',
+      darkEdge: 'linear-gradient(to left, hsl(220deg 13% 15%) 0%, hsl(220deg 13% 25%) 8%, hsl(220deg 13% 25%) 92%, hsl(220deg 13% 15%) 100%)',
       front: 'hsl(var(--card))',
       darkBorder: 'hsl(220deg 13% 30% / 0.3)'
     },
     purple: {
       shadow: 'hsla(270, 92%, 28%, 0.25)',
       edge: 'linear-gradient(to left, hsl(270, 94%, 20%) 0%, hsl(270, 80%, 36%) 8%, hsl(270, 57%, 35%) 92%, hsl(270, 90%, 23%) 100%)',
+      darkEdge: 'linear-gradient(to left, hsl(270, 94%, 12%) 0%, hsl(270, 80%, 20%) 8%, hsl(270, 57%, 18%) 92%, hsl(270, 90%, 14%) 100%)',
       front: 'linear-gradient(135deg, hsl(270deg 60% 96%) 0%, hsl(270deg 50% 98%) 100%)',
       darkBorder: 'hsl(270deg 60% 40% / 0.3)'
     },
     blue: {
       shadow: 'hsla(222, 92%, 28%, 0.25)',
       edge: 'linear-gradient(to left, hsl(261, 94%, 20%) 0%, hsl(253, 80%, 36%) 8%, hsl(252, 57%, 35%) 92%, hsl(266, 90%, 23%) 100%)',
+      darkEdge: 'linear-gradient(to left, hsl(261, 94%, 12%) 0%, hsl(253, 80%, 20%) 8%, hsl(252, 57%, 18%) 92%, hsl(266, 90%, 14%) 100%)',
       front: 'linear-gradient(135deg, hsl(220deg 60% 96%) 0%, hsl(220deg 50% 98%) 100%)',
       darkBorder: 'hsl(220deg 60% 40% / 0.3)'
     },
     green: {
       shadow: 'hsla(122, 92%, 28%, 0.25)',
       edge: 'linear-gradient(to left, hsl(128, 94%, 20%) 0%, hsl(155, 100%, 32%) 8%, hsl(143, 62%, 23%) 92%, hsl(123, 85%, 28%) 100%)',
+      darkEdge: 'linear-gradient(to left, hsl(128, 94%, 12%) 0%, hsl(155, 100%, 18%) 8%, hsl(143, 62%, 14%) 92%, hsl(123, 85%, 16%) 100%)',
       front: 'linear-gradient(135deg, hsl(140deg 60% 96%) 0%, hsl(140deg 50% 98%) 100%)',
       darkBorder: 'hsl(140deg 60% 40% / 0.3)'
     },
     orange: {
       shadow: 'hsla(27, 86%, 33%, 0.25)',
       edge: 'linear-gradient(to left, hsl(27, 86%, 33%) 0%, hsl(48, 100%, 32%) 8%, hsl(23, 89%, 40%) 92%, hsl(36, 95%, 22%) 100%)',
+      darkEdge: 'linear-gradient(to left, hsl(27, 86%, 18%) 0%, hsl(48, 100%, 20%) 8%, hsl(23, 89%, 22%) 92%, hsl(36, 95%, 14%) 100%)',
       front: 'linear-gradient(135deg, hsl(30deg 60% 96%) 0%, hsl(30deg 50% 98%) 100%)',
       darkBorder: 'hsl(30deg 60% 40% / 0.3)'
     },
     pink: {
       shadow: 'hsl(340deg 100% 16% / 0.25)',
       edge: 'linear-gradient(to left, hsl(340deg 100% 16%) 0%, hsl(340deg 100% 32%) 8%, hsl(340deg 100% 32%) 92%, hsl(340deg 100% 16%) 100%)',
+      darkEdge: 'linear-gradient(to left, hsl(340deg 100% 10%) 0%, hsl(340deg 100% 18%) 8%, hsl(340deg 100% 18%) 92%, hsl(340deg 100% 10%) 100%)',
       front: 'linear-gradient(135deg, hsl(340deg 60% 96%) 0%, hsl(340deg 50% 98%) 100%)',
       darkBorder: 'hsl(340deg 60% 40% / 0.3)'
     }
@@ -61,7 +67,7 @@ const cardClasses = computed(() => {
 <template>
   <div :class="['card-3d', cardClasses]">
     <span class="card-shadow" :style="{ background: cardColors.shadow }"></span>
-    <span class="card-edge" :style="{ background: cardColors.edge }"></span>
+    <span class="card-edge" :style="{ background: cardColors.edge, '--dark-edge-color': cardColors.darkEdge }"></span>
     <div class="card-front" :style="{ background: cardColors.front, '--dark-border-color': cardColors.darkBorder }">
       <slot />
     </div>
@@ -121,6 +127,10 @@ const cardClasses = computed(() => {
 .dark .card-front {
   background: hsl(var(--card)) !important;
   border: 1px solid var(--dark-border-color, hsl(220deg 13% 30% / 0.3));
+}
+
+.dark .card-edge {
+  background: var(--dark-edge-color) !important;
 }
 
 .dark .card-shadow {
