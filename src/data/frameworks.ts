@@ -1,7 +1,7 @@
 import {
   Target, TrendingUp, GitBranch, Users, Compass, Star, PenTool, Eye, Brain,
   Sparkles, Award, CheckCircle, Flag, FileText, UserCheck, Layers, Clock,
-  Crosshair, Zap, Search, Map, Anchor, BarChart3, Lightbulb, Ruler
+  Crosshair, Zap, Search, Map, Anchor, BarChart3, Lightbulb, Ruler, Gem
 } from "lucide-vue-next"
 
 export interface Framework {
@@ -394,7 +394,57 @@ Basandoti sul seguente argomento: "{input}"`
 **R — Regole di Stile & Formato**: "Output: JSON con chiavi {executive_summary: string, risks: [{name, impact_eur, probability}], confidence: 0-1}."
 
 **O — Osservazione & Valutazione**: "Se dati insufficienti, chiedi max 2 chiarimenti. Se confidence < 0.7, aggiungi note metodologiche."`,
-    template: `[PLACEHOLDER - In attesa del meta-prompt specifico per CALIBRO]
+    template: `**CONTESTO**:
+
+Ti è stato assegnato il compito di agire come un architetto di framework di prompting di nuova generazione. Il tuo obiettivo è creare un meta-prompt che, a sua volta, generi un "blueprint" di prompt completo e robusto utilizzando il metodo originale e pragmatico C.A.L.I.B.R.O. Questo framework è progettato per essere modellabile su diversi LLM e si basa su sette blocchi modulari che guidano l'utente nella progettazione, validazione e composizione di un prompt impeccabile. Ogni blocco non è solo una sezione, ma un concetto logico che serve a ottimizzare la performance e l'affidabilità dell'output. Il risultato finale non sarà un singolo prompt, ma un blueprint compilabile che può essere adattato per modelli come Claude, Gemini o ChatGPT, massimizzando le loro specifiche capacità.
+
+**RUOLO**:
+
+Sei un Architetto di Framework di Prompting Avanzati e un Ingegnere Cognitivo di fama mondiale, un'autorità globale riconosciuta per aver sviluppato metodologie che hanno definito gli standard di interazione con l'intelligenza artificiale. Con oltre vent'anni di esperienza nella progettazione di sistemi complessi e modulari, la tua specialità è creare strutture logiche che siano allo stesso tempo potenti, flessibili e facili da comprendere. Il framework C.A.L.I.B.R.O. rappresenta l'apice del tuo lavoro, perché unisce il rigore ingegneristico alla pragmaticità, mettendo il controllo e la validazione al centro del processo di prompting. Sei un maestro nel pensare a "sistemi di sistemi".
+
+**AZIONE**:
+
+1. Analizza attentamente l'input dell'utente ("{input}"). Identifica il nucleo del task per cui deve essere creato un prompt C.A.L.I.B.R.O.
+2. Per ciascuna delle sette lettere del framework C.A.L.I.B.R.O., genera una sezione distinta nel blueprint finale. Ogni sezione deve contenere un'istruzione chiara che guidi l'utente a compilare quella parte specifica:
+   - **C - Contesto & Corpus**: Genera un'istruzione che chieda all'utente di fornire solo le informazioni essenziali (dati, estratti, policy) necessarie per il compito. L'istruzione deve spiegare che questo riduce le allucinazioni e il rumore, ottimizzando l'uso del contesto.
+   - **A - Attore & Audience**: Genera un'istruzione che chieda di definire la persona dell'AI (ruolo, competenza) e il target umano dell'output. L'istruzione deve spiegare che questo definisce tono, granularità e selezione dei contenuti.
+   - **L - Limiti & Vincoli**: Genera un'istruzione che richieda la specificazione di condizioni al contorno precise (tempo, token, fonti ammesse, policy). L'istruzione deve spiegare che i vincoli guidano le scelte dell'LLM e limitano gli errori.
+   - **I - Intenzione & Criteri di Successo**: Genera un'istruzione che spinga l'utente a enunciare l'obiettivo finale e la metrica di qualità attesa. L'istruzione deve spiegare che l'LLM ottimizza ciò che viene chiesto esplicitamente.
+   - **B - Breakdown & Procedura**: Genera un'istruzione che richieda un piano d'azione chiaro (passi, checklist, subtask). L'istruzione deve spiegare che questo migliora la coerenza e la tracciabilità del processo.
+   - **R - Regole di Stile & Formato**: Genera un'istruzione che chieda di definire la struttura dell'output (JSON/YAML/Markdown), il tono e la terminologia. L'istruzione deve spiegare che questo abilita l'integrazione e l'automazione downstream.
+   - **O - Osservazione & Valutazione**: Genera un'istruzione che includa richieste per auto-verifiche, test rapidi e meccanismi di correzione. L'istruzione deve spiegare che questo chiude il loop di qualità e riduce gli errori prima della produzione.
+3. Assembla le sette componenti in un unico "blueprint" C.A.L.I.B.R.O. finale, strutturato e coerente, che l'utente potrà compilare.
+
+**FORMATO**:
+
+Genera un "blueprint" di prompt completo e strutturato utilizzando il framework C.A.L.I.B.R.O. Ogni sezione deve essere chiaramente etichettata:
+
+**C — Contesto & Corpus**:
+[Istruzioni per fornire informazioni essenziali, dati, estratti, policy]
+
+**A — Attore & Audience**:
+[Definizione del ruolo dell'AI e del target dell'output]
+
+**L — Limiti & Vincoli**:
+[Boundary conditions: tempo, token, fonti ammesse, policy]
+
+**I — Intenzione & Criteri di Successo**:
+[Obiettivo finale e metriche di qualità]
+
+**B — Breakdown & Procedura**:
+[Piano d'azione: passi, checklist, subtask]
+
+**R — Regole di Stile & Formato**:
+[Struttura output: JSON/YAML/Markdown, tono, terminologia]
+
+**O — Osservazione & Valutazione**:
+[Auto-verifiche, test rapidi, meccanismi di correzione]
+
+**TARGET**:
+
+Il blueprint C.A.L.I.B.R.O. che genererai è destinato a essere compilato e utilizzato con i più recenti e avanzati Large Language Models di ultima generazione, tra cui Claude 3.5 Sonnet, Gemini 2.5 Pro e Flash, GPT-5 e GPT-4.1, e GLM-4.6. Questi modelli possiedono la capacità di comprensione contestuale e il rigore logico necessari per eseguire un framework così strutturato e modulare. Il blueprint che creerai deve essere abbastanza chiaro e robusto da permettere a un utente di generare un prompt finale ottimizzato e specifico per ciascuno di questi modelli, sfruttandone al massimo le caratteristiche uniche.
+
+---
 
 Basandoti sul seguente argomento: "{input}"`
   },
@@ -1890,6 +1940,274 @@ Esempio di struttura: "[Verbo imperativo] + [oggetto del compito] + [vincoli opz
 **TARGET**:
 
 Il prompt "Zero-Shot" che genererai è destinato a essere utilizzato con i più recenti e avanzati Large Language Models di ultima generazione, tra cui Claude 3.5 Sonnet, Gemini 2.5 Pro e Flash, GPT-5 e GPT-4.1, e GLM-4.6. Questi modelli possiedono una base di conoscenza vastissima e capacità di generalizzazione eccezionali, che permettono loro di eseguire un'ampia gamma di compiti comuni senza bisogno di esempi o istruzioni dettagliate. Il prompt Zero-Shot è il test più puro della loro capacità di comprensione intrinseca e il punto di partenza per qualsiasi interazione efficiente. Se un prompt Zero-Shot ben formulato non produce il risultato desiderato, è il segnale per passare a tecniche più avanzate come Few-Shot Learning o framework strutturati (CARE, COAST, COSTAR, etc.).
+
+---
+
+Basandoti sul seguente argomento: "{input}"`
+  },
+  {
+    id: "prisma",
+    title: "P.R.I.S.M.A.",
+    description: "Prompt Research, Iteration, Synthesis, Multi-path Analysis - meta-framework definitivo by Claude Sonnet 3.5",
+    icon: Gem,
+    color: "bg-gradient-to-r from-purple-600 via-blue-600 to-cyan-600",
+    category: "Innovativo",
+    difficulty: "Avanzato",
+    explanation: "P.R.I.S.M.A. è un meta-framework ibrido che combina i punti di forza di tutti i framework esistenti: l'iterazione di ReAct, l'esplorazione multi-path di Tree of Thoughts, la modularità enterprise di CALIBRO, la struttura di CRAFT, la valutazione di TRACE e gli esempi operativi di T-REX. Perfetto per task complessi che richiedono ragionamento, esplorazione di alternative, valutazione oggettiva e delivery strutturato. Framework signature creato da Claude Sonnet 3.5.",
+    example: `**P — Problem & Purpose**
+Problema: Lancio nuovo prodotto SaaS analytics AI in mercato saturo
+Obiettivo: 1000 sign-ups qualificati in 90 giorni, CAC < $200
+Success: Conversion trial-to-paid > 15%
+
+**R — Research & Role**
+Role: CMO SaaS B2B, 20 anni esperienza, 3 exit
+Research: PLG, ABM, demand gen, positioning competitivo
+Context: Budget $150k, team 3 persone, vs Mixpanel/Amplitude
+
+**I — Iteration Framework**
+Thought 1: Scegliere tra PLG puro o hybrid ABM?
+Options:
+- A) PLG freemium aggressive
+- B) ABM enterprise focus
+- C) Hybrid: PLG per SMB + ABM per enterprise
+Action 1: Analizza audience size e LTV per segment
+Observation 1: SMB ha volume ma LTV basso, Enterprise LTV alto ma ciclo lungo
+Refine: Hybrid è ottimale
+
+**S — Structure & Standards**
+Format: Doc strategico Markdown + Gantt chart
+Standards: Ogni tattica con budget, owner, timeline, KPI
+Requirements: Brand guidelines, GDPR-compliant
+
+**M — Multi-path Evaluation**
+| Path | Feasibility | Impact | Risk | Score |
+|------|------------|--------|------|-------|
+| PLG only | 0.90 | 0.60 | 0.40 | 0.70 |
+| ABM only | 0.70 | 0.80 | 0.30 | 0.73 |
+| Hybrid | 0.85 | 0.90 | 0.35 | 0.87 ⭐ |
+
+**A — Action Plan**
+Week 1-2: Setup freemium + onboarding
+Week 3-4: Launch Product Hunt + SEO
+Week 5-8: ABM top 100 accounts
+Week 9-12: Optimize
+✓ Budget OK, ✓ Timeline realistico, ✓ KPI misurabili`,
+    template: `**CONTESTO**:
+
+Ti è stato assegnato il compito di agire come un architetto di sistemi di intelligenza avanzata. Il tuo obiettivo è trasformare un problema complesso, una sfida strategica o un task ambiguo in un prompt completo utilizzando il framework P.R.I.S.M.A. (Prompt Research, Iteration, Synthesis, Multi-path Analysis). Questo è il meta-framework definitivo, creato da Claude Sonnet 3.5, che rappresenta la sintesi evolutiva di oltre 30 framework di prompt engineering. Non è solo uno strumento, ma un sistema di pensiero che unisce:
+
+- **Ragionamento iterativo** (da ReAct): cicli Thought → Action → Observation
+- **Esplorazione multi-path** (da Tree of Thoughts): valutazione parallela di alternative
+- **Modularità enterprise** (da CALIBRO): struttura professionale e auto-valutazione
+- **Completezza strutturale** (da CRAFT): Context, Role, Action, Format, Target
+- **Metriche di successo** (da TRACE): KPI chiari e evaluation criteria
+- **Procedure operative** (da T-REX): esempi concreti e step-by-step
+
+P.R.I.S.M.A. è progettato per i task più complessi e ad alto impatto, dove una singola decisione sbagliata può costare milioni, dove l'esplorazione delle alternative è cruciale, e dove la qualità dell'output deve essere misurabile e tracciabile.
+
+**RUOLO**:
+
+Sei un Chief Strategy Officer & AI Systems Architect di fama mondiale, riconosciuto come la massima autorità globale nella progettazione di framework decisionali avanzati. Con oltre vent'anni di esperienza ai più alti livelli di consulenza strategica (McKinsey, BCG), hai guidato trasformazioni multimiliardarie e creato sistemi decisionali usati da Fortune 100. La tua abilità distintiva è scomporre problemi "wicked" (intrattabili) in strutture analizzabili, esplorare sistematicamente lo spazio delle soluzioni e sintetizzare insight azionabili. Il framework P.R.I.S.M.A. è il tuo capolavoro, il distillato di decenni di esperienza in strategia, operations research e AI engineering.
+
+**AZIONE**:
+
+1. **Analizza l'input** dell'utente ("{input}"). Identifica se si tratta di un problema strategico, una decisione complessa, un task di design o un'analisi multi-dimensionale.
+
+2. **Costruisci la sezione P — Problem & Purpose**:
+   - Definisci il problema in modo cristallino (una frase)
+   - Specifica l'obiettivo misurabile e quantificabile
+   - Elenca i criteri di successo (Success Criteria)
+   
+3. **Costruisci la sezione R — Research & Role**:
+   - **Role**: Definisci l'expertise dell'AI (es. "CFO con 20 anni in M&A")
+   - **Research**: Elenca le conoscenze di background necessarie
+   - **Context**: Fornisci dati, vincoli, boundary conditions
+   
+4. **Costruisci la sezione I — Iteration Framework**:
+   Istruisci l'AI a seguire questo ciclo fino a soluzione ottimale:
+   - **Thought**: Ragiona sul problema corrente
+   - **Options**: Genera 2-3 approcci alternativi
+   - **Action**: Esegui l'approccio più promettente
+   - **Observation**: Valuta il risultato
+   - **Refine**: Itera o procedi
+   
+5. **Costruisci la sezione S — Structure & Standards**:
+   - **Format**: Specifica struttura output (JSON, Markdown, Table, Code)
+   - **Standards**: Definisci quality standards e KPI
+   - **Requirements**: Elenca requisiti tecnici, compliance, brand guidelines
+   
+6. **Costruisci la sezione M — Multi-path Evaluation**:
+   Crea una tabella di valutazione con colonne:
+   - **Path**: Nome dell'opzione
+   - **Feasibility** (0-1): Quanto è fattibile?
+   - **Impact** (0-1): Quale impatto ha?
+   - **Risk** (0-1): Quali rischi comporta?
+   - **Score**: Media pesata o formula custom
+   Identifica il vincitore con ⭐
+   
+7. **Costruisci la sezione A — Action Plan & Delivery**:
+   - Breakdown step-by-step con timeline
+   - Examples concreti (few-shot quando applicabile)
+   - Final deliverable con checklist di auto-verifica
+   
+8. **Assembla** tutte le sezioni in un prompt P.R.I.S.M.A. completo, coerente e pronto per l'esecuzione.
+
+**FORMATO**:
+
+Genera un prompt completo e strutturato utilizzando il framework P.R.I.S.M.A. Ogni sezione principale deve essere etichettata chiaramente:
+
+**P — Problem & Purpose**
+- Problema: [definizione problema]
+- Obiettivo: [goal misurabile]
+- Success Criteria: [criteri di successo]
+
+**R — Research & Role**
+- Role: [expertise AI]
+- Research: [conoscenze background]
+- Context: [dati, vincoli, boundary]
+
+**I — Iteration Framework**
+- Thought N: [ragionamento]
+- Options: [lista alternative]
+- Action N: [azione specifica]
+- Observation N: [risultato]
+- Refine: [decisione iterazione]
+
+**S — Structure & Standards**
+- Format: [struttura output]
+- Standards: [quality KPI]
+- Requirements: [tecnici/compliance]
+
+**M — Multi-path Evaluation**
+| Path | Feasibility | Impact | Risk | Score |
+|------|------------|--------|------|-------|
+| ... | ... | ... | ... | ... |
+
+**A — Action Plan & Delivery**
+1. [Step con timeline]
+2. [Step con timeline]
+...
+Examples: [link o descrizioni]
+Final Check: ✓ [criterio 1], ✓ [criterio 2], ✓ [criterio 3]
+
+**TARGET**:
+
+Il prompt P.R.I.S.M.A. che genererai è destinato a essere utilizzato con i più potenti Large Language Models di ultima generazione: **Claude 3.5 Sonnet** (creatore di questo framework), **Gemini 2.5 Pro**, **GPT-5**, **GPT-4.1** e **GLM-4.6**. Questi modelli possiedono capacità di ragionamento multi-step, memoria contestuale estesa, abilità di auto-valutazione meta-cognitiva e pattern-matching avanzato. P.R.I.S.M.A. è progettato per sfruttare al massimo queste capacità di frontiera, trasformando il LLM in un sistema di consulenza strategica virtuale capace di esplorare, valutare e raccomandare con la sofisticazione di un team di esperti umani.
+
+---
+
+**Framework Design Credit**: P.R.I.S.M.A. è stato creato da **Claude Sonnet 3.5** (Anthropic) come meta-framework sintetico definitivo, combinando i punti di forza di ReAct, Tree of Thoughts, CALIBRO, CRAFT, TRACE, T-REX e altri 25+ framework esistenti. È il framework signature di Promptify.
+
+---
+
+Basandoti sul seguente argomento: "{input}"`
+  },
+  {
+    id: "bcm",
+    title: "B.C.M.",
+    description: "Brief Creativo Multistile - framework ibrido per copywriting con valutazione automatica",
+    icon: Sparkles,
+    color: "bg-gradient-to-r from-pink-600 to-orange-600",
+    category: "Marketing",
+    difficulty: "Avanzato",
+    explanation: "B.C.M. (Brief Creativo Multistile) è un framework ibrido che unisce CALIBRO e PACE per generare copy multicanale con auto-valutazione. Genera 3 varianti per ogni formato richiesto (caption, email, headline) e le valuta automaticamente con scoring su Coerenza Brand, Originalità e Chiarezza. Ideale per campagne marketing, lanci prodotto e brand refresh dove brand voice e vincoli sono non negoziabili.",
+    example: `## B.C.M. per: Lancio bevanda energetica biologica
+
+### B — Brief (Contesto & Attore)
+**Contesto**: Brand "VitaFlow" - bevanda energetica 100% biologica, yerba mate + guaranà
+**USP**: Energia naturale senza crash, certificazione bio, packaging sostenibile
+**Attore**: Copywriter senior esperto in beverage marketing
+
+**PACE Integration:**
+- **Purpose**: Generare trial tra millennials salutisti, comunicare sostenibilità
+- **Audience**: 25-40 anni, urban, health-conscious, attivi, valore sostenibilità
+- **Constraints**: Max 280 char Instagram, oggetto email max 50 char, no claim medici
+- **Examples**: 
+  ✓ "Energia pura dalla natura"
+  ✗ "Cura la stanchezza" (claim medico vietato)
+
+### C — Creatività (Intenzione & Regole)
+**Intenzione**: Genera 3 varianti per: [Instagram caption], [Email subject], [Billboard headline]
+**Regole**: Tono giovane ma credibile, focus benefici naturali, call-to-action chiara
+
+### M — Multiformato (Breakdown)
+1. Generazione: 3 varianti × 3 formati = 9 copy totali
+2. Valutazione: Score 0-1 per Coerenza/Originalità/Chiarezza
+3. Sintesi: Tabella finale con best performers
+
+### Valutazione Automatica
+| Formato | Variante | Coerenza | Originalità | Chiarezza | Note |
+|---------|----------|----------|-------------|-----------|------|
+| Instagram | V1 | 0.90 | 0.75 | 0.85 | Buon balance natura/energia |
+| Instagram | V2 | 0.95 | 0.60 | 0.90 | Troppo simile a competitor |
+| Instagram | V3 | 0.85 | 0.95 | 0.80 | Originale ma meno chiaro ⭐ |`,
+    template: `**CONTESTO**:
+
+Ti è stato assegnato il compito di agire come un architetto di processi creativi per l'intelligenza artificiale. Il tuo obiettivo è creare un meta-prompt che, a sua volta, generi un "Brief Creativo Multistile" (B.C.M.) completo e robusto. Questo framework è uno strumento sintetico ma incredibilmente potente, progettato specificamente per task di copywriting e naming che richiedono non solo creatività, ma anche coerenza e valutazione. B.C.M. è un ibrido che unisce la robustezza sistemica di CALIBRO con la focalizzazione utente di PACE, generando 3 varianti multi-formato (es. caption Instagram, oggetto email, headline) e, cosa cruciale, le valuta automaticamente secondo criteri precisi. È lo strumento definitivo per campagne marketing, lanci prodotto e brand refresh dove la coerenza del brand voice e il rispetto dei vincoli sono non negoziabili.
+
+**RUOLO**:
+
+Sei un Creative Director & Prompt Architect di fama mondiale, un'autorità globale riconosciuta per aver guidato le agenzie creative più innovative e per aver sviluppato sistemi di prompting che ridefiniscono il processo creativo. Con oltre vent'anni di esperienza nella creazione di campagne premio e nello sviluppo di framework di comunicazione, la tua specialità è tradurre l'anima di un brand in un brief così chiaro e potente che un'AI può eseguirlo con la stessa sensibilità di un team di copywriter senior. Il framework B.C.M. è la tua creazione più recente, il punto d'incontro tra strategia di branding, creatività pura e ingegneria dei prompt.
+
+**AZIONE**:
+
+1. Analizza attentamente l'input dell'utente ("{input}"). Identifica il nucleo della richiesta creativa (es. "lancio di una nuova bevanda energetica biologica").
+
+2. Genera un "blueprint" B.C.M. completo, strutturato nelle sezioni principali che seguono. Ogni sezione deve contenere istruzioni chiare per guidare l'utente nella compilazione.
+
+3. **Sezione B — Brief (Contesto & Attore)**:
+   - Crea una sottosezione **Contesto** che chieda di definire il brand, il suo Unique Selling Proposition (USP) e le fonti di ispirazione.
+   - Crea una sottosezione **Attore** che istruisca l'AI ad agire come un "copywriter senior esperto in [settore]".
+   - **Integra qui gli elementi di PACE**:
+     - **Purpose**: Chiedi qual è l'obiettivo finale del copy (es. "generare trial", "comunicare sostenibilità").
+     - **Audience**: Chiedi di descrivere il target in dettaglio (demografia, psicografia, valori).
+     - **Constraints**: Chiedi di elencare tutti i vincoli (lunghezze massime per formato, parole vietate, requisiti di compliance).
+     - **Examples**: Chiedi di fornire 1-2 esempi di copy che rappresentano la voce del brand (cosa fare ✓) e, se utile, cosa evitare (✗).
+
+4. **Sezione C — Creatività (Intenzione & Regole)**:
+   - Crea una sottosezione **Intenzione** che specifichi chiaramente l'output richiesto: "Genera 3 varianti di copy per ciascuno dei seguenti formati: [Formato 1], [Formato 2], [Formato 3]".
+   - Crea una sottosezione **Regole** che definisca il tono di voce (es. "ironico e intelligente", "rassicurante e professionale") e le regole strutturali da seguire.
+
+5. **Sezione M — Multiformato (Breakdown & Procedura)**:
+   Crea una sottosezione **Breakdown** che delinei il processo operativo che l'AI deve seguire:
+   - **Generazione**: Per ogni formato specificato, crea 3 varianti di copy distinte.
+   - **Valutazione**: Valuta ogni singola variante generata secondo i criteri della sezione successiva.
+   - **Sintesi**: Prepara una tabella riassuntiva finale.
+
+6. **Sezione Valutazione Automatica (Osservazione)**:
+   Questa è la parte più critica. Crea una rubrica di valutazione chiara. Per ogni variante generata, l'AI deve assegnare un punteggio da 0 a 1 (con due decimali, es. 0.85) per ciascuno dei seguenti criteri:
+   - **Coerenza Brand**: Quanto il copy è allineato al brand voice definito nel brief?
+   - **Originalità**: Quanto il copy è fresco e si distingue dalla concorrenza?
+   - **Chiarezza**: Quanto è facile da capire e immediato per il target?
+   Aggiungi un campo per **Note Giustificative** per ogni punteggio, spiegando brevemente il perché di quella valutazione.
+
+7. Assembla tutte queste sezioni in un unico blueprint B.C.M. finale, strutturato e coerente.
+
+**FORMATO**:
+
+Genera un "Brief Creativo Multistile" completo e strutturato utilizzando il framework B.C.M. Il documento deve essere in Markdown. Il titolo principale deve essere:
+
+# Brief Creativo Multistile (B.C.M.) per: [Argomento]
+
+Le sezioni principali devono usare intestazioni di livello 2:
+- ## B — Brief (Contesto & Attore)
+- ## C — Creatività (Intenzione & Regole)
+- ## M — Multiformato (Breakdown & Procedura)
+- ## Valutazione Automatica
+
+Le sottosezioni devono usare intestazioni di livello 3:
+- ### Contesto
+- ### Attore
+- ### PACE Integration (con sottoelenchi per Purpose, Audience, Constraints, Examples)
+- ### Intenzione
+- ### Regole
+- ### Breakdown
+
+Usa **grassetto**, elenchi puntati e tabelle Markdown per garantire la massima chiarezza. La tabella di valutazione deve avere colonne: Formato | Variante | Coerenza | Originalità | Chiarezza | Note
+
+**TARGET**:
+
+Il brief B.C.M. che genererai è destinato a essere compilato e utilizzato con i più recenti e avanzati Large Language Models di ultima generazione, tra cui Claude 3.5 Sonnet, Gemini 2.5 Pro e Flash, GPT-5 e GPT-4.1, e GLM-4.6. Questi modelli possiedono capacità creative, di ragionamento strutturato e di auto-valutazione (meta-cognizione) superiori, che sono essenziali per eseguire un framework complesso e ibrido come B.C.M. Il brief che creerai deve essere abbastanza preciso da guidarli attraverso un processo creativo, valutativo e di sintesi, trasformandoli in un vero e proprio team di copywriting virtuale capace di generare, valutare e selezionare il copy migliore secondo criteri oggettivi e misurabili.
 
 ---
 
