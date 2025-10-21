@@ -97,30 +97,66 @@ const formatTitle = (title: string) => {
     <!-- Hero Section -->
     <div class="min-h-screen flex items-center justify-center">
       <div class="container mx-auto px-4 py-8 relative">
-        <div class="text-center mb-8">
-          <h1 class="text-5xl md:text-7xl font-bold mb-8 leading-tight bg-clip-text text-transparent bg-gradient-to-r from-purple-600 via-blue-600 to-orange-600 dark:from-purple-400 dark:via-blue-400 dark:to-orange-400 animate-fade-in">
-            Framework per prompt efficaci, subito.
-          </h1>
-          <p class="text-xl md:text-2xl text-muted-foreground max-w-4xl mx-auto leading-relaxed font-light mb-12 animate-fade-in" style="animation-delay: 0.2s; opacity: 0; animation-fill-mode: forwards;">
-            Oltre 30 framework professionali pronti all'uso. Testa con i modelli di Gemini, OpenAI e ZAI e ottieni risultati superiori in pochi secondi.
-          </p>
-
-          <!-- Search Bar -->
-          <div class="flex justify-center px-4 animate-fade-in" style="animation-delay: 0.4s; opacity: 0; animation-fill-mode: forwards;">
-            <div class="w-full max-w-4xl">
-              <SearchBar />
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <!-- Left Column - Text & CTA -->
+          <div class="space-y-8 animate-fade-in">
+            <h1 class="text-5xl md:text-7xl font-bold leading-tight bg-clip-text text-transparent bg-gradient-to-r from-purple-600 via-blue-600 to-orange-600 dark:from-purple-400 dark:via-blue-400 dark:to-orange-400">
+              Framework per prompt efficaci, subito.
+            </h1>
+            <p class="text-xl md:text-2xl text-muted-foreground leading-relaxed font-light animate-fade-in" style="animation-delay: 0.2s; opacity: 0; animation-fill-mode: forwards;">
+              Oltre 30 framework professionali pronti all'uso. Testa con i modelli di Gemini, OpenAI e ZAI e ottieni risultati superiori in pochi secondi.
+            </p>
+            
+            <!-- CTA Buttons -->
+            <div class="flex flex-wrap gap-4 animate-fade-in" style="animation-delay: 0.3s; opacity: 0; animation-fill-mode: forwards;">
+              <a href="#categories">
+                <Button3D variant="purple" size="default">
+                  <Play class="h-5 w-5" />
+                  <span>Esplora Framework</span>
+                </Button3D>
+              </a>
+              <RouterLink to="/guide">
+                <Button3D variant="blue" size="default">
+                  <span>Leggi le Guide</span>
+                </Button3D>
+              </RouterLink>
             </div>
+
+            <!-- Scroll Down Arrow -->
+            <a 
+              href="#categories" 
+              class="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-purple-600 dark:hover:text-purple-400 transition-colors duration-200 cursor-pointer group animate-fade-in"
+              style="animation-delay: 0.4s; opacity: 0; animation-fill-mode: forwards;"
+            >
+              <span class="font-medium">Scopri i framework</span>
+              <ChevronDown class="h-5 w-5 group-hover:translate-y-1 transition-transform" />
+            </a>
           </div>
 
-          <!-- Scroll Down Arrow -->
-          <a 
-            href="#categories" 
-            class="inline-flex flex-col items-center mt-16 text-muted-foreground hover:text-purple-600 dark:hover:text-purple-400 transition-colors duration-200 animate-fade-in cursor-pointer group"
-            style="animation-delay: 0.6s; opacity: 0; animation-fill-mode: forwards;"
-          >
-            <span class="text-sm font-medium mb-2">Scopri i framework</span>
-            <ChevronDown class="h-8 w-8 animate-bounce" />
-          </a>
+          <!-- Right Column - Search Bar -->
+          <div class="animate-fade-in" style="animation-delay: 0.5s; opacity: 0; animation-fill-mode: forwards;">
+            <div class="bg-background/50 backdrop-blur-sm border border-border rounded-3xl p-8 shadow-2xl">
+              <h3 class="text-2xl font-bold mb-4 text-foreground">Cerca il tuo framework</h3>
+              <p class="text-muted-foreground mb-6">Trova rapidamente il framework perfetto per il tuo progetto</p>
+              <SearchBar />
+              
+              <!-- Quick Stats -->
+              <div class="grid grid-cols-3 gap-4 mt-8 pt-6 border-t border-border">
+                <div class="text-center">
+                  <div class="text-3xl font-bold text-purple-600 dark:text-purple-400">30+</div>
+                  <div class="text-xs text-muted-foreground mt-1">Framework</div>
+                </div>
+                <div class="text-center">
+                  <div class="text-3xl font-bold text-blue-600 dark:text-blue-400">7</div>
+                  <div class="text-xs text-muted-foreground mt-1">Categorie</div>
+                </div>
+                <div class="text-center">
+                  <div class="text-3xl font-bold text-orange-600 dark:text-orange-400">3</div>
+                  <div class="text-xs text-muted-foreground mt-1">Provider AI</div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -128,10 +164,10 @@ const formatTitle = (title: string) => {
     <!-- Come Funziona Section -->
     <div id="how-it-works" class="py-20 px-4 bg-gradient-to-b from-background via-purple-50/20 to-background dark:via-purple-950/10">
       <div class="container mx-auto max-w-5xl">
-        <h2 class="text-4xl md:text-5xl font-bold text-center mb-6 text-foreground animate-fade-in">
+        <h2 class="text-5xl md:text-7xl font-bold text-center mb-6 bg-clip-text text-transparent bg-gradient-to-r from-purple-600 via-blue-600 to-orange-600 dark:from-purple-400 dark:via-blue-400 dark:to-orange-400 animate-fade-in">
           Come Funziona
         </h2>
-        <p class="text-xl text-muted-foreground text-center mb-16 max-w-3xl mx-auto">
+        <p class="text-xl md:text-2xl text-muted-foreground text-center mb-16 max-w-3xl mx-auto font-light leading-relaxed">
           Usa Promptify in 3 semplici passaggi per trasformare i tuoi prompt in risultati professionali
         </p>
 
@@ -245,7 +281,7 @@ const formatTitle = (title: string) => {
     <!-- Macro Categories Section -->
     <div id="categories" class="min-h-screen flex items-center justify-center py-20 px-4">
       <div class="container mx-auto relative">
-        <h2 class="text-3xl font-bold text-center mb-12 text-foreground animate-fade-in">
+        <h2 class="text-5xl md:text-7xl font-bold text-center mb-12 bg-clip-text text-transparent bg-gradient-to-r from-purple-600 via-blue-600 to-orange-600 dark:from-purple-400 dark:via-blue-400 dark:to-orange-400 animate-fade-in">
           Esplora per Categoria
         </h2>
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 px-4">
@@ -281,10 +317,10 @@ const formatTitle = (title: string) => {
     <div id="frameworks" class="py-20 px-4">
       <div class="container mx-auto">
         <div class="text-center mb-12 animate-fade-in">
-          <h2 class="text-3xl font-bold mb-4">
+          <h2 class="text-5xl md:text-7xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-purple-600 via-blue-600 to-orange-600 dark:from-purple-400 dark:via-blue-400 dark:to-orange-400">
             {{ selectedCategory ? macroCategories.find(c => c.id === selectedCategory)?.name : 'Tutti i Framework' }}
           </h2>
-          <p v-if="selectedCategory" class="text-muted-foreground mb-4">
+          <p v-if="selectedCategory" class="text-xl md:text-2xl text-muted-foreground mb-6 font-light leading-relaxed">
             {{ macroCategories.find(c => c.id === selectedCategory)?.description }}
           </p>
           <div v-if="selectedCategory" class="flex justify-center">

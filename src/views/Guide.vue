@@ -31,10 +31,10 @@ const getDifficultyVariant = (difficulty: string) => {
       <section id="guide">
         <!-- Hero Section -->
         <div class="text-center mb-16">
-          <h1 class="text-4xl md:text-5xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-purple-600 via-blue-600 to-orange-600 dark:from-purple-400 dark:via-blue-400 dark:to-orange-400">
+          <h1 class="text-5xl md:text-7xl font-bold mb-8 leading-tight bg-clip-text text-transparent bg-gradient-to-r from-purple-600 via-blue-600 to-orange-600 dark:from-purple-400 dark:via-blue-400 dark:to-orange-400">
             Guide per il Prompt Engineering
           </h1>
-          <p class="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+          <p class="text-xl md:text-2xl text-muted-foreground max-w-4xl mx-auto leading-relaxed font-light mb-12">
             Impara a padroneggiare l'arte del prompt engineering con guide pratiche, best practices e tecniche avanzate.
           </p>
         </div>
@@ -82,7 +82,7 @@ const getDifficultyVariant = (difficulty: string) => {
 
         <!-- Quick Tips Section -->
         <div class="bg-gradient-to-r from-purple-500/10 to-blue-500/10 dark:from-purple-500/20 dark:to-blue-500/20 rounded-2xl p-8 md:p-12">
-          <h2 class="text-2xl md:text-3xl font-bold mb-6 text-center">
+          <h2 class="text-5xl md:text-7xl font-bold mb-12 text-center bg-clip-text text-transparent bg-gradient-to-r from-purple-600 via-blue-600 to-orange-600 dark:from-purple-400 dark:via-blue-400 dark:to-orange-400">
             💡 Consigli Rapidi
           </h2>
           <div class="grid grid-cols-1 md:grid-cols-2 gap-6">

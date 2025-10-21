@@ -35,47 +35,64 @@
 - **Dark/Light Mode**: Tema scuro/chiaro con persistenza localStorage
 - **Animazioni Fluide**: Transizioni CSS ottimizzate per un'esperienza premium
 - **Responsive Design**: Layout ottimizzato per mobile, tablet e desktop
+- **Menu Navigabile**: Header con menu desktop e hamburger su mobile
 
 ### 🔍 Esplorazione Framework
-- **28 Framework**: Collezione completa dei migliori framework di prompt engineering
-- **Filtri per Categoria**: Creativi, Analitici, Strutturati, Comunicativi, Tecnici, Innovativi
-- **Ricerca Avanzata**: Cerca per nome, descrizione o caratteristiche
-- **Badge Visivi**: Difficoltà e categorie visualizzate con badge colorati
+- **30+ Framework**: Collezione completa dei migliori framework di prompt engineering
+- **Filtri per Categoria**: Creativi, Analitici, Strutturati, Comunicativi, Tecnici, Innovativi, Marketing
+- **Badge Visivi**: Difficoltà, categorie e badge creatore AI
+- **Framework Personalizzati**: CALIBRO (GPT-5), BCM (GLM-4.6), PRISMA (Claude Sonnet 4.5)
 
 ### 🧪 Testing Interattivo
 - **Prova i Prompt**: Interfaccia per testare ogni framework con input personalizzati
 - **Preview Generato**: Visualizza il prompt finale prima dell'invio
 - **Copy to Clipboard**: Copia rapidamente i prompt generati
-- **Meta-Prompts**: Template intelligenti che guidano l'AI nella generazione
+- **Risposte AI Estese**: Supporto fino a 16K token per risposte dettagliate
+- **Multi-Provider**: OpenAI (GPT-5, GPT-4.1), Gemini 2.5, ZAI (GLM-4.6)
 
 ### 🔧 Funzionalità Tecniche
-- **API Integration**: Supporto per OpenAI, Anthropic, Gemini
+- **API Integration**: Supporto per OpenAI, Google Gemini e ZAI
 - **Gestione API Keys**: Storage sicuro delle chiavi API in localStorage
-- **Router Vue**: Navigazione SPA con Vue Router
+- **Router Vue**: Navigazione SPA con Vue Router e hash navigation
 - **State Management**: Pinia per la gestione dello stato globale
+- **Heroicons Integration**: Icone professionali con @heroicons/vue
 
 ---
 
 ## 🎯 Framework Disponibili
 
-### 📚 Completati con Meta-Prompts (7/28)
-1. **APE** - Action, Purpose, Expectation
-2. **AIDA** - Attention, Interest, Desire, Action
-3. **BAB** - Before, After, Bridge
-4. **CARE** - Context, Action, Result, Example
-5. **COAST** - Context, Objective, Actions, Scenario, Task
-6. **COSTAR** - Context, Objective, Style, Tone, Audience, Response
-7. **CRISPE** - Capacity, Insight, Statement, Personality, Experiment
+### 🆕 Framework Signature Personalizzati
+1. **CALIBRO** - Framework modulare enterprise creato da GPT-5
+2. **BCM** - Brief Creativo Multistile per copywriting by GLM-4.6  
+3. **PRISMA** - Meta-framework ibrido definitivo by Claude Sonnet 4.5
 
-### 🆕 Novità
-- **CALIBRO** - Framework innovativo per calibrare precisione delle risposte AI
-
-### 📝 Altri Framework Inclusi
-- Chain of Thought
-- CRAFT (Context, Role, Action, Format, Target)
-- Few Shot Learning
-- GRADE, PAR, RACE, SMART, STAR
-- E molti altri... (21 in arrivo)
+### 📚 Framework Professionali (30+)
+- **APE** - Action, Purpose, Expectation
+- **AIDA** - Attention, Interest, Desire, Action
+- **BAB** - Before, After, Bridge
+- **CARE** - Context, Action, Result, Example
+- **COAST** - Context, Objective, Actions, Scenario, Task
+- **COSTAR** - Context, Objective, Style, Tone, Audience, Response
+- **CRISPE** - Capacity, Insight, Statement, Personality, Experiment
+- **Chain of Thought** - Ragionamento step-by-step
+- **CRAFTING AI** - Metodologia iterativa di raffinamento
+- **Few-Shot Learning** - Apprendimento da esempi
+- **GRADE** - Goal, Request, Action, Detail, Examples
+- **PAR** - Problem, Action, Result
+- **RACE** - Role, Action, Context, Example
+- **RASCEF** - Role, Action, Steps, Context, Example, Format
+- **RHODES** - Role, How, Objective, Details, Examples, Sense-check
+- **ROSES** - Role, Objective, Scenario, Expected Solution, Short form
+- **RTF** - Role, Task, Format
+- **SMART** - Specific, Measurable, Achievable, Relevant, Time-bound
+- **SPARC** - Situation, Problem, Action, Result, Context
+- **SPEAR** - Situation, Problem, Explanation, Action, Result
+- **STAR** - Situation, Task, Action, Result
+- **TAG** - Task, Action, Goal
+- **TRACE** - Task, Request, Action, Context, Example
+- **Tree of Thoughts** - Esplorazione multi-path parallela
+- **T-REX** - Task, Requirements, Examples, eXecution
+- **Zero-Shot** - Prompt senza esempi preliminari
 
 ---
 
@@ -91,6 +108,7 @@
 - **Tailwind CSS** (3.4.18) - Utility-first CSS framework
 - **PostCSS** - Autoprefixer e ottimizzazioni CSS
 - **Lucide Icons** - Libreria icone moderne e leggere
+- **Heroicons** - Icone SVG professionali per badge e UI
 
 ### State & Utils
 - **Pinia** (2.3.0) - Store management
@@ -172,10 +190,10 @@ promptify-vue/
 │   │   │   ├── Badge.vue        # Badge per categorie
 │   │   │   ├── Input.vue        # Input field
 │   │   │   ├── Textarea.vue     # Textarea
-│   │   │   └── Select.vue       # Select dropdown
-│   │   ├── Header.vue           # Header con navigazione
+│   │   │   ├── Select.vue       # Select dropdown
+│   │   │   └── Alert.vue        # Alert messages
+│   │   ├── Header.vue           # Header con menu navigabile
 │   │   ├── Footer.vue           # Footer
-│   │   ├── SearchBar.vue        # Barra di ricerca
 │   │   └── ThemeToggle.vue      # Toggle dark/light mode
 │   ├── data/
 │   │   ├── frameworks.ts        # Dati dei 28 framework
@@ -240,18 +258,24 @@ I contributi sono benvenuti!
 
 ### Aree di Contributo
 
-- 📝 **Meta-Prompts**: Completa i 21 framework rimanenti
 - 🎨 **UI/UX**: Migliora componenti e animazioni
-- 🐛 **Bug Fix**: Risolvi issue aperti (es. CRAFT/CRISPE styling)
+- 🐛 **Bug Fix**: Risolvi issue aperti
 - 📚 **Documentazione**: Aggiungi guide e tutorial
 - 🌐 **i18n**: Traduzioni in altre lingue
 - 🧪 **Testing**: Aggiungi unit test e e2e test
+- 🚀 **Performance**: Ottimizzazioni e best practices
 
 ---
 
-## 🐛 Issue Noti
+## � Novità Recenti
 
-- **CRAFT & CRISPE Cards**: Background color leggermente diverso dalle altre card (in investigazione)
+### v1.2.0 (Ottobre 2025)
+- ✨ Aggiunti 3 framework signature: CALIBRO, BCM, PRISMA
+- 🎨 Integrati Heroicons per badge professionali
+- 📱 Nuovo header con menu navigabile e hamburger mobile
+- 🔧 Aumentato contesto risposte AI da 8K a 16K token
+- 🎯 Migliorati componenti Button3D e Alert
+- 📝 Aggiunta sezione "Come Funziona" interattiva
 
 ---
 

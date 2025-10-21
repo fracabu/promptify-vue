@@ -3,18 +3,15 @@ import { ref } from 'vue'
 import { RouterLink } from 'vue-router'
 import { Menu, X, Settings } from 'lucide-vue-next'
 import Button from './ui/Button.vue'
-import SearchBar from './SearchBar.vue'
 import ThemeToggle from './ThemeToggle.vue'
 
 const isMenuOpen = ref(false)
 
 const navigation = [
-  { name: 'Framework', href: '/' },
-  // use a location object so Vue Router will keep the current route and set the hash
+  { name: 'Home', href: '/' },
   { name: 'Categorie', href: { path: '/', hash: '#categories' } },
-  // point to a dedicated Guide view/route
+  { name: 'Come Funziona', href: { path: '/', hash: '#how-it-works' } },
   { name: 'Guide', href: '/guide' },
-  { name: 'Impostazioni', href: '/impostazioni' },
 ]
 </script>
 
@@ -49,10 +46,17 @@ const navigation = [
           </span>
         </RouterLink>
 
-        <!-- Search Bar (Desktop & Tablet) -->
-        <div class="hidden md:flex flex-1 max-w-xl mx-4">
-          <SearchBar />
-        </div>
+        <!-- Desktop Navigation -->
+        <nav class="hidden md:flex items-center space-x-1 flex-1 justify-center">
+          <RouterLink
+            v-for="item in navigation"
+            :key="item.name"
+            :to="item.href"
+            class="px-4 py-2 text-sm font-medium text-slate-700 dark:text-slate-200 transition-all duration-200 hover:text-purple-600 dark:hover:text-purple-400 rounded-md hover:bg-muted"
+          >
+            {{ item.name }}
+          </RouterLink>
+        </nav>
 
         <!-- Right side actions -->
         <div class="flex items-center space-x-4">
@@ -80,21 +84,26 @@ const navigation = [
       <!-- Mobile Navigation -->
       <div v-if="isMenuOpen" class="md:hidden animate-fade-in">
         <div class="border-t bg-background px-4 py-4">
-          <!-- Mobile Search -->
-          <div class="mb-4">
-            <SearchBar />
-          </div>
-          
           <!-- Mobile Nav Links -->
           <nav class="flex flex-col space-y-2">
             <RouterLink
               v-for="item in navigation"
               :key="item.name"
               :to="item.href"
-              class="block px-3 py-2 text-sm font-medium text-slate-700 dark:text-slate-200 transition-all duration-200 hover:text-purple-600 dark:hover:text-purple-400 rounded-md hover:bg-muted hover:scale-105"
+              class="block px-3 py-2 text-sm font-medium text-slate-700 dark:text-slate-200 transition-all duration-200 hover:text-purple-600 dark:hover:text-purple-400 rounded-md hover:bg-muted"
               @click="isMenuOpen = false"
             >
               {{ item.name }}
+            </RouterLink>
+            
+            <!-- Impostazioni in mobile -->
+            <RouterLink
+              to="/impostazioni"
+              class="flex items-center gap-2 px-3 py-2 text-sm font-medium text-slate-700 dark:text-slate-200 transition-all duration-200 hover:text-purple-600 dark:hover:text-purple-400 rounded-md hover:bg-muted"
+              @click="isMenuOpen = false"
+            >
+              <Settings class="h-4 w-4" />
+              Impostazioni
             </RouterLink>
           </nav>
         </div>
