@@ -39,7 +39,7 @@ async function callOpenAI(prompt: string, apiKey: string, model: string = 'gpt-5
         }
       ],
       temperature: 0.7,
-      max_tokens: 8000
+      max_tokens: 16000
     })
   })
 
@@ -67,7 +67,7 @@ async function callGemini(prompt: string, apiKey: string, model: string = 'gemin
       }],
       generationConfig: {
         temperature: 0.7,
-        maxOutputTokens: 8000
+        maxOutputTokens: 16000
       }
     })
   })
@@ -103,7 +103,7 @@ async function callZAI(prompt: string, apiKey: string, model: string = 'z-ai/glm
           }
         ],
         temperature: 0.7,
-        max_tokens: 8000
+        max_tokens: 16000
       })
     })
 

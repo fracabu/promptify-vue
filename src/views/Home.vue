@@ -1,7 +1,8 @@
 <script setup lang="ts">
 import { computed, ref, onMounted } from 'vue'
 import { RouterLink, useRoute, useRouter } from 'vue-router'
-import { ChevronDown } from 'lucide-vue-next'
+import { ChevronDown, Play } from 'lucide-vue-next'
+import { SparklesIcon, CpuChipIcon } from '@heroicons/vue/24/solid'
 import Header from '../components/Header.vue'
 import Footer from '../components/Footer.vue'
 import SearchBar from '../components/SearchBar.vue'
@@ -124,6 +125,123 @@ const formatTitle = (title: string) => {
       </div>
     </div>
 
+    <!-- Come Funziona Section -->
+    <div id="how-it-works" class="py-20 px-4 bg-gradient-to-b from-background via-purple-50/20 to-background dark:via-purple-950/10">
+      <div class="container mx-auto max-w-5xl">
+        <h2 class="text-4xl md:text-5xl font-bold text-center mb-6 text-foreground animate-fade-in">
+          Come Funziona
+        </h2>
+        <p class="text-xl text-muted-foreground text-center mb-16 max-w-3xl mx-auto">
+          Usa Promptify in 3 semplici passaggi per trasformare i tuoi prompt in risultati professionali
+        </p>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+          <!-- Step 1 -->
+          <div class="relative group">
+            <div class="absolute -inset-1 bg-gradient-to-r from-purple-600 to-blue-600 rounded-2xl blur opacity-25 group-hover:opacity-75 transition duration-300"></div>
+            <div class="relative bg-background border border-border rounded-2xl p-8 h-full">
+              <div class="w-12 h-12 bg-gradient-to-br from-purple-600 to-blue-600 rounded-xl flex items-center justify-center mb-4 text-white font-bold text-xl">
+                1
+              </div>
+              <h3 class="text-xl font-bold mb-3 text-foreground">Scegli il Framework</h3>
+              <p class="text-muted-foreground mb-4">
+                Esplora oltre 30 framework professionali di prompt engineering. Cerca per categoria, difficoltà o usa la barra di ricerca per trovare quello perfetto per il tuo caso d'uso.
+              </p>
+              <div class="flex flex-wrap gap-2">
+                <Badge variant="outline" class="text-xs">APE</Badge>
+                <Badge variant="outline" class="text-xs">COSTAR</Badge>
+                <Badge variant="outline" class="text-xs">CALIBRO</Badge>
+              </div>
+            </div>
+          </div>
+
+          <!-- Step 2 -->
+          <div class="relative group">
+            <div class="absolute -inset-1 bg-gradient-to-r from-blue-600 to-orange-600 rounded-2xl blur opacity-25 group-hover:opacity-75 transition duration-300"></div>
+            <div class="relative bg-background border border-border rounded-2xl p-8 h-full">
+              <div class="w-12 h-12 bg-gradient-to-br from-blue-600 to-orange-600 rounded-xl flex items-center justify-center mb-4 text-white font-bold text-xl">
+                2
+              </div>
+              <h3 class="text-xl font-bold mb-3 text-foreground">Configura le API</h3>
+              <p class="text-muted-foreground mb-4">
+                Vai nelle <RouterLink to="/impostazioni" class="text-purple-600 dark:text-purple-400 hover:underline font-medium">Impostazioni</RouterLink> e inserisci le tue chiavi API per OpenAI, Google Gemini o ZAI. Le chiavi vengono salvate solo nel tuo browser, mai sui nostri server.
+              </p>
+              <div class="bg-muted/50 p-3 rounded-lg text-xs font-mono">
+                sk-proj-abcd1234...
+              </div>
+            </div>
+          </div>
+
+          <!-- Step 3 -->
+          <div class="relative group">
+            <div class="absolute -inset-1 bg-gradient-to-r from-orange-600 to-pink-600 rounded-2xl blur opacity-25 group-hover:opacity-75 transition duration-300"></div>
+            <div class="relative bg-background border border-border rounded-2xl p-8 h-full">
+              <div class="w-12 h-12 bg-gradient-to-br from-orange-600 to-pink-600 rounded-xl flex items-center justify-center mb-4 text-white font-bold text-xl">
+                3
+              </div>
+              <h3 class="text-xl font-bold mb-3 text-foreground">Testa e Genera</h3>
+              <p class="text-muted-foreground mb-4">
+                Inserisci il tuo input, scegli il modello AI e clicca su "Testa Framework". Il prompt ottimizzato viene generato automaticamente e inviato all'AI per risultati professionali.
+              </p>
+              <Button3D variant="purple" size="sm" class="w-full">
+                <Play class="h-4 w-4 mr-2" />
+                Testa Framework
+              </Button3D>
+            </div>
+          </div>
+        </div>
+
+        <!-- Dettagli API Keys -->
+        <div class="bg-gradient-to-r from-purple-50 to-blue-50 dark:from-purple-950/30 dark:to-blue-950/30 border border-purple-200 dark:border-purple-800 rounded-2xl p-8">
+          <h3 class="text-2xl font-bold mb-4 text-foreground flex items-center gap-2">
+            <svg class="w-6 h-6 text-purple-600 dark:text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+            </svg>
+            Come inserire le chiavi API
+          </h3>
+          <div class="grid md:grid-cols-3 gap-6 mb-6">
+            <div>
+              <h4 class="font-semibold mb-2 text-foreground">OpenAI (GPT-5, GPT-4.1)</h4>
+              <ol class="text-sm text-muted-foreground space-y-1 list-decimal list-inside">
+                <li>Vai su <a href="https://platform.openai.com/api-keys" target="_blank" class="text-purple-600 dark:text-purple-400 hover:underline">platform.openai.com</a></li>
+                <li>Crea una nuova API key</li>
+                <li>Copia la chiave che inizia con "sk-proj-"</li>
+                <li>Incollala nelle impostazioni</li>
+              </ol>
+            </div>
+            <div>
+              <h4 class="font-semibold mb-2 text-foreground">Google Gemini</h4>
+              <ol class="text-sm text-muted-foreground space-y-1 list-decimal list-inside">
+                <li>Vai su <a href="https://aistudio.google.com/apikey" target="_blank" class="text-purple-600 dark:text-purple-400 hover:underline">aistudio.google.com</a></li>
+                <li>Genera una nuova API key</li>
+                <li>Copia la chiave</li>
+                <li>Incollala nelle impostazioni</li>
+              </ol>
+            </div>
+            <div>
+              <h4 class="font-semibold mb-2 text-foreground">ZAI (GLM-4.6)</h4>
+              <ol class="text-sm text-muted-foreground space-y-1 list-decimal list-inside">
+                <li>Vai su <a href="https://open.bigmodel.cn" target="_blank" class="text-purple-600 dark:text-purple-400 hover:underline">open.bigmodel.cn</a></li>
+                <li>Registrati e crea una key</li>
+                <li>Copia la tua API key</li>
+                <li>Incollala nelle impostazioni</li>
+              </ol>
+            </div>
+          </div>
+          <div class="bg-yellow-50 dark:bg-yellow-950/30 border border-yellow-200 dark:border-yellow-800 rounded-lg p-4">
+            <p class="text-sm text-yellow-800 dark:text-yellow-200 flex items-start gap-2">
+              <svg class="w-5 h-5 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd" />
+              </svg>
+              <span>
+                <strong>Privacy garantita:</strong> Le tue chiavi API vengono salvate solo nel localStorage del tuo browser e non vengono mai inviate ai nostri server. Sono utilizzate solo per comunicare direttamente con i provider AI che hai scelto.
+              </span>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <!-- Macro Categories Section -->
     <div id="categories" class="min-h-screen flex items-center justify-center py-20 px-4">
       <div class="container mx-auto relative">
@@ -192,10 +310,11 @@ const formatTitle = (title: string) => {
               <!-- Sticker "NEW" nell'angolo in alto a destra -->
               <div 
                 v-if="['calibro', 'bcm', 'prisma'].includes(framework.id)" 
-                class="absolute -top-2 -right-2 z-20 bg-gradient-to-br from-orange-400 to-pink-500 text-white font-bold text-xs px-3 py-2 rounded-full shadow-xl transform rotate-12 border-2 border-white"
+                class="absolute -top-2 -right-2 z-20 bg-gradient-to-br from-orange-400 to-pink-500 text-white font-bold text-xs px-3 py-2 rounded-full shadow-xl transform rotate-12 border-2 border-white flex items-center gap-1"
                 style="box-shadow: 0 4px 15px rgba(251, 146, 60, 0.5);"
               >
-                ⭐ NEW
+                <SparklesIcon class="w-3 h-3" />
+                NEW
               </div>
               
               <div class="p-6 h-full flex flex-col">
@@ -206,8 +325,13 @@ const formatTitle = (title: string) => {
                   <div class="flex-1 min-w-0">
                     <div class="flex items-center gap-2 mb-1 flex-wrap">
                       <h3 class="font-bold text-lg tracking-wider">{{ formatTitle(framework.title) }}</h3>
-                      <Badge v-if="framework.id === 'calibro'" variant="default" class="text-xs bg-gradient-to-r from-indigo-600 to-purple-600 text-white">
-                        🆕 NUOVO
+                      <Badge v-if="framework.id === 'calibro'" variant="default" class="text-xs bg-gradient-to-r from-indigo-600 to-purple-600 text-white flex items-center gap-1">
+                        <SparklesIcon class="w-3 h-3" />
+                        NUOVO
+                      </Badge>
+                      <Badge v-if="framework.createdBy" variant="outline" class="text-xs border-purple-400 text-purple-700 dark:text-purple-300 flex items-center gap-1">
+                        <CpuChipIcon class="w-3 h-3" />
+                        {{ framework.createdBy }}
                       </Badge>
                     </div>
                     <Badge :variant="getDifficultyVariant()" :class="['text-xs font-medium', getDifficultyStyles(framework.difficulty)]">

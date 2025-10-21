@@ -15,6 +15,7 @@ export interface Framework {
   explanation?: string
   example?: string
   template?: string
+  createdBy?: string
 }
 
 export interface MacroCategory {
@@ -380,6 +381,7 @@ Basandoti sul seguente argomento: "{input}"`
     color: "bg-gradient-to-r from-indigo-600 to-purple-600",
     category: "Innovativo",
     difficulty: "Avanzato",
+    createdBy: "GPT-5",
     explanation: "CALIBRO è un framework di prompting innovativo e pragmatico che si modella sui diversi LLM. Ogni lettera corrisponde a un blocco progettato per validare e comporre prompt ottimali: Contesto & Corpus (informazioni necessarie), Attore & Audience (ruolo e target), Limiti & Vincoli (boundary conditions), Intenzione & Criteri (obiettivi misurabili), Breakdown & Procedura (piano d'azione), Regole di Stile & Formato (struttura output), Osservazione & Valutazione (auto-verifiche). Ideale per progetti che richiedono massima precisione e tracciabilità.",
     example: `**C — Contesto & Corpus**: "Analizza report finanziario Q3 2024 (sezioni 1-4, esclusi allegati). Focus su margini operativi e cash flow."
 
@@ -1948,12 +1950,13 @@ Basandoti sul seguente argomento: "{input}"`
   {
     id: "prisma",
     title: "P.R.I.S.M.A.",
-    description: "Prompt Research, Iteration, Synthesis, Multi-path Analysis - meta-framework definitivo by Claude Sonnet 3.5",
+    description: "Prompt Research, Iteration, Synthesis, Multi-path Analysis - meta-framework definitivo by Claude Sonnet 4.5",
     icon: Gem,
     color: "bg-gradient-to-r from-purple-600 via-blue-600 to-cyan-600",
     category: "Innovativo",
     difficulty: "Avanzato",
-    explanation: "P.R.I.S.M.A. è un meta-framework ibrido che combina i punti di forza di tutti i framework esistenti: l'iterazione di ReAct, l'esplorazione multi-path di Tree of Thoughts, la modularità enterprise di CALIBRO, la struttura di CRAFT, la valutazione di TRACE e gli esempi operativi di T-REX. Perfetto per task complessi che richiedono ragionamento, esplorazione di alternative, valutazione oggettiva e delivery strutturato. Framework signature creato da Claude Sonnet 3.5.",
+    createdBy: "Claude Sonnet 4.5",
+    explanation: "P.R.I.S.M.A. è un meta-framework ibrido che combina i punti di forza di tutti i framework esistenti: l'iterazione di ReAct, l'esplorazione multi-path di Tree of Thoughts, la modularità enterprise di CALIBRO, la struttura di CRAFT, la valutazione di TRACE e gli esempi operativi di T-REX. Perfetto per task complessi che richiedono ragionamento, esplorazione di alternative, valutazione oggettiva e delivery strutturato. Framework signature creato da Claude Sonnet 4.5.",
     example: `**P — Problem & Purpose**
 Problema: Lancio nuovo prodotto SaaS analytics AI in mercato saturo
 Obiettivo: 1000 sign-ups qualificati in 90 giorni, CAC < $200
@@ -1994,7 +1997,7 @@ Week 9-12: Optimize
 ✓ Budget OK, ✓ Timeline realistico, ✓ KPI misurabili`,
     template: `**CONTESTO**:
 
-Ti è stato assegnato il compito di agire come un architetto di sistemi di intelligenza avanzata. Il tuo obiettivo è trasformare un problema complesso, una sfida strategica o un task ambiguo in un prompt completo utilizzando il framework P.R.I.S.M.A. (Prompt Research, Iteration, Synthesis, Multi-path Analysis). Questo è il meta-framework definitivo, creato da Claude Sonnet 3.5, che rappresenta la sintesi evolutiva di oltre 30 framework di prompt engineering. Non è solo uno strumento, ma un sistema di pensiero che unisce:
+Ti è stato assegnato il compito di agire come un architetto di sistemi di intelligenza avanzata. Il tuo obiettivo è trasformare un problema complesso, una sfida strategica o un task ambiguo in un prompt completo utilizzando il framework P.R.I.S.M.A. (Prompt Research, Iteration, Synthesis, Multi-path Analysis). Questo è il meta-framework definitivo, creato da Claude Sonnet 4.5, che rappresenta la sintesi evolutiva di oltre 30 framework di prompt engineering. Non è solo uno strumento, ma un sistema di pensiero che unisce:
 
 - **Ragionamento iterativo** (da ReAct): cicli Thought → Action → Observation
 - **Esplorazione multi-path** (da Tree of Thoughts): valutazione parallela di alternative
@@ -2092,11 +2095,7 @@ Final Check: ✓ [criterio 1], ✓ [criterio 2], ✓ [criterio 3]
 
 **TARGET**:
 
-Il prompt P.R.I.S.M.A. che genererai è destinato a essere utilizzato con i più potenti Large Language Models di ultima generazione: **Claude 3.5 Sonnet** (creatore di questo framework), **Gemini 2.5 Pro**, **GPT-5**, **GPT-4.1** e **GLM-4.6**. Questi modelli possiedono capacità di ragionamento multi-step, memoria contestuale estesa, abilità di auto-valutazione meta-cognitiva e pattern-matching avanzato. P.R.I.S.M.A. è progettato per sfruttare al massimo queste capacità di frontiera, trasformando il LLM in un sistema di consulenza strategica virtuale capace di esplorare, valutare e raccomandare con la sofisticazione di un team di esperti umani.
-
----
-
-**Framework Design Credit**: P.R.I.S.M.A. è stato creato da **Claude Sonnet 3.5** (Anthropic) come meta-framework sintetico definitivo, combinando i punti di forza di ReAct, Tree of Thoughts, CALIBRO, CRAFT, TRACE, T-REX e altri 25+ framework esistenti. È il framework signature di Promptify.
+Il prompt P.R.I.S.M.A. che genererai è destinato a essere utilizzato con i più potenti Large Language Models di ultima generazione: **Claude Sonnet 4.5**, **Gemini 2.5 Pro**, **GPT-5**, **GPT-4.1** e **GLM-4.6**. Questi modelli possiedono capacità di ragionamento multi-step, memoria contestuale estesa, abilità di auto-valutazione meta-cognitiva e pattern-matching avanzato. P.R.I.S.M.A. è progettato per sfruttare al massimo queste capacità di frontiera, trasformando il LLM in un sistema di consulenza strategica virtuale capace di esplorare, valutare e raccomandare con la sofisticazione di un team di esperti umani.
 
 ---
 
@@ -2110,6 +2109,7 @@ Basandoti sul seguente argomento: "{input}"`
     color: "bg-gradient-to-r from-pink-600 to-orange-600",
     category: "Marketing",
     difficulty: "Avanzato",
+    createdBy: "GLM-4.6",
     explanation: "B.C.M. (Brief Creativo Multistile) è un framework ibrido che unisce CALIBRO e PACE per generare copy multicanale con auto-valutazione. Genera 3 varianti per ogni formato richiesto (caption, email, headline) e le valuta automaticamente con scoring su Coerenza Brand, Originalità e Chiarezza. Ideale per campagne marketing, lanci prodotto e brand refresh dove brand voice e vincoli sono non negoziabili.",
     example: `## B.C.M. per: Lancio bevanda energetica biologica
 
