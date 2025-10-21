@@ -40,7 +40,7 @@ const clearCategory = () => {
   selectedCategory.value = null
 }
 
-const getDifficultyVariant = (difficulty: string): "outline" => {
+const getDifficultyVariant = (): "outline" => {
   return 'outline'
 }
 
@@ -201,7 +201,7 @@ const formatTitle = (title: string) => {
                         🆕 NUOVO
                       </Badge>
                     </div>
-                    <Badge :variant="getDifficultyVariant(framework.difficulty)" :class="['text-xs font-medium', getDifficultyStyles(framework.difficulty)]">
+                    <Badge :variant="getDifficultyVariant()" :class="['text-xs font-medium', getDifficultyStyles(framework.difficulty)]">
                       <span class="mr-1">{{ getDifficultyIcon(framework.difficulty) }}</span>
                       {{ framework.difficulty }}
                     </Badge>
