@@ -7,7 +7,7 @@ const currentYear = new Date().getFullYear()
 
 <template>
   <footer class="border-t bg-background">
-    <div class="container px-4 py-8">
+    <div class="container mx-auto px-4 py-8">
       <div class="flex flex-col items-center space-y-4">
         <!-- Brand -->
         <RouterLink to="/" class="flex items-center space-x-1">
