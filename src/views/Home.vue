@@ -117,7 +117,7 @@ const formatTitle = (title: string) => {
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <!-- Left Column - Text & CTA -->
           <div class="space-y-8 animate-fade-in">
-            <h1 class="text-5xl md:text-7xl font-bold leading-tight pb-4 bg-clip-text text-transparent bg-gradient-to-r from-purple-600 via-blue-600 to-orange-600 dark:from-purple-400 dark:via-blue-400 dark:to-orange-400">
+            <h1 class="text-5xl md:text-7xl font-bold leading-relaxed bg-clip-text text-transparent bg-gradient-to-r from-purple-600 via-blue-600 to-orange-600 dark:from-purple-400 dark:via-blue-400 dark:to-orange-400">
               {{ t('hero.title') }}
             </h1>
             <p class="text-xl md:text-2xl text-muted-foreground leading-relaxed font-light animate-fade-in" style="animation-delay: 0.2s; opacity: 0; animation-fill-mode: forwards;">

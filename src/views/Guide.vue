@@ -50,7 +50,7 @@ const getDifficultyVariant = (difficulty: string) => {
       <section id="guide">
         <!-- Hero Section -->
         <div class="text-center mb-16">
-          <h1 class="text-5xl md:text-7xl font-bold mb-8 pb-2 leading-tight bg-clip-text text-transparent bg-gradient-to-r from-purple-600 via-blue-600 to-orange-600 dark:from-purple-400 dark:via-blue-400 dark:to-orange-400">
+          <h1 class="text-5xl md:text-7xl font-bold mb-8 leading-relaxed bg-clip-text text-transparent bg-gradient-to-r from-purple-600 via-blue-600 to-orange-600 dark:from-purple-400 dark:via-blue-400 dark:to-orange-400">
             {{ t('guides.title') }}
           </h1>
           <p class="text-xl md:text-2xl text-muted-foreground max-w-4xl mx-auto leading-relaxed font-light mb-12">
@@ -98,7 +98,7 @@ const getDifficultyVariant = (difficulty: string) => {
 
         <!-- Quick Tips Section -->
         <div class="bg-gradient-to-r from-purple-500/10 to-blue-500/10 dark:from-purple-500/20 dark:to-blue-500/20 rounded-2xl p-8 md:p-12">
-          <h2 class="text-5xl md:text-7xl font-bold mb-12 pb-2 text-center bg-clip-text text-transparent bg-gradient-to-r from-purple-600 via-blue-600 to-orange-600 dark:from-purple-400 dark:via-blue-400 dark:to-orange-400">
+          <h2 class="text-5xl md:text-7xl font-bold mb-12 leading-relaxed text-center bg-clip-text text-transparent bg-gradient-to-r from-purple-600 via-blue-600 to-orange-600 dark:from-purple-400 dark:via-blue-400 dark:to-orange-400">
             {{ t('guides.quickTips.title') }}
           </h2>
           <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
