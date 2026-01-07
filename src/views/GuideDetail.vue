@@ -98,7 +98,7 @@ const getDifficultyColor = (difficulty: string) => {
               <component :is="guide.icon" class="h-10 w-10 text-white" />
             </div>
             <div class="flex-1">
-              <h1 class="text-5xl md:text-7xl font-bold mb-6 leading-tight bg-clip-text text-transparent bg-gradient-to-r from-purple-600 via-blue-600 to-orange-600 dark:from-purple-400 dark:via-blue-400 dark:to-orange-400">{{ getGuideTitle(guide.id) }}</h1>
+              <h1 class="text-5xl md:text-7xl font-bold mb-6 pb-2 leading-tight bg-clip-text text-transparent bg-gradient-to-r from-purple-600 via-blue-600 to-orange-600 dark:from-purple-400 dark:via-blue-400 dark:to-orange-400">{{ getGuideTitle(guide.id) }}</h1>
               <p class="text-xl md:text-2xl text-muted-foreground mb-6 font-light leading-relaxed">{{ getGuideDescription(guide.id) }}</p>
               <div class="flex flex-wrap gap-2">
                 <Badge :class="getDifficultyColor(guide.difficulty)">
