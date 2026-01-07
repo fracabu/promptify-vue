@@ -7,6 +7,7 @@ import { useI18n } from 'vue-i18n'
 import Header from '../components/Header.vue'
 import Footer from '../components/Footer.vue'
 import SearchBar from '../components/SearchBar.vue'
+import GridOverlay from '../components/GridOverlay.vue'
 import Card3D from '../components/ui/Card3D.vue'
 import Badge from '../components/ui/Badge.vue'
 import Button3D from '../components/ui/Button3D.vue'
@@ -33,10 +34,12 @@ const route = useRoute()
 const router = useRouter()
 const selectedCategory = ref<string | null>(null)
 
-// Reset della categoria quando si carica la home
+// Reset della categoria e scroll quando si carica la home
 onMounted(() => {
   if (!route.hash) {
     selectedCategory.value = null
+    // Forza scroll in cima
+    window.scrollTo({ top: 0, behavior: 'instant' })
   }
 })
 
@@ -103,17 +106,10 @@ const formatTitle = (title: string) => {
   <div class="min-h-screen pt-16">
     <Header />
 
-    <!-- Background gradients -->
-    <div class="fixed inset-0 -z-10">
-      <div class="absolute inset-0 bg-gradient-to-br from-blue-50/30 via-white to-purple-50/30 dark:from-blue-950/20 dark:via-slate-900 dark:to-purple-950/20" />
-      <div class="absolute top-0 left-1/4 w-96 h-96 bg-blue-400/10 rounded-full blur-3xl" />
-      <div class="absolute bottom-0 right-1/4 w-96 h-96 bg-purple-400/10 rounded-full blur-3xl" />
-      <div class="absolute top-1/2 left-1/2 w-96 h-96 bg-pink-400/10 rounded-full blur-3xl" />
-    </div>
-
     <!-- Hero Section -->
-    <div class="min-h-screen flex items-center justify-center">
-      <div class="container mx-auto px-4 py-8 relative">
+    <div class="min-h-screen flex items-center justify-center relative overflow-hidden">
+      <GridOverlay />
+      <div class="container mx-auto px-4 py-8 relative z-10">
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <!-- Left Column - Text & CTA -->
           <div class="space-y-8 animate-fade-in">
@@ -179,7 +175,7 @@ const formatTitle = (title: string) => {
     </div>
 
     <!-- Come Funziona Section -->
-    <div id="how-it-works" class="py-20 px-4 pb-32 bg-gradient-to-b from-background via-purple-50/20 to-background dark:via-purple-950/10">
+    <div id="how-it-works" class="py-20 px-4 pb-32">
       <div class="container mx-auto max-w-6xl">
         <h2 class="text-5xl md:text-7xl font-bold text-center mb-6 bg-clip-text text-transparent bg-gradient-to-r from-purple-600 via-blue-600 to-orange-600 dark:from-purple-400 dark:via-blue-400 dark:to-orange-400 animate-fade-in" style="font-family: 'Aldrich', sans-serif; line-height: 1.3; padding-bottom: 0.15em;">
           {{ t('howItWorks.title') }}
@@ -300,8 +296,9 @@ const formatTitle = (title: string) => {
     </div>
 
     <!-- Macro Categories Section -->
-    <div id="categories" class="min-h-screen flex items-center justify-center py-20 px-4">
-      <div class="container mx-auto relative">
+    <div id="categories" class="min-h-screen flex items-center justify-center py-20 px-4 relative overflow-hidden">
+      <GridOverlay />
+      <div class="container mx-auto relative z-10">
         <h2 class="text-5xl md:text-7xl font-bold text-center mb-12 bg-clip-text text-transparent bg-gradient-to-r from-purple-600 via-blue-600 to-orange-600 dark:from-purple-400 dark:via-blue-400 dark:to-orange-400 animate-fade-in" style="font-family: 'Aldrich', sans-serif; line-height: 1.3; padding-bottom: 0.15em;">
           {{ t('categories.title') }}
         </h2>
