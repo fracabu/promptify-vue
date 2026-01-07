@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { ref, computed } from 'vue'
 import { useRoute, RouterLink } from 'vue-router'
+import { useI18n } from 'vue-i18n'
 import { useApiKeysStore, type ApiProvider } from '../stores/apiKeys'
 import { testFramework } from '../utils/apiCalls'
 import { frameworks, getDifficultyStyles, getDifficultyIcon } from '../data/frameworks'
@@ -15,6 +16,23 @@ import Select from '../components/ui/Select.vue'
 import Alert from '../components/ui/Alert.vue'
 import Progress from '../components/ui/Progress.vue'
 import { ArrowLeft, Play, Copy, Check, AlertCircle } from 'lucide-vue-next'
+
+const { t } = useI18n()
+
+// Helper functions for translated content
+const getFrameworkTitle = (id: string) => t(`frameworks.items.${id}.title`)
+const getFrameworkDescription = (id: string) => t(`frameworks.items.${id}.description`)
+const getFrameworkExplanation = (id: string) => t(`frameworks.items.${id}.explanation`)
+const getFrameworkExample = (id: string) => t(`frameworks.items.${id}.example`)
+const getTranslatedDifficulty = (difficulty: string) => {
+  const map: Record<string, string> = {
+    'Facile': t('difficulty.easy'),
+    'Medio': t('difficulty.medium'),
+    'Avanzato': t('difficulty.advanced')
+  }
+  return map[difficulty] || difficulty
+}
+const getTranslatedCategory = (category: string) => t(`frameworks.categories.${category}`)
 
 const route = useRoute()
 const apiKeysStore = useApiKeysStore()
@@ -211,12 +229,12 @@ const copyResult = async () => {
     <div v-if="!framework" class="container mx-auto px-4 py-12">
       <Alert variant="destructive">
         <AlertCircle class="h-4 w-4 inline mr-2" />
-        Framework non trovato
+        {{ t('framework.notFound') }}
       </Alert>
       <RouterLink to="/" class="mt-4 inline-block">
         <Button variant="ghost">
           <ArrowLeft class="h-4 w-4 mr-2" />
-          Torna alla home
+          {{ t('framework.backHome') }}
         </Button>
       </RouterLink>
     </div>
@@ -226,7 +244,7 @@ const copyResult = async () => {
       <RouterLink to="/" class="inline-block mb-6 animate-slide-in-left">
         <Button variant="ghost" size="sm" class="hover:scale-105 transition-transform duration-200">
           <ArrowLeft class="h-4 w-4 mr-2" />
-          Torna alla home
+          {{ t('framework.backHome') }}
         </Button>
       </RouterLink>
 
@@ -238,18 +256,18 @@ const copyResult = async () => {
           </div>
           <div class="flex-1">
             <div class="flex items-center gap-3 mb-2">
-              <h1 class="text-4xl font-bold">{{ framework.title }}</h1>
+              <h1 class="text-4xl font-bold">{{ getFrameworkTitle(framework.id) }}</h1>
               <Badge v-if="framework.id === 'calibro'" variant="default" class="text-sm bg-gradient-to-r from-indigo-600 to-purple-600 text-white animate-pulse">
-                🆕 NUOVO
+                {{ t('framework.new') }}
               </Badge>
             </div>
-            <p class="text-xl text-muted-foreground mb-3">{{ framework.description }}</p>
+            <p class="text-xl text-muted-foreground mb-3">{{ getFrameworkDescription(framework.id) }}</p>
             <div class="flex space-x-2">
               <Badge variant="outline" :class="['font-medium', getDifficultyStyles(framework.difficulty)]">
                 <span class="mr-1">{{ getDifficultyIcon(framework.difficulty) }}</span>
-                {{ framework.difficulty }}
+                {{ getTranslatedDifficulty(framework.difficulty) }}
               </Badge>
-              <Badge variant="outline">{{ framework.category }}</Badge>
+              <Badge variant="outline">{{ getTranslatedCategory(framework.category) }}</Badge>
             </div>
           </div>
         </div>
@@ -258,69 +276,69 @@ const copyResult = async () => {
       <!-- Info Cards -->
       <div v-if="framework.example" class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
         <Card class="p-6 animate-slide-in-left hover:shadow-lg transition-all duration-300" style="animation-delay: 0.1s; opacity: 0; animation-fill-mode: forwards;">
-          <h2 class="text-2xl font-bold mb-4">Spiegazione</h2>
+          <h2 class="text-2xl font-bold mb-4">{{ t('framework.explanation') }}</h2>
           <p class="text-muted-foreground leading-relaxed">
-            {{ framework.explanation }}
+            {{ getFrameworkExplanation(framework.id) }}
           </p>
         </Card>
 
         <Card class="p-6 animate-slide-in-right hover:shadow-lg transition-all duration-300" style="animation-delay: 0.2s; opacity: 0; animation-fill-mode: forwards;">
-          <h2 class="text-2xl font-bold mb-4">Esempio</h2>
-          <pre class="text-sm text-muted-foreground whitespace-pre-wrap bg-muted p-4 rounded-lg overflow-x-auto">{{ framework.example }}</pre>
+          <h2 class="text-2xl font-bold mb-4">{{ t('framework.example') }}</h2>
+          <pre class="text-sm text-muted-foreground whitespace-pre-wrap bg-muted p-4 rounded-lg overflow-x-auto">{{ getFrameworkExample(framework.id) }}</pre>
         </Card>
       </div>
 
       <div v-else class="mb-8">
         <Card class="p-6 animate-fade-in hover:shadow-lg transition-all duration-300" style="animation-delay: 0.1s; opacity: 0; animation-fill-mode: forwards;">
-          <h2 class="text-2xl font-bold mb-4">Spiegazione</h2>
+          <h2 class="text-2xl font-bold mb-4">{{ t('framework.explanation') }}</h2>
           <p class="text-muted-foreground leading-relaxed">
-            {{ framework.explanation }}
+            {{ getFrameworkExplanation(framework.id) }}
           </p>
         </Card>
       </div>
 
       <div v-if="framework.template" class="mb-8 animate-fade-in" style="animation-delay: 0.3s; opacity: 0; animation-fill-mode: forwards;">
         <Card class="p-6 hover:shadow-lg transition-all duration-300">
-          <h2 class="text-2xl font-bold mb-4">Template</h2>
+          <h2 class="text-2xl font-bold mb-4">{{ t('framework.template') }}</h2>
           <pre class="text-sm text-muted-foreground whitespace-pre-wrap bg-muted p-4 rounded-lg overflow-x-auto">{{ framework.template }}</pre>
         </Card>
       </div>
 
       <!-- Test Section - Full Width -->
       <Card class="p-6 animate-scale-in hover:shadow-lg transition-all duration-300" style="animation-delay: 0.4s; opacity: 0; animation-fill-mode: forwards;">
-        <h2 class="text-2xl font-bold mb-6">Testa il Framework</h2>
+        <h2 class="text-2xl font-bold mb-6">{{ t('framework.testFramework') }}</h2>
 
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-6">
             <!-- Provider selection -->
             <div>
-              <label class="text-sm font-medium mb-2 block">Provider AI</label>
+              <label class="text-sm font-medium mb-2 block">{{ t('framework.aiProvider') }}</label>
               <Select
                 v-model="selectedProvider"
                 :options="providers"
-                placeholder="Seleziona provider..."
+                :placeholder="t('framework.selectProvider')"
                 @update:modelValue="updateDefaultModel"
               />
               <p v-if="!hasApiKey" class="text-sm text-destructive mt-2">
-                ⚠️ Configura la chiave API nelle <RouterLink to="/impostazioni" class="underline">impostazioni</RouterLink>
+                {{ t('framework.configureApiKey') }}
               </p>
             </div>
 
             <!-- Model selection -->
             <div>
-              <label class="text-sm font-medium mb-2 block">Modello</label>
+              <label class="text-sm font-medium mb-2 block">{{ t('framework.model') }}</label>
               <Select
                 v-model="selectedModel"
                 :options="modelsByProvider"
-                placeholder="Seleziona modello..."
+                :placeholder="t('framework.selectModel')"
               />
             </div>
         </div>
 
         <div class="mb-6">
-          <label class="text-sm font-medium mb-2 block">Il tuo input</label>
+          <label class="text-sm font-medium mb-2 block">{{ t('framework.yourInput') }}</label>
           <Textarea
             v-model="userInput"
-            placeholder="Inserisci il tuo prompt o problema..."
+            :placeholder="t('framework.inputPlaceholder')"
             :rows="6"
           />
         </div>
@@ -333,8 +351,8 @@ const copyResult = async () => {
           size="default"
         >
           <Play v-if="!isLoading" class="h-5 w-5" />
-          <span v-if="isLoading">Testing...</span>
-          <span v-else>Testa Framework</span>
+          <span v-if="isLoading">{{ t('framework.testing') }}</span>
+          <span v-else>{{ t('framework.testButton') }}</span>
         </Button3D>
 
         <!-- Progress Bar -->
@@ -343,7 +361,7 @@ const copyResult = async () => {
             <div class="flex items-center gap-3">
               <div class="flex-shrink-0 w-2 h-2 bg-purple-600 rounded-full animate-pulse"></div>
               <p class="text-sm font-medium text-muted-foreground">
-                Generazione in corso con {{ selectedProvider === 'openai' ? 'OpenAI' : selectedProvider === 'gemini' ? 'Google Gemini' : 'ZAI' }}...
+                {{ t('framework.generatingWith', { provider: selectedProvider === 'openai' ? 'OpenAI' : selectedProvider === 'gemini' ? 'Google Gemini' : 'ZAI' }) }}
               </p>
             </div>
             <span class="text-sm font-semibold text-purple-600 dark:text-purple-400">
@@ -352,14 +370,14 @@ const copyResult = async () => {
           </div>
           <Progress variant="purple" :value="progress" :showPercentage="false" />
           <p class="text-xs text-muted-foreground mt-2 text-center">
-            {{ progress < 30 ? '🚀 Invio richiesta...' : progress < 60 ? '🤔 Elaborazione AI...' : progress < 90 ? '✨ Quasi pronto...' : '🎯 Finalizzazione...' }}
+            {{ progress < 30 ? t('framework.progress.sending') : progress < 60 ? t('framework.progress.processing') : progress < 90 ? t('framework.progress.almostReady') : t('framework.progress.finalizing') }}
           </p>
         </div>
 
         <!-- Generated Prompt Preview -->
         <div v-if="generatedPrompt" class="mt-6">
           <div class="flex items-center justify-between mb-3">
-            <h3 class="text-lg font-semibold">Prompt Generato</h3>
+            <h3 class="text-lg font-semibold">{{ t('framework.generatedPrompt') }}</h3>
             <Button
               @click="copyPrompt"
               variant="ghost"
@@ -367,14 +385,14 @@ const copyResult = async () => {
             >
               <Check v-if="promptCopied" class="h-4 w-4 mr-2" />
               <Copy v-else class="h-4 w-4 mr-2" />
-              {{ promptCopied ? 'Copiato!' : 'Copia Prompt' }}
+              {{ promptCopied ? t('framework.copied') : t('framework.copyPrompt') }}
             </Button>
           </div>
           <Alert variant="default" class="bg-muted">
             <pre class="whitespace-pre-wrap text-xs leading-relaxed font-mono">{{ generatedPrompt }}</pre>
           </Alert>
           <p class="text-xs text-muted-foreground mt-2">
-            👆 Questo è il prompt completo che verrà inviato all'AI
+            {{ t('framework.promptSentInfo') }}
           </p>
         </div>
 
@@ -388,7 +406,7 @@ const copyResult = async () => {
         <!-- Result - Full Width -->
         <div v-if="result" class="mt-6">
           <div class="flex items-center justify-between mb-3">
-            <h3 class="text-lg font-semibold">Risultato</h3>
+            <h3 class="text-lg font-semibold">{{ t('framework.result') }}</h3>
             <Button
               @click="copyResult"
               variant="ghost"
@@ -396,7 +414,7 @@ const copyResult = async () => {
             >
               <Check v-if="copied" class="h-4 w-4 mr-2" />
               <Copy v-else class="h-4 w-4 mr-2" />
-              {{ copied ? 'Copiato!' : 'Copia' }}
+              {{ copied ? t('framework.copied') : t('framework.copy') }}
             </Button>
           </div>
           <Alert variant="success">

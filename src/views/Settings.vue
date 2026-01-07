@@ -1,5 +1,6 @@
 <script setup lang="ts">
-import { ref } from 'vue'
+import { ref, computed } from 'vue'
+import { useI18n } from 'vue-i18n'
 import { useApiKeysStore, type ApiProvider } from '../stores/apiKeys'
 import Header from '../components/Header.vue'
 import Footer from '../components/Footer.vue'
@@ -9,25 +10,26 @@ import Button from '../components/ui/Button.vue'
 import Badge from '../components/ui/Badge.vue'
 import { Key, Trash2, Save, Eye, EyeOff } from 'lucide-vue-next'
 
+const { t } = useI18n()
 const apiKeysStore = useApiKeysStore()
 
-const providers: { id: ApiProvider; name: string; description: string }[] = [
+const providers = computed(() => [
   {
-    id: 'openai',
-    name: 'OpenAI',
-    description: 'Usa GPT-4 per testare i framework. Ottieni la tua chiave su platform.openai.com'
+    id: 'openai' as ApiProvider,
+    name: t('settings.providers.openai.name'),
+    description: t('settings.providers.openai.description')
   },
   {
-    id: 'gemini',
-    name: 'Google Gemini',
-    description: 'Usa Gemini 2.0 Flash per testare. Ottieni la chiave su ai.google.dev'
+    id: 'gemini' as ApiProvider,
+    name: t('settings.providers.gemini.name'),
+    description: t('settings.providers.gemini.description')
   },
   {
-    id: 'zai',
-    name: 'ZAI',
-    description: 'Provider alternativo. Ottieni la chiave su z-ai.dev'
+    id: 'zai' as ApiProvider,
+    name: t('settings.providers.zai.name'),
+    description: t('settings.providers.zai.description')
   }
-]
+])
 
 const tempKeys = ref<Record<ApiProvider, string>>({
   openai: apiKeysStore.getKey('openai'),
@@ -61,9 +63,9 @@ const toggleShowKey = (provider: ApiProvider) => {
 
     <div class="container mx-auto px-4 py-12 max-w-4xl">
       <div class="mb-8">
-        <h1 class="text-4xl font-bold mb-2">Impostazioni</h1>
+        <h1 class="text-4xl font-bold mb-2">{{ t('settings.title') }}</h1>
         <p class="text-muted-foreground">
-          Gestisci le tue chiavi API per testare i framework AI. Le chiavi sono salvate solo nel tuo browser.
+          {{ t('settings.subtitle') }}
         </p>
       </div>
 
@@ -84,10 +86,10 @@ const toggleShowKey = (provider: ApiProvider) => {
               </div>
             </div>
             <Badge v-if="apiKeysStore.getKey(provider.id)" variant="default">
-              Configurata
+              {{ t('settings.configured') }}
             </Badge>
             <Badge v-else variant="outline">
-              Non configurata
+              {{ t('settings.notConfigured') }}
             </Badge>
           </div>
 
@@ -96,7 +98,7 @@ const toggleShowKey = (provider: ApiProvider) => {
               <Input
                 v-model="tempKeys[provider.id]"
                 :type="showKeys[provider.id] ? 'text' : 'password'"
-                :placeholder="`Inserisci chiave API ${provider.name}...`"
+                :placeholder="t('settings.inputPlaceholder', { provider: provider.name })"
                 class="pr-10"
               />
               <button
@@ -111,7 +113,7 @@ const toggleShowKey = (provider: ApiProvider) => {
             <div class="flex space-x-2">
               <Button @click="saveKey(provider.id)" :disabled="!tempKeys[provider.id]">
                 <Save class="h-4 w-4 mr-2" />
-                Salva
+                {{ t('settings.save') }}
               </Button>
               <Button
                 v-if="apiKeysStore.getKey(provider.id)"
@@ -119,7 +121,7 @@ const toggleShowKey = (provider: ApiProvider) => {
                 variant="destructive"
               >
                 <Trash2 class="h-4 w-4 mr-2" />
-                Rimuovi
+                {{ t('settings.remove') }}
               </Button>
             </div>
           </div>
@@ -131,13 +133,10 @@ const toggleShowKey = (provider: ApiProvider) => {
           <svg class="h-5 w-5 mr-2 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
           </svg>
-          Privacy e Sicurezza
+          {{ t('settings.privacyTitle') }}
         </h4>
         <ul class="text-sm text-muted-foreground space-y-1">
-          <li>• Le chiavi API sono salvate solo nel localStorage del tuo browser</li>
-          <li>• Non vengono mai inviate ai nostri server</li>
-          <li>• Sono usate solo per chiamare direttamente OpenAI, Gemini o ZAI</li>
-          <li>• Puoi rimuoverle in qualsiasi momento</li>
+          <li v-for="(item, index) in t('settings.privacyItems')" :key="index">• {{ item }}</li>
         </ul>
       </div>
     </div>

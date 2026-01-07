@@ -1,0 +1,192 @@
+{
+  "nav": {
+    "home": "Home",
+    "categories": "Categories",
+    "howItWorks": "How It Works",
+    "guides": "Guides",
+    "settings": "Settings",
+    "toggleMenu": "Toggle menu"
+  },
+  "hero": {
+    "title": "Effective prompt frameworks, instantly.",
+    "subtitle": "Over 30 professional frameworks ready to use. Test with Gemini, OpenAI and ZAI models and get superior results in seconds.",
+    "exploreFrameworks": "Explore Frameworks",
+    "readGuides": "Read Guides",
+    "discoverFrameworks": "Discover frameworks",
+    "searchTitle": "Search your framework",
+    "searchSubtitle": "Quickly find the perfect framework for your project",
+    "stats": {
+      "frameworks": "Frameworks",
+      "categories": "Categories",
+      "providers": "AI Providers"
+    }
+  },
+  "howItWorks": {
+    "title": "How It Works",
+    "subtitle": "Use Promptify in 3 simple steps to transform your prompts into professional results",
+    "step1": {
+      "title": "Choose the Framework",
+      "description": "Explore over 30 professional prompt engineering frameworks. Search by category, difficulty or use the search bar to find the perfect one for your use case."
+    },
+    "step2": {
+      "title": "Configure APIs",
+      "description": "Go to Settings and enter your API keys for OpenAI, Google Gemini or ZAI. Keys are saved only in your browser, never on our servers."
+    },
+    "step3": {
+      "title": "Generate and Copy",
+      "description": "Enter your prompt and click Generate. The AI will optimize your prompt following the chosen framework. You can copy the result or continue refining it."
+    },
+    "promptReady": "Professional prompt ready!",
+    "apiKeysTitle": "How to enter API keys",
+    "openai": {
+      "title": "OpenAI (GPT-5, GPT-4.1)",
+      "steps": ["Go to platform.openai.com", "Create a new API key", "Copy the key starting with \"sk-proj-\"", "Paste it in settings"]
+    },
+    "gemini": {
+      "title": "Google Gemini",
+      "steps": ["Go to aistudio.google.com", "Generate a new API key", "Copy the key", "Paste it in settings"]
+    },
+    "zai": {
+      "title": "ZAI (GLM-4.6)",
+      "steps": ["Go to open.bigmodel.cn", "Register and create a key", "Copy your API key", "Paste it in settings"]
+    },
+    "privacyNote": "Privacy guaranteed: Your API keys are saved only in your browser's localStorage and are never sent to our servers. They are used only to communicate directly with your chosen AI providers."
+  },
+  "categories": {
+    "title": "Explore by Category",
+    "framework": "framework",
+    "frameworks": "frameworks",
+    "showAll": "Show all frameworks",
+    "allFrameworks": "All Frameworks"
+  },
+  "framework": {
+    "notFound": "Framework not found",
+    "backHome": "Back to home",
+    "explanation": "Explanation",
+    "example": "Example",
+    "template": "Template",
+    "testFramework": "Test the Framework",
+    "aiProvider": "AI Provider",
+    "model": "Model",
+    "yourInput": "Your input",
+    "inputPlaceholder": "Enter your prompt or problem...",
+    "testButton": "Test Framework",
+    "testing": "Testing...",
+    "generatedPrompt": "Generated Prompt",
+    "copyPrompt": "Copy Prompt",
+    "copied": "Copied!",
+    "copy": "Copy",
+    "result": "Result",
+    "promptSentInfo": "This is the complete prompt that will be sent to the AI",
+    "configureApiKey": "Configure API key in settings",
+    "generatingWith": "Generating with {provider}...",
+    "progress": {
+      "sending": "Sending request...",
+      "processing": "AI processing...",
+      "almostReady": "Almost ready...",
+      "finalizing": "Finalizing..."
+    },
+    "new": "NEW",
+    "selectProvider": "Select provider...",
+    "selectModel": "Select model..."
+  },
+  "models": {
+    "gpt5Latest": "GPT-5 (Latest)",
+    "gpt5Mini": "GPT-5 Mini (Fast)",
+    "gpt41": "GPT-4.1",
+    "geminiFlash": "Gemini 2.5 Flash (Fast)",
+    "geminiPro": "Gemini 2.5 Pro (Most powerful)",
+    "glm46": "GLM-4.6",
+    "glm45": "GLM-4.5"
+  },
+  "settings": {
+    "title": "Settings",
+    "subtitle": "Manage your API keys to test AI frameworks. Keys are saved only in your browser.",
+    "configured": "Configured",
+    "notConfigured": "Not configured",
+    "inputPlaceholder": "Enter {provider} API key...",
+    "save": "Save",
+    "remove": "Remove",
+    "privacyTitle": "Privacy & Security",
+    "privacyItems": [
+      "API keys are saved only in your browser's localStorage",
+      "They are never sent to our servers",
+      "They are used only to call OpenAI, Gemini or ZAI directly",
+      "You can remove them at any time"
+    ],
+    "providers": {
+      "openai": {
+        "name": "OpenAI",
+        "description": "Use GPT-4 to test frameworks. Get your key at platform.openai.com"
+      },
+      "gemini": {
+        "name": "Google Gemini",
+        "description": "Use Gemini 2.0 Flash to test. Get your key at ai.google.dev"
+      },
+      "zai": {
+        "name": "ZAI",
+        "description": "Alternative provider. Get your key at z-ai.dev"
+      }
+    }
+  },
+  "guides": {
+    "title": "Prompt Engineering Guides",
+    "subtitle": "Learn to master the art of prompt engineering with practical guides, best practices and advanced techniques.",
+    "topics": "Topics:",
+    "quickTips": {
+      "title": "Quick Tips",
+      "tip1": {
+        "title": "Be Specific",
+        "description": "The more details you provide, the better the result. Specify format, tone and desired length."
+      },
+      "tip2": {
+        "title": "Provide Context",
+        "description": "The model doesn't know your background. Always describe who you are and what you want to achieve."
+      },
+      "tip3": {
+        "title": "Use Examples",
+        "description": "Few-shot learning works. Show 2-3 examples of the result you expect."
+      },
+      "tip4": {
+        "title": "Iterate and Test",
+        "description": "The first prompt is rarely perfect. Test, measure and optimize based on results."
+      }
+    },
+    "notFound": "Guide not found",
+    "notFoundDescription": "The guide you're looking for doesn't exist.",
+    "backToGuides": "Back to Guides",
+    "backToAllGuides": "Back to all Guides",
+    "relatedFrameworks": "Related Frameworks",
+    "exampleLabel": "📝 Example",
+    "codeLabel": "💻 Code"
+  },
+  "search": {
+    "placeholder": "Search frameworks... (⌘K)",
+    "results": "{count} result | {count} results",
+    "noResults": "No framework found for \"{query}\"",
+    "navigate": "Navigate",
+    "open": "Open",
+    "close": "Close"
+  },
+  "footer": {
+    "description": "The professional platform to discover and master the most effective prompt engineering frameworks",
+    "createdWith": "Created with",
+    "forCommunity": "for the AI community",
+    "developedBy": "Developed by"
+  },
+  "difficulty": {
+    "easy": "Easy",
+    "medium": "Medium",
+    "advanced": "Advanced"
+  },
+  "common": {
+    "select": "Select...",
+    "loading": "Loading...",
+    "error": "Error",
+    "unknownError": "Unknown error"
+  },
+  "language": {
+    "it": "Italiano",
+    "en": "English"
+  }
+}

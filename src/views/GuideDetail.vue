@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { computed } from 'vue'
 import { useRoute, RouterLink } from 'vue-router'
+import { useI18n } from 'vue-i18n'
 import { ArrowLeft, BookMarked } from 'lucide-vue-next'
 import Header from '../components/Header.vue'
 import Footer from '../components/Footer.vue'
@@ -10,6 +11,7 @@ import Button from '../components/ui/Button.vue'
 import { getGuideById } from '../data/guides'
 import { frameworks } from '../data/frameworks'
 
+const { t, tm } = useI18n()
 const route = useRoute()
 const guideId = computed(() => route.params.id as string)
 const guide = computed(() => getGuideById(guideId.value))
@@ -18,6 +20,34 @@ const relatedFrameworksList = computed(() => {
   if (!guide.value?.relatedFrameworks) return []
   return frameworks.filter(f => guide.value!.relatedFrameworks!.includes(f.id))
 })
+
+// Helper functions for translated content
+const getGuideTitle = (id: string) => t(`guides.items.${id}.title`)
+const getGuideDescription = (id: string) => t(`guides.items.${id}.description`)
+const getGuideIntroduction = (id: string) => t(`guides.items.${id}.introduction`)
+const getGuideTopics = (id: string): string[] => {
+  const topics = tm(`guides.items.${id}.topics`) as unknown
+  return Array.isArray(topics) ? topics as string[] : []
+}
+interface GuideSection {
+  title: string
+  content: string
+  example?: string
+  code?: string
+}
+const getGuideSections = (id: string): GuideSection[] => {
+  const sections = tm(`guides.items.${id}.sections`) as unknown
+  return Array.isArray(sections) ? sections as GuideSection[] : []
+}
+const getTranslatedDifficulty = (difficulty: string) => {
+  const map: Record<string, string> = {
+    'Facile': t('difficulty.easy'),
+    'Medio': t('difficulty.medium'),
+    'Avanzato': t('difficulty.advanced')
+  }
+  return map[difficulty] || difficulty
+}
+const getFrameworkTitle = (id: string) => t(`frameworks.items.${id}.title`)
 
 const getDifficultyColor = (difficulty: string) => {
   switch (difficulty) {
@@ -43,12 +73,12 @@ const getDifficultyColor = (difficulty: string) => {
     <main class="container mx-auto px-4 py-12">
       <!-- 404 State -->
       <div v-if="!guide" class="text-center py-20">
-        <h1 class="text-3xl font-bold mb-4">Guida non trovata</h1>
-        <p class="text-muted-foreground mb-8">La guida che stai cercando non esiste.</p>
+        <h1 class="text-3xl font-bold mb-4">{{ t('guides.notFound') }}</h1>
+        <p class="text-muted-foreground mb-8">{{ t('guides.notFoundDescription') }}</p>
         <RouterLink to="/guide">
           <Button>
             <ArrowLeft class="h-4 w-4 mr-2" />
-            Torna alle Guide
+            {{ t('guides.backToGuides') }}
           </Button>
         </RouterLink>
       </div>
@@ -58,7 +88,7 @@ const getDifficultyColor = (difficulty: string) => {
         <!-- Back Button -->
         <RouterLink to="/guide" class="inline-flex items-center text-sm text-muted-foreground hover:text-foreground mb-8 transition-colors">
           <ArrowLeft class="h-4 w-4 mr-2" />
-          Torna alle Guide
+          {{ t('guides.backToGuides') }}
         </RouterLink>
 
         <!-- Header -->
@@ -68,13 +98,13 @@ const getDifficultyColor = (difficulty: string) => {
               <component :is="guide.icon" class="h-10 w-10 text-white" />
             </div>
             <div class="flex-1">
-              <h1 class="text-5xl md:text-7xl font-bold mb-6 leading-tight bg-clip-text text-transparent bg-gradient-to-r from-purple-600 via-blue-600 to-orange-600 dark:from-purple-400 dark:via-blue-400 dark:to-orange-400">{{ guide.title }}</h1>
-              <p class="text-xl md:text-2xl text-muted-foreground mb-6 font-light leading-relaxed">{{ guide.description }}</p>
+              <h1 class="text-5xl md:text-7xl font-bold mb-6 leading-tight bg-clip-text text-transparent bg-gradient-to-r from-purple-600 via-blue-600 to-orange-600 dark:from-purple-400 dark:via-blue-400 dark:to-orange-400">{{ getGuideTitle(guide.id) }}</h1>
+              <p class="text-xl md:text-2xl text-muted-foreground mb-6 font-light leading-relaxed">{{ getGuideDescription(guide.id) }}</p>
               <div class="flex flex-wrap gap-2">
                 <Badge :class="getDifficultyColor(guide.difficulty)">
-                  {{ guide.difficulty }}
+                  {{ getTranslatedDifficulty(guide.difficulty) }}
                 </Badge>
-                <Badge v-for="topic in guide.topics" :key="topic" variant="outline">
+                <Badge v-for="topic in getGuideTopics(guide.id)" :key="topic" variant="outline">
                   {{ topic }}
                 </Badge>
               </div>
@@ -85,14 +115,14 @@ const getDifficultyColor = (difficulty: string) => {
           <Card class="p-6 bg-gradient-to-r from-purple-500/5 to-blue-500/5 dark:from-purple-500/10 dark:to-blue-500/10 border-purple-200 dark:border-purple-800">
             <div class="flex items-start space-x-3">
               <BookMarked class="h-5 w-5 text-purple-600 dark:text-purple-400 flex-shrink-0 mt-0.5" />
-              <p class="text-base leading-relaxed">{{ guide.introduction }}</p>
+              <p class="text-base leading-relaxed">{{ getGuideIntroduction(guide.id) }}</p>
             </div>
           </Card>
         </div>
 
         <!-- Sections -->
         <div class="space-y-8 mb-12">
-          <div v-for="(section, index) in guide.sections" :key="index">
+          <div v-for="(section, index) in getGuideSections(guide.id)" :key="index">
             <Card class="p-8 hover:shadow-lg transition-shadow">
               <h2 class="text-2xl font-bold mb-4 flex items-center">
                 <span :class="`${guide.color} text-white w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold mr-3`">
@@ -100,20 +130,20 @@ const getDifficultyColor = (difficulty: string) => {
                 </span>
                 {{ section.title }}
               </h2>
-              
+
               <div class="prose prose-slate dark:prose-invert max-w-none mb-6">
                 <p class="text-muted-foreground leading-relaxed">{{ section.content }}</p>
               </div>
 
               <!-- Example -->
               <div v-if="section.example" class="bg-slate-50 dark:bg-slate-900 rounded-lg p-6 border-l-4 border-blue-500">
-                <p class="text-sm font-semibold text-slate-600 dark:text-slate-400 mb-2">📝 Esempio</p>
+                <p class="text-sm font-semibold text-slate-600 dark:text-slate-400 mb-2">{{ t('guides.exampleLabel') }}</p>
                 <pre class="whitespace-pre-wrap text-sm text-slate-700 dark:text-slate-300 font-mono">{{ section.example }}</pre>
               </div>
 
               <!-- Code -->
               <div v-if="section.code" class="bg-slate-900 dark:bg-slate-950 rounded-lg p-6 overflow-x-auto">
-                <p class="text-sm font-semibold text-slate-400 mb-3">💻 Codice</p>
+                <p class="text-sm font-semibold text-slate-400 mb-3">{{ t('guides.codeLabel') }}</p>
                 <pre class="text-sm text-slate-300"><code>{{ section.code }}</code></pre>
               </div>
             </Card>
@@ -122,7 +152,7 @@ const getDifficultyColor = (difficulty: string) => {
 
         <!-- Related Frameworks -->
         <div v-if="relatedFrameworksList.length > 0" class="mb-12">
-          <h2 class="text-2xl font-bold mb-6">Framework Correlati</h2>
+          <h2 class="text-2xl font-bold mb-6">{{ t('guides.relatedFrameworks') }}</h2>
           <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
             <RouterLink
               v-for="framework in relatedFrameworksList"
@@ -135,8 +165,8 @@ const getDifficultyColor = (difficulty: string) => {
                     <component :is="framework.icon" class="h-4 w-4 text-white" />
                   </div>
                   <div>
-                    <h3 class="font-semibold">{{ framework.title }}</h3>
-                    <p class="text-xs text-muted-foreground">{{ framework.difficulty }}</p>
+                    <h3 class="font-semibold">{{ getFrameworkTitle(framework.id) }}</h3>
+                    <p class="text-xs text-muted-foreground">{{ getTranslatedDifficulty(framework.difficulty) }}</p>
                   </div>
                 </div>
               </Card>
@@ -149,7 +179,7 @@ const getDifficultyColor = (difficulty: string) => {
           <RouterLink to="/guide">
             <Button size="lg" class="group">
               <ArrowLeft class="h-4 w-4 mr-2 group-hover:-translate-x-1 transition-transform" />
-              Torna a tutte le Guide
+              {{ t('guides.backToAllGuides') }}
             </Button>
           </RouterLink>
         </div>

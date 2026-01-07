@@ -1,0 +1,192 @@
+{
+  "nav": {
+    "home": "Home",
+    "categories": "Categorie",
+    "howItWorks": "Come Funziona",
+    "guides": "Guide",
+    "settings": "Impostazioni",
+    "toggleMenu": "Apri/chiudi menu"
+  },
+  "hero": {
+    "title": "Framework per prompt efficaci, subito.",
+    "subtitle": "Oltre 30 framework professionali pronti all'uso. Testa con i modelli di Gemini, OpenAI e ZAI e ottieni risultati superiori in pochi secondi.",
+    "exploreFrameworks": "Esplora Framework",
+    "readGuides": "Leggi le Guide",
+    "discoverFrameworks": "Scopri i framework",
+    "searchTitle": "Cerca il tuo framework",
+    "searchSubtitle": "Trova rapidamente il framework perfetto per il tuo progetto",
+    "stats": {
+      "frameworks": "Framework",
+      "categories": "Categorie",
+      "providers": "Provider AI"
+    }
+  },
+  "howItWorks": {
+    "title": "Come Funziona",
+    "subtitle": "Usa Promptify in 3 semplici passaggi per trasformare i tuoi prompt in risultati professionali",
+    "step1": {
+      "title": "Scegli il Framework",
+      "description": "Esplora oltre 30 framework professionali di prompt engineering. Cerca per categoria, difficoltà o usa la barra di ricerca per trovare quello perfetto per il tuo caso d'uso."
+    },
+    "step2": {
+      "title": "Configura le API",
+      "description": "Vai nelle Impostazioni e inserisci le tue chiavi API per OpenAI, Google Gemini o ZAI. Le chiavi vengono salvate solo nel tuo browser, mai sui nostri server."
+    },
+    "step3": {
+      "title": "Genera e Copia",
+      "description": "Inserisci il tuo prompt e clicca su Genera. L'AI ottimizzerà il tuo prompt seguendo il framework scelto. Puoi copiare il risultato o continuare a perfezionarlo."
+    },
+    "promptReady": "Prompt professionale pronto!",
+    "apiKeysTitle": "Come inserire le chiavi API",
+    "openai": {
+      "title": "OpenAI (GPT-5, GPT-4.1)",
+      "steps": ["Vai su platform.openai.com", "Crea una nuova API key", "Copia la chiave che inizia con \"sk-proj-\"", "Incollala nelle impostazioni"]
+    },
+    "gemini": {
+      "title": "Google Gemini",
+      "steps": ["Vai su aistudio.google.com", "Genera una nuova API key", "Copia la chiave", "Incollala nelle impostazioni"]
+    },
+    "zai": {
+      "title": "ZAI (GLM-4.6)",
+      "steps": ["Vai su open.bigmodel.cn", "Registrati e crea una key", "Copia la tua API key", "Incollala nelle impostazioni"]
+    },
+    "privacyNote": "Privacy garantita: Le tue chiavi API vengono salvate solo nel localStorage del tuo browser e non vengono mai inviate ai nostri server. Sono utilizzate solo per comunicare direttamente con i provider AI che hai scelto."
+  },
+  "categories": {
+    "title": "Esplora per Categoria",
+    "framework": "framework",
+    "frameworks": "framework",
+    "showAll": "Mostra tutti i framework",
+    "allFrameworks": "Tutti i Framework"
+  },
+  "framework": {
+    "notFound": "Framework non trovato",
+    "backHome": "Torna alla home",
+    "explanation": "Spiegazione",
+    "example": "Esempio",
+    "template": "Template",
+    "testFramework": "Testa il Framework",
+    "aiProvider": "Provider AI",
+    "model": "Modello",
+    "yourInput": "Il tuo input",
+    "inputPlaceholder": "Inserisci il tuo prompt o problema...",
+    "testButton": "Testa Framework",
+    "testing": "Testing...",
+    "generatedPrompt": "Prompt Generato",
+    "copyPrompt": "Copia Prompt",
+    "copied": "Copiato!",
+    "copy": "Copia",
+    "result": "Risultato",
+    "promptSentInfo": "Questo è il prompt completo che verrà inviato all'AI",
+    "configureApiKey": "Configura la chiave API nelle impostazioni",
+    "generatingWith": "Generazione in corso con {provider}...",
+    "progress": {
+      "sending": "Invio richiesta...",
+      "processing": "Elaborazione AI...",
+      "almostReady": "Quasi pronto...",
+      "finalizing": "Finalizzazione..."
+    },
+    "new": "NUOVO",
+    "selectProvider": "Seleziona provider...",
+    "selectModel": "Seleziona modello..."
+  },
+  "models": {
+    "gpt5Latest": "GPT-5 (Più recente)",
+    "gpt5Mini": "GPT-5 Mini (Veloce)",
+    "gpt41": "GPT-4.1",
+    "geminiFlash": "Gemini 2.5 Flash (Veloce)",
+    "geminiPro": "Gemini 2.5 Pro (Più potente)",
+    "glm46": "GLM-4.6",
+    "glm45": "GLM-4.5"
+  },
+  "settings": {
+    "title": "Impostazioni",
+    "subtitle": "Gestisci le tue chiavi API per testare i framework AI. Le chiavi sono salvate solo nel tuo browser.",
+    "configured": "Configurata",
+    "notConfigured": "Non configurata",
+    "inputPlaceholder": "Inserisci chiave API {provider}...",
+    "save": "Salva",
+    "remove": "Rimuovi",
+    "privacyTitle": "Privacy e Sicurezza",
+    "privacyItems": [
+      "Le chiavi API sono salvate solo nel localStorage del tuo browser",
+      "Non vengono mai inviate ai nostri server",
+      "Sono usate solo per chiamare direttamente OpenAI, Gemini o ZAI",
+      "Puoi rimuoverle in qualsiasi momento"
+    ],
+    "providers": {
+      "openai": {
+        "name": "OpenAI",
+        "description": "Usa GPT-4 per testare i framework. Ottieni la tua chiave su platform.openai.com"
+      },
+      "gemini": {
+        "name": "Google Gemini",
+        "description": "Usa Gemini 2.0 Flash per testare. Ottieni la chiave su ai.google.dev"
+      },
+      "zai": {
+        "name": "ZAI",
+        "description": "Provider alternativo. Ottieni la chiave su z-ai.dev"
+      }
+    }
+  },
+  "guides": {
+    "title": "Guide per il Prompt Engineering",
+    "subtitle": "Impara a padroneggiare l'arte del prompt engineering con guide pratiche, best practices e tecniche avanzate.",
+    "topics": "Argomenti:",
+    "quickTips": {
+      "title": "Consigli Rapidi",
+      "tip1": {
+        "title": "Sii Specifico",
+        "description": "Più dettagli fornisci, migliore sarà il risultato. Specifica formato, tono e lunghezza desiderata."
+      },
+      "tip2": {
+        "title": "Fornisci Contesto",
+        "description": "Il modello non conosce il tuo background. Descrivi sempre chi sei e cosa vuoi ottenere."
+      },
+      "tip3": {
+        "title": "Usa Esempi",
+        "description": "Few-shot learning funziona. Mostra 2-3 esempi del risultato che ti aspetti."
+      },
+      "tip4": {
+        "title": "Itera e Testa",
+        "description": "Il primo prompt raramente è perfetto. Testa, misura e ottimizza in base ai risultati."
+      }
+    },
+    "notFound": "Guida non trovata",
+    "notFoundDescription": "La guida che stai cercando non esiste.",
+    "backToGuides": "Torna alle Guide",
+    "backToAllGuides": "Torna a tutte le Guide",
+    "relatedFrameworks": "Framework Correlati",
+    "exampleLabel": "📝 Esempio",
+    "codeLabel": "💻 Codice"
+  },
+  "search": {
+    "placeholder": "Cerca framework... (⌘K)",
+    "results": "{count} risultato | {count} risultati",
+    "noResults": "Nessun framework trovato per \"{query}\"",
+    "navigate": "Naviga",
+    "open": "Apri",
+    "close": "Chiudi"
+  },
+  "footer": {
+    "description": "La piattaforma professionale per scoprire e padroneggiare i framework di prompt engineering più efficaci",
+    "createdWith": "Creato con",
+    "forCommunity": "per la community AI",
+    "developedBy": "Sviluppato da"
+  },
+  "difficulty": {
+    "easy": "Facile",
+    "medium": "Medio",
+    "advanced": "Avanzato"
+  },
+  "common": {
+    "select": "Seleziona...",
+    "loading": "Caricamento...",
+    "error": "Errore",
+    "unknownError": "Errore sconosciuto"
+  },
+  "language": {
+    "it": "Italiano",
+    "en": "English"
+  }
+}

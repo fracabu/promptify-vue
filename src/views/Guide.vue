@@ -1,10 +1,29 @@
 <script setup lang="ts">
 import { RouterLink } from 'vue-router'
+import { useI18n } from 'vue-i18n'
 import Header from '../components/Header.vue'
 import Footer from '../components/Footer.vue'
 import Card from '../components/ui/Card.vue'
 import Badge from '../components/ui/Badge.vue'
 import { guides } from '../data/guides'
+
+const { t, tm } = useI18n()
+
+// Helper functions for translated content
+const getGuideTitle = (id: string) => t(`guides.items.${id}.title`)
+const getGuideDescription = (id: string) => t(`guides.items.${id}.description`)
+const getGuideTopics = (id: string): string[] => {
+  const topics = tm(`guides.items.${id}.topics`) as unknown
+  return Array.isArray(topics) ? topics as string[] : []
+}
+const getTranslatedDifficulty = (difficulty: string) => {
+  const map: Record<string, string> = {
+    'Facile': t('difficulty.easy'),
+    'Medio': t('difficulty.medium'),
+    'Avanzato': t('difficulty.advanced')
+  }
+  return map[difficulty] || difficulty
+}
 
 const getDifficultyVariant = (difficulty: string) => {
   switch (difficulty) {
@@ -32,10 +51,10 @@ const getDifficultyVariant = (difficulty: string) => {
         <!-- Hero Section -->
         <div class="text-center mb-16">
           <h1 class="text-5xl md:text-7xl font-bold mb-8 leading-tight bg-clip-text text-transparent bg-gradient-to-r from-purple-600 via-blue-600 to-orange-600 dark:from-purple-400 dark:via-blue-400 dark:to-orange-400">
-            Guide per il Prompt Engineering
+            {{ t('guides.title') }}
           </h1>
           <p class="text-xl md:text-2xl text-muted-foreground max-w-4xl mx-auto leading-relaxed font-light mb-12">
-            Impara a padroneggiare l'arte del prompt engineering con guide pratiche, best practices e tecniche avanzate.
+            {{ t('guides.subtitle') }}
           </p>
         </div>
 
@@ -52,29 +71,26 @@ const getDifficultyVariant = (difficulty: string) => {
                   <component :is="guide.icon" class="h-6 w-6 text-white" />
                 </div>
                 <div class="flex-1">
-                  <h3 class="font-bold text-lg mb-2">{{ guide.title }}</h3>
+                  <h3 class="font-bold text-lg mb-2">{{ getGuideTitle(guide.id) }}</h3>
                   <Badge :variant="getDifficultyVariant(guide.difficulty)" class="text-xs">
-                    {{ guide.difficulty }}
+                    {{ getTranslatedDifficulty(guide.difficulty) }}
                   </Badge>
                 </div>
               </div>
-              
+
               <p class="text-sm text-muted-foreground mb-4">
-                {{ guide.description }}
+                {{ getGuideDescription(guide.id) }}
               </p>
 
-              <div class="space-y-1">
-                <p class="text-xs font-semibold text-muted-foreground/70 uppercase tracking-wide">Argomenti:</p>
-                <div class="flex flex-wrap gap-2">
+              <div class="flex flex-wrap gap-2">
                   <Badge
-                    v-for="topic in guide.topics"
+                    v-for="topic in getGuideTopics(guide.id)"
                     :key="topic"
                     variant="outline"
                     class="text-xs"
                   >
                     {{ topic }}
                   </Badge>
-                </div>
               </div>
             </Card>
           </RouterLink>
@@ -83,7 +99,7 @@ const getDifficultyVariant = (difficulty: string) => {
         <!-- Quick Tips Section -->
         <div class="bg-gradient-to-r from-purple-500/10 to-blue-500/10 dark:from-purple-500/20 dark:to-blue-500/20 rounded-2xl p-8 md:p-12">
           <h2 class="text-5xl md:text-7xl font-bold mb-12 text-center bg-clip-text text-transparent bg-gradient-to-r from-purple-600 via-blue-600 to-orange-600 dark:from-purple-400 dark:via-blue-400 dark:to-orange-400">
-            💡 Consigli Rapidi
+            {{ t('guides.quickTips.title') }}
           </h2>
           <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div class="flex items-start space-x-3">
@@ -91,8 +107,8 @@ const getDifficultyVariant = (difficulty: string) => {
                 1
               </div>
               <div>
-                <h3 class="font-semibold mb-1">Sii Specifico</h3>
-                <p class="text-sm text-muted-foreground">Più dettagli fornisci, migliore sarà il risultato. Specifica formato, tono e lunghezza desiderata.</p>
+                <h3 class="font-semibold mb-1">{{ t('guides.quickTips.tip1.title') }}</h3>
+                <p class="text-sm text-muted-foreground">{{ t('guides.quickTips.tip1.description') }}</p>
               </div>
             </div>
 
@@ -101,8 +117,8 @@ const getDifficultyVariant = (difficulty: string) => {
                 2
               </div>
               <div>
-                <h3 class="font-semibold mb-1">Fornisci Contesto</h3>
-                <p class="text-sm text-muted-foreground">Il modello non conosce il tuo background. Descrivi sempre chi sei e cosa vuoi ottenere.</p>
+                <h3 class="font-semibold mb-1">{{ t('guides.quickTips.tip2.title') }}</h3>
+                <p class="text-sm text-muted-foreground">{{ t('guides.quickTips.tip2.description') }}</p>
               </div>
             </div>
 
@@ -111,8 +127,8 @@ const getDifficultyVariant = (difficulty: string) => {
                 3
               </div>
               <div>
-                <h3 class="font-semibold mb-1">Usa Esempi</h3>
-                <p class="text-sm text-muted-foreground">Few-shot learning funziona. Mostra 2-3 esempi del risultato che ti aspetti.</p>
+                <h3 class="font-semibold mb-1">{{ t('guides.quickTips.tip3.title') }}</h3>
+                <p class="text-sm text-muted-foreground">{{ t('guides.quickTips.tip3.description') }}</p>
               </div>
             </div>
 
@@ -121,8 +137,8 @@ const getDifficultyVariant = (difficulty: string) => {
                 4
               </div>
               <div>
-                <h3 class="font-semibold mb-1">Itera e Testa</h3>
-                <p class="text-sm text-muted-foreground">Il primo prompt raramente è perfetto. Testa, misura e ottimizza in base ai risultati.</p>
+                <h3 class="font-semibold mb-1">{{ t('guides.quickTips.tip4.title') }}</h3>
+                <p class="text-sm text-muted-foreground">{{ t('guides.quickTips.tip4.description') }}</p>
               </div>
             </div>
           </div>

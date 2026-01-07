@@ -1,18 +1,35 @@
 <script setup lang="ts">
-import { ref } from 'vue'
+import { ref, computed } from 'vue'
 import { RouterLink } from 'vue-router'
-import { Menu, X, Settings } from 'lucide-vue-next'
+import { Menu, X, Settings, Globe } from 'lucide-vue-next'
+import { useI18n } from 'vue-i18n'
 import Button from './ui/Button.vue'
 import ThemeToggle from './ThemeToggle.vue'
+import { setLocale } from '../i18n'
 
+const { t, locale } = useI18n()
 const isMenuOpen = ref(false)
+const isLangMenuOpen = ref(false)
 
-const navigation = [
-  { name: 'Home', href: '/' },
-  { name: 'Categorie', href: { path: '/', hash: '#categories' } },
-  { name: 'Come Funziona', href: { path: '/', hash: '#how-it-works' } },
-  { name: 'Guide', href: '/guide' },
+const navigation = computed(() => [
+  { name: t('nav.home'), href: '/' },
+  { name: t('nav.categories'), href: { path: '/', hash: '#categories' } },
+  { name: t('nav.howItWorks'), href: { path: '/', hash: '#how-it-works' } },
+  { name: t('nav.guides'), href: '/guide' },
+])
+
+const languages = [
+  { code: 'it', name: 'Italiano', flag: '🇮🇹' },
+  { code: 'en', name: 'English', flag: '🇬🇧' }
 ]
+
+// currentLanguage can be used for displaying current lang name if needed
+// const currentLanguage = computed(() => languages.find(l => l.code === locale.value) || languages[0])
+
+const switchLanguage = (langCode: string) => {
+  setLocale(langCode)
+  isLangMenuOpen.value = false
+}
 </script>
 
 <template>
@@ -59,12 +76,40 @@ const navigation = [
         </nav>
 
         <!-- Right side actions -->
-        <div class="flex items-center space-x-4">
+        <div class="flex items-center space-x-2 md:space-x-4">
+          <!-- Language Switcher -->
+          <div class="relative">
+            <Button
+              variant="ghost"
+              size="icon"
+              class="hover:scale-110 transition-transform duration-200"
+              @click="isLangMenuOpen = !isLangMenuOpen"
+            >
+              <Globe class="h-5 w-5 text-slate-700 dark:text-slate-200" />
+              <span class="sr-only">{{ t('nav.toggleMenu') }}</span>
+            </Button>
+            <div
+              v-if="isLangMenuOpen"
+              class="absolute right-0 mt-2 w-36 bg-background border border-border rounded-lg shadow-lg py-1 z-50"
+            >
+              <button
+                v-for="lang in languages"
+                :key="lang.code"
+                @click="switchLanguage(lang.code)"
+                class="w-full px-4 py-2 text-left text-sm hover:bg-muted flex items-center gap-2 transition-colors"
+                :class="{ 'bg-muted': locale === lang.code }"
+              >
+                <span>{{ lang.flag }}</span>
+                <span>{{ lang.name }}</span>
+              </button>
+            </div>
+          </div>
+
           <ThemeToggle />
-          
+
           <Button variant="ghost" size="icon" as="RouterLink" to="/impostazioni" class="hidden md:flex hover:scale-110 transition-transform duration-200">
             <Settings class="h-5 w-5 text-slate-700 dark:text-slate-200" />
-            <span class="sr-only">Impostazioni</span>
+            <span class="sr-only">{{ t('nav.settings') }}</span>
           </Button>
 
           <!-- Mobile menu button -->
@@ -103,7 +148,7 @@ const navigation = [
               @click="isMenuOpen = false"
             >
               <Settings class="h-4 w-4" />
-              Impostazioni
+              {{ t('nav.settings') }}
             </RouterLink>
           </nav>
         </div>

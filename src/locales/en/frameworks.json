@@ -1,0 +1,248 @@
+{
+  "macroCategories": {
+    "fondamentali": {
+      "name": "Fundamentals",
+      "description": "Essential base structures to get started with prompt engineering"
+    },
+    "innovativi": {
+      "name": "Innovative",
+      "description": "Next-generation frameworks and experimental methodologies"
+    },
+    "business": {
+      "name": "Business & Professional",
+      "description": "Frameworks optimized for business and professional contexts"
+    },
+    "creativi": {
+      "name": "Creative & Marketing",
+      "description": "Tools for creative content, marketing and communication"
+    },
+    "avanzati": {
+      "name": "Advanced & System",
+      "description": "Complex frameworks for specialized and multi-agent tasks"
+    },
+    "problem-solving": {
+      "name": "Problem Solving",
+      "description": "Structured methodologies for solving complex problems"
+    }
+  },
+  "items": {
+    "ape": {
+      "title": "APE",
+      "description": "Three-step structure (Action, Purpose, Expectation) ideal for beginners and content creation",
+      "explanation": "APE (Action-Purpose-Expectation) is one of the simplest and most accessible frameworks. It consists of three elements: Action (what you want the AI to do), Purpose (why you're asking), Expectation (expected result). It's perfect for getting started with prompt engineering because it's intuitive and covers the essential basics.",
+      "example": "Action: Write a blog article\nPurpose: To explain to beginners what prompt engineering is\nExpectation: 500-word article, accessible tone, with 3 practical examples"
+    },
+    "aida": {
+      "title": "AIDA",
+      "description": "Marketing formula (Attention, Interest, Desire, Action) adapted for prompt engineering",
+      "explanation": "AIDA is a classic marketing framework adapted for prompt engineering. Attention (capture attention), Interest (generate interest), Desire (create desire), Action (drive to action). It's ideal for persuasive content, advertising copy and communication that needs to convert.",
+      "example": "Attention: \"78% of startups fail within the first 3 years\"\nInterest: \"But those using AI for marketing are 3x more likely to succeed\"\nDesire: \"Imagine automating your content creation saving 20 hours per week\"\nAction: \"Download our free AI Marketing Toolkit guide now\""
+    },
+    "bab": {
+      "title": "BAB",
+      "description": "Before-After-Bridge structure for presenting scenarios and connected solutions",
+      "explanation": "BAB (Before-After-Bridge) is perfect for presenting problems and solutions. Before describes the current situation/problem, After shows the desired result, Bridge explains how to get there. Excellent for pitches, case studies and persuasive storytelling.",
+      "example": "Before: The marketing team spends 15 hours/week creating social content manually\nAfter: The team reduces time to 3 hours/week while maintaining superior quality\nBridge: By implementing an AI content generation system with custom templates"
+    },
+    "care": {
+      "title": "CARE",
+      "description": "Context, Action, Result, Example for providing context and clear examples",
+      "explanation": "CARE emphasizes the importance of complete context. Context (situation and background), Action (what to do), Result (desired outcome), Example (concrete example). Great when precision is needed and when the task requires deep understanding of context.",
+      "example": "Context: I'm a SaaS startup founder in the HR tech sector, targeting Italian SMEs\nAction: Write a cold outreach email for HR managers\nResult: Response rate of at least 15%, conversation toward demo\nExample: Similar to [insert example of effective email you've seen]"
+    },
+    "coast": {
+      "title": "COAST",
+      "description": "Context, Objective, Audience, Style, Tone for business and creative work",
+      "explanation": "COAST is a complete framework for professional content creation. Context (background), Objective (specific purpose), Audience (precise target), Style (format and structure), Tone (voice and personality). Ideal for creative briefs and corporate communication.",
+      "example": "Context: Launch of new SaaS product for project management\nObjective: Generate 500 qualified leads in 30 days\nAudience: Project managers at tech companies with 50-200 employees, ages 30-45\nStyle: Landing page with hero section, 3 benefits, social proof, CTA\nTone: Professional but modern, data-driven, results-oriented"
+    },
+    "costar": {
+      "title": "COSTAR",
+      "description": "Complete framework for prompt writing as a full-stack design challenge",
+      "explanation": "COSTAR is the most complete framework: Context, Objective, Style, Tone, Audience, Response format. It's the gold standard for complex tasks in professional contexts. Requires more effort but produces superior results when maximum precision is needed.",
+      "example": "Context: B2B SaaS analytics product launch in competitive market\nObjective: Position ourselves as innovative leader, generate 1000 trials in Q1\nStyle: Long-form content marketing, data-driven, storytelling\nTone: Authoritative but accessible, tech-forward, human\nAudience: C-level and VP Analytics at Fortune 1000 companies\nResponse: Series of 4 articles, 2000 words, structure: hook-data-case study-CTA"
+    },
+    "calibro": {
+      "title": "CALIBRO",
+      "description": "Innovative modular framework for LLMs - Context, Actor, Limits, Intention, Breakdown, Rules, Observation",
+      "explanation": "CALIBRO is an innovative and pragmatic prompting framework that adapts to different LLMs. Each letter corresponds to a block designed to validate and compose optimal prompts: Context & Corpus, Actor & Audience, Limits & Constraints, Intention & Criteria, Breakdown & Procedure, Rules of Style & Format, Observation & Evaluation. Ideal for projects requiring maximum precision and traceability.",
+      "example": "C — Context & Corpus: \"Analyze Q3 2024 financial report (sections 1-4, excluding appendices). Focus on operating margins and cash flow.\"\n\nA — Actor & Audience: \"Act as a senior CFO. Target: non-financial board members, 10-minute presentation.\"\n\nL — Limits & Constraints: \"Only data from provided document. No speculation on Q4. Maximum analysis time: 5 minutes.\"\n\nI — Intention & Criteria: \"Objective: identify 3 main risks with quantified impact. Success: each risk with precise figures.\"\n\nB — Breakdown & Procedure: \"1) Extract KPIs → 2) Compare with Q2 → 3) Identify anomalies → 4) Quantify impacts → 5) Draft summary.\"\n\nR — Rules of Style & Format: \"Output: JSON with keys {executive_summary: string, risks: [{name, impact_eur, probability}], confidence: 0-1}.\"\n\nO — Observation & Evaluation: \"If insufficient data, ask max 2 clarifications. If confidence < 0.7, add methodological notes.\""
+    },
+    "craft": {
+      "title": "CRAFT",
+      "description": "Context, Role, Action, Format, Target - structured methodology for complete prompts",
+      "explanation": "CRAFT stands for Context, Role, Action, Format, Target. Professional framework for creating extremely detailed and complete prompts that leave no room for doubt. Includes situational context, expert role, sequential actions, output format and target audience. Perfect for generating superior quality prompts.",
+      "example": "CONTEXT: B2B SaaS company wanting to create educational content to increase engagement and demo requests.\n\nROLE: You are an expert content marketing strategist with over 20 years of experience in the B2B SaaS sector.\n\nACTION:\n1. Analyze the target audience and identify main pain points\n2. Create a 3-month content strategy with SMART goals\n3. Propose 10 topic ideas with keyword research\n\nFORMAT: Strategic document in tabular format.\n\nTARGET: Marketing managers at tech SMEs (50-200 employees)."
+    },
+    "crispe": {
+      "title": "CRISPE",
+      "description": "Capacity, Insight, Statement, Personality, Experiment - define AI role and personality",
+      "explanation": "CRISPE emphasizes AI role-playing. Capacity/Role (expertise and role), Insight (background knowledge), Statement (specific task), Personality (tone and style), Experiment (iteration). Perfect for outputs requiring specific expertise and defined personality.",
+      "example": "Capacity: You are a senior marketing strategist with 15 years of B2B SaaS experience\nInsight: You know growth hacking, PLG (Product-Led Growth), marketing automation\nStatement: Create a go-to-market strategy for AI analytics product launch\nPersonality: Direct, data-driven, ROI-focused, pragmatic\nExperiment: Propose 3 strategic variants with pros/cons of each"
+    },
+    "chain-of-thought": {
+      "title": "Chain of Thought",
+      "description": "Guide the model to reason step by step to reach a solution",
+      "explanation": "Chain of Thought (CoT) dramatically improves response quality for complex tasks. Instead of asking for the answer directly, you guide the model to 'think out loud', showing each logical step. Fundamental for math, logic, problem solving.",
+      "example": "Problem: Calculate the ROI of a marketing campaign\nBudget: €10,000\nResults: 500 leads, 50 conversions, average customer value €1,200\n\nThink step by step:\n1. Calculate generated revenue\n2. Subtract the cost\n3. Divide profit by cost\n4. Convert to percentage\n5. Interpret the result"
+    },
+    "crafting-ai": {
+      "title": "CRAFTING AI",
+      "description": "Extension of CRAFT with validation and continuous refinement phases",
+      "explanation": "CRAFTING AI extends CRAFT by adding iteration and validation. Includes testing, feedback and refinement phases. Ideal for complex projects requiring multiple iterations and continuous optimization.",
+      "example": "Context: Developing customer service chatbot for e-commerce\nRequest: Bot handling returns, tracking, product FAQs\nAction: Design conversations, error handling, human escalation\nFormat: Flow diagram + conversation scripts + KPIs\nTarget: Italian customers, all tech literacy levels\n\n--- ITERATION LOOP ---\n1. Generate first version\n2. Identify 3-5 test scenarios\n3. Validate output\n4. List improvements\n5. Generate improved version"
+    },
+    "few-shot": {
+      "title": "Few-Shot Learning",
+      "description": "Provide 2-5 examples to teach the model the desired pattern",
+      "explanation": "Few-Shot Learning is extremely powerful for specific tasks. Provide 2-5 examples of the desired output format before the actual request. The model will learn the pattern and replicate it. Extremely effective for tasks with specific formatting.",
+      "example": "Convert these sentences to JSON with sentiment analysis:\n\nInput: \"I love this product!\"\nOutput: {\"text\": \"I love this product!\", \"sentiment\": \"positive\", \"score\": 0.95}\n\nInput: \"It doesn't work at all.\"\nOutput: {\"text\": \"It doesn't work at all.\", \"sentiment\": \"negative\", \"score\": 0.88}\n\nNow analyze: \"Fantastic experience, I recommend it!\""
+    },
+    "grade": {
+      "title": "GRADE",
+      "description": "Goal, Request, Action, Detail, Examples for clear objectives",
+      "explanation": "GRADE emphasizes clarity of objectives. Goal (final objective), Request (specific request), Action (what to do), Detail (specifics), Examples (examples). Great for tasks with well-defined objectives.",
+      "example": "Goal: Increase social media engagement by 50%\nRequest: Create an editorial calendar for 30 days\nAction: Plan posts for LinkedIn, Twitter, Instagram\nDetail: 3 posts/day, mix of educational and promotional content\nExamples: Tutorial posts, infographics, case studies"
+    },
+    "par": {
+      "title": "PAR",
+      "description": "Problem, Action, Result - simple structure for problem solving",
+      "explanation": "PAR is a minimalist but effective framework. Problem (define the problem), Action (what to do to solve it), Result (expected outcome). Perfect for simple tasks that don't require complex structures.",
+      "example": "Problem: The website has a 0.5% conversion rate\nAction: Analyze UX and propose 5 improvements\nResult: Increase conversion rate to 2%"
+    },
+    "race": {
+      "title": "RACE",
+      "description": "Role, Action, Context, Example for tasks with defined role",
+      "explanation": "RACE puts the role first. Role (who is the AI), Action (what to do), Context (situation), Example (output example). Useful when the AI's role is crucial for output quality.",
+      "example": "Role: You are a senior copywriter specialized in B2B tech\nAction: Write 5 headlines for LinkedIn campaign\nContext: AI product launch for HR analytics\nExample: \"AI that transforms HR data into strategic decisions\""
+    },
+    "rascef": {
+      "title": "RASCEF",
+      "description": "Role, Action, Steps, Context, Example, Format for procedural tasks",
+      "explanation": "RASCEF adds Steps to the RACE framework. Perfect for tasks requiring step-by-step procedures. Also includes Format to specify output structure.",
+      "example": "Role: Senior data analyst\nAction: Create quarterly sales report\nSteps: 1) Extract data 2) Calculate KPIs 3) Identify trends 4) Recommendations\nContext: Fashion e-commerce, Q3 2024\nExample: Report with graphs and tables\nFormat: PDF with executive summary + detail"
+    },
+    "rhodes": {
+      "title": "RHODES",
+      "description": "Role, How, Objective, Details, Examples, Sense-check for complex tasks",
+      "explanation": "RHODES is a complete framework that includes self-verification. Role, How (methodology), Objective, Details, Examples, Sense-check (logic verification). Ideal for critical tasks requiring validation.",
+      "example": "Role: Strategy consultant\nHow: Use SWOT and Porter's Five Forces frameworks\nObjective: SaaS market competitive analysis\nDetails: Focus on 5 direct competitors\nExamples: Include sector case study\nSense-check: Verify data and conclusion consistency"
+    },
+    "roses": {
+      "title": "ROSES",
+      "description": "Role, Objective, Scenario, Expected Solution, Short form",
+      "explanation": "ROSES is great for specific scenarios. Role, Objective, Scenario (detailed situation), Expected Solution, Short form (summary). Perfect for simulations and case studies.",
+      "example": "Role: Tech startup CEO\nObjective: Decide funding strategy\nScenario: Series A vs bootstrapping, 18-month runway\nExpected Solution: Pros/cons of both options\nShort form: Recommendation in 3 bullet points"
+    },
+    "rtf": {
+      "title": "RTF",
+      "description": "Role, Task, Format - minimalist but effective framework",
+      "explanation": "RTF is the simplest and fastest framework. Role (who), Task (what), Format (how). Perfect for quick tasks that don't require elaborate context.",
+      "example": "Role: SEO expert\nTask: Optimize this meta description\nFormat: Max 160 characters, include main keyword"
+    },
+    "smart": {
+      "title": "SMART",
+      "description": "Specific, Measurable, Achievable, Relevant, Time-bound for objectives",
+      "explanation": "SMART applies classic goal-setting criteria to prompting. Specific, Measurable, Achievable, Relevant, Time-bound. Perfect for defining clear and measurable objectives.",
+      "example": "Specific: Create 10 LinkedIn posts\nMeasurable: Engagement rate > 5%\nAchievable: Content based on existing expertise\nRelevant: Supports new product launch\nTime-bound: Delivery by Friday"
+    },
+    "sparc": {
+      "title": "SPARC",
+      "description": "Situation, Problem, Action, Result, Context for structured problem solving",
+      "explanation": "SPARC is ideal for problem solving. Situation (current state), Problem (specific challenge), Action (what to do), Result (outcome), Context (additional information). Robust framework for analytical tasks.",
+      "example": "Situation: E-commerce with 10K visitors/month\nProblem: 80% cart abandonment rate\nAction: Analyze and propose 5 solutions\nResult: Reduce abandonment to 60%\nContext: Target millennials, tech products"
+    },
+    "spear": {
+      "title": "SPEAR",
+      "description": "Situation, Problem, Explanation, Action, Result for causal analysis",
+      "explanation": "SPEAR adds Explanation to understand causes. Situation, Problem, Explanation (why it happens), Action, Result. Great when you need to understand the \"why\" before acting.",
+      "example": "Situation: Newsletter with 50K subscribers\nProblem: Open rate dropped from 25% to 15%\nExplanation: Analyze possible causes\nAction: Propose recovery plan\nResult: Return to 25% in 3 months"
+    },
+    "star": {
+      "title": "STAR",
+      "description": "Situation, Task, Action, Result - classic framework for storytelling",
+      "explanation": "STAR is the classic framework for telling stories and case studies. Situation (context), Task (challenge), Action (what you did), Result (outcome). Perfect for portfolios and presentations.",
+      "example": "Situation: Early-stage startup with no marketing budget\nTask: Generate 1000 leads in 3 months\nAction: Content marketing + strategic partnerships\nResult: 1500 leads, 50 paying customers"
+    },
+    "tag": {
+      "title": "TAG",
+      "description": "Task, Action, Goal - ultra-minimalist framework",
+      "explanation": "TAG is the most essential framework. Task (what), Action (how), Goal (why). Perfect for quick prompts when context is already clear.",
+      "example": "Task: Rewrite this paragraph\nAction: Make it more concise and professional\nGoal: Convince investors in pitch deck"
+    },
+    "trace": {
+      "title": "TRACE",
+      "description": "Task, Request, Action, Context, Example for professional tasks",
+      "explanation": "TRACE is a balanced framework for professional tasks. Task, Request (specific), Action, Context, Example. Provides enough structure without being too complex.",
+      "example": "Task: Write a business proposal\nRequest: For AI consulting service\nAction: Include executive summary, scope, pricing\nContext: Enterprise client, €100K+ budget\nExample: Follow attached template"
+    },
+    "tree-of-thoughts": {
+      "title": "Tree of Thoughts",
+      "description": "Explore multiple reasoning paths in parallel and choose the best",
+      "explanation": "Tree of Thoughts extends Chain of Thought by exploring multiple paths. Instead of a single linear reasoning, it explores multiple routes, evaluates each and chooses the best. Ideal for complex decisions with multiple possible solutions.",
+      "example": "Problem: How to increase sales by 30%?\n\nPath 1: Pricing optimization\n→ Pros: Immediate, controllable\n→ Cons: Risk of margin reduction\n\nPath 2: Channel expansion\n→ Pros: New segments\n→ Cons: High initial investment\n\nPath 3: Product improvement\n→ Pros: Lasting added value\n→ Cons: Long development time\n\nEvaluation: Path 1 best for quick wins"
+    },
+    "traci": {
+      "title": "TRACI",
+      "description": "Task, Role, Audience, Create, Intent for content creation",
+      "explanation": "TRACI is optimized for content creation. Task, Role, Audience, Create (content type), Intent (purpose). Perfect for social media and marketing content.",
+      "example": "Task: LinkedIn post\nRole: AI thought leader\nAudience: CTOs and tech leaders\nCreate: 10-slide carousel\nIntent: Generate leads for webinar"
+    },
+    "crip": {
+      "title": "CRIP",
+      "description": "Context, Role, Instructions, Parameters for technical tasks",
+      "explanation": "CRIP is oriented toward technical tasks. Context, Role, Instructions (detailed), Parameters (technical constraints). Great for coding, data analysis, tasks with precise requirements.",
+      "example": "Context: REST API for e-commerce\nRole: Senior backend developer\nInstructions: Implement checkout endpoint\nParameters: Node.js, PostgreSQL, max latency 200ms"
+    },
+    "react": {
+      "title": "ReAct",
+      "description": "Reasoning and Acting - combines reasoning with concrete actions",
+      "explanation": "ReAct alternates reasoning and action. The model thinks, acts, observes the result, thinks again. Very powerful for tasks requiring interaction with the environment or iterative decisions.",
+      "example": "Thought: I need to find the average house price in Milan\nAction: Search[average house price Milan 2024]\nObservation: €4,500/sqm in the center\nThought: Now I calculate the budget for 80sqm\nAction: Calculate[4500 * 80]\nObservation: €360,000\nFinal: Estimated budget €360,000"
+    },
+    "t-rex": {
+      "title": "T-REX",
+      "description": "Task, Requirements, Examples, eXecution for structured tasks",
+      "explanation": "T-REX emphasizes requirements and examples. Task, Requirements (specific), Examples (concrete), eXecution (action plan). Great when there are precise technical requirements.",
+      "example": "Task: Develop landing page\nRequirements: Mobile-first, < 3s load time, WCAG 2.1\nExamples: Reference to competitors X and Y\neXecution: 1) Wireframe 2) Design 3) Dev 4) Test"
+    },
+    "zero-shot": {
+      "title": "Zero-Shot",
+      "description": "Direct prompt without preliminary examples",
+      "explanation": "Zero-Shot is the most direct prompting: ask for something without providing examples. Works well for generic tasks where the model already has the necessary knowledge. Fast but less precise for specific tasks.",
+      "example": "Write a professional email to request a meeting with a potential client in the B2B tech sector."
+    },
+    "prisma": {
+      "title": "PRISMA",
+      "description": "Ultimate meta-framework combining ReAct, Tree of Thoughts, CALIBRO and CRAFT",
+      "explanation": "PRISMA is the most advanced framework, designed for maximum complexity tasks. Combines the strength of ReAct (iterative reasoning), Tree of Thoughts (parallel exploration), CALIBRO (enterprise modularity) and CRAFT (professional structure). Includes self-evaluation and continuous refinement.",
+      "example": "--- PRISMA EXECUTION ---\n\n[P]REPARATION:\nTask: GTM strategy for AI product\nConstraints: €50K budget, 6 months\n\n[R]EASONING:\nThought 1: I identify 3 possible approaches\nPath A: Product-led growth\nPath B: Sales-led\nPath C: Partnership\n\n[I]TERATION:\nPros/cons analysis for each path\n\n[S]ELECTION:\nChoice: Path A (PLG) with elements of C\n\n[M]ODELING:\nCALIBRO blueprint for implementation\n\n[A]CTION:\nDetailed execution plan"
+    },
+    "bcm": {
+      "title": "BCM",
+      "description": "Multi-Style Creative Brief with integrated self-evaluation",
+      "explanation": "BCM (Multi-Style Creative Brief) is a specialized framework for copywriting and content marketing. Automatically generates multiple stylistic variants of the same content and includes self-evaluation to identify the best version.",
+      "example": "--- BCM EXECUTION ---\n\nBRIEF: Landing page for AI writing tool\n\nSTYLE 1 - Professional:\n\"Transform your content marketing with AI\"\n\nSTYLE 2 - Provocative:\n\"Is your human copywriter obsolete?\"\n\nSTYLE 3 - Emotional:\n\"Free your creativity from operational tasks\"\n\nSELF-EVALUATION:\nStyle 2: Highest engagement potential\nStyle 1: Safest for B2B enterprise\nStyle 3: Best for creative agencies"
+    }
+  },
+  "categories": {
+    "Struttura": "Structure",
+    "Marketing": "Marketing",
+    "Contesto": "Context",
+    "Business": "Business",
+    "Innovativo": "Innovative",
+    "Personificazione": "Personification",
+    "Ragionamento": "Reasoning",
+    "Apprendimento": "Learning",
+    "Obiettivi": "Goals",
+    "Stile": "Style",
+    "Sistema": "System",
+    "Problem Solving": "Problem Solving",
+    "Narrativa": "Narrative",
+    "Semplice": "Simple",
+    "Professionale": "Professional",
+    "Efficienza": "Efficiency",
+    "Documentazione": "Documentation",
+    "Creativo": "Creative"
+  }
+}

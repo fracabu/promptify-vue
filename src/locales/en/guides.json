@@ -1,0 +1,234 @@
+{
+  "items": {
+    "introduzione": {
+      "title": "Introduction to Prompts",
+      "description": "Discover the fundamental concepts of prompt engineering and how to structure effective requests for superior results.",
+      "introduction": "Prompt engineering is the art and science of effectively communicating with AI language models. A good prompt can make the difference between a generic response and an exceptional result.",
+      "topics": ["What is a prompt", "Basic structure", "Best practices", "Common mistakes"],
+      "sections": [
+        {
+          "title": "What is a Prompt?",
+          "content": "A prompt is the text input you provide to an AI model to get a response. It can be a simple question, a complex instruction, or a structured template. The quality of the prompt directly determines the quality of the output.",
+          "example": "Basic prompt: \"Write an article about marketing\"\nImproved prompt: \"Write a 500-word article about digital marketing for SMEs, focusing on social media and SEO. Professional but accessible tone, include 3 practical examples.\""
+        },
+        {
+          "title": "Elements of a Good Prompt",
+          "content": "An effective prompt contains: Context (who you are, what's the situation), Task (what you want the model to do), Constraints (limitations, format, length), Examples (when possible) and Desired output (specific response format).",
+          "example": "Context: \"I'm a marketing manager at a tech startup\"\nTask: \"Create 5 headlines for a LinkedIn campaign\"\nConstraints: \"Max 100 characters, innovative tone\"\nOutput: \"Numbered list with rationale for each headline\""
+        },
+        {
+          "title": "Common Mistakes to Avoid",
+          "content": "Avoid prompts that are too vague (\"tell me something about X\"), lack context, have contradictory instructions, or unrealistic expectations. Remember: the model doesn't know your background or specific needs unless you communicate them.",
+          "example": "Bad: \"Write code\"\nGood: \"Write a Python function that sorts a list of dictionaries by 'date' key in descending order. Include docstring and type hints.\""
+        },
+        {
+          "title": "Iteration and Refinement",
+          "content": "The first prompt is rarely perfect. Start with a basic version, analyze the output, identify what's missing or needs improvement, and refine the prompt. This iterative process is fundamental for optimal results.",
+          "example": "Iteration 1: \"Write an email\"\nIteration 2: \"Write a professional email\"\nIteration 3: \"Write a professional follow-up email after a meeting, friendly tone, max 150 words, with CTA to schedule next appointment\""
+        }
+      ]
+    },
+    "integrazione-llm": {
+      "title": "LLM Integration",
+      "description": "Learn to use frameworks with OpenAI, Gemini, Claude and ZAI. API configuration, parameters and optimization.",
+      "introduction": "Integrating prompt frameworks with different Large Language Models requires understanding API parameters, token management and optimal configuration for each provider.",
+      "topics": ["API keys setup", "Temperature & Top-p", "System prompts", "Token management"],
+      "sections": [
+        {
+          "title": "API Keys Setup",
+          "content": "Each provider requires an API key to authenticate requests. Keep keys secure using environment variables or secret managers. Never include API keys directly in code."
+        },
+        {
+          "title": "Temperature and Top-p",
+          "content": "Temperature (0-2) controls creativity: low values (0.2-0.5) for deterministic tasks, high values (0.7-1.5) for creative content. Top-p (0-1) is an alternative that controls response diversity through nucleus sampling.",
+          "example": "Temperature 0.2: Perfect for translations, data analysis, code\nTemperature 0.8: Ideal for brainstorming, creative writing\nTemperature 1.5: Maximum creativity for poems, storytelling"
+        },
+        {
+          "title": "System Prompts",
+          "content": "System prompts define the model's general behavior before each conversation. Use system prompts to set role, tone, style and global constraints that apply throughout the session."
+        },
+        {
+          "title": "Token Management",
+          "content": "Each model has token limits (input + output). Monitor token usage to optimize costs and performance. Use chunking for long documents and summarize previous conversations when necessary.",
+          "example": "GPT-4: 8K-128K tokens\nGPT-3.5: 4K-16K tokens\nGemini Pro: up to 1M tokens\n\n1 token ≈ 0.75 words in English\n1 token ≈ 0.5 words in Italian (more characters)"
+        }
+      ]
+    },
+    "scegliere-framework": {
+      "title": "Choosing the Right Framework",
+      "description": "Practical guide for selecting the most suitable framework for your use case: business, creative, technical or problem solving.",
+      "introduction": "With over 30 frameworks available, choosing the right one can seem complex. This guide will help you identify the perfect framework for every situation.",
+      "topics": ["Frameworks by category", "When to use what", "Comparisons", "Use cases"],
+      "sections": [
+        {
+          "title": "Frameworks for Beginners",
+          "content": "If you're starting with prompt engineering, begin with simple and intuitive frameworks like APE (Action-Purpose-Expectation), RTF (Role-Task-Finish) or TAG (Task-Action-Goal). These have few elements and are easy to remember.",
+          "example": "APE - Perfect for quick content creation\nRTF - Ideal for tasks with clear deliverables\nTAG - Great for defining specific objectives"
+        },
+        {
+          "title": "Business and Professional Frameworks",
+          "content": "For business contexts use COAST (Context-Objective-Audience-Style-Tone), COSTAR for complex projects or TRACE for advanced professional tasks. These frameworks include elements like audience and tone essential in business.",
+          "example": "Business reports: COSTAR\nClient presentations: COAST\nTechnical documentation: RASCEF\nMarketing strategy: AIDA"
+        },
+        {
+          "title": "Creative Frameworks",
+          "content": "For creative and marketing content choose AIDA (Attention-Interest-Desire-Action), ROSES (Role-Objective-Style-Example-Scenario) or personality frameworks like CRISPE. These emphasize style and tone.",
+          "example": "Advertising copy: AIDA\nStorytelling: ROSES\nPersonal branding: CRISPE\nSocial media: TRACI"
+        },
+        {
+          "title": "Advanced Frameworks",
+          "content": "For complex reasoning use Chain of Thought or Tree of Thoughts. For multi-step tasks use SPARC System. For contextual learning use Few-Shot Learning. These require more experience but offer superior results.",
+          "example": "Math problems: Chain of Thought\nComplex decisions: Tree of Thoughts\nMulti-agent systems: SPARC\nTasks with examples: Few-Shot Learning"
+        }
+      ]
+    },
+    "prompt-avanzati": {
+      "title": "Advanced Techniques",
+      "description": "Chain of Thought, Few-Shot Learning, Tree of Thoughts and other advanced techniques for complex tasks.",
+      "introduction": "Advanced prompt engineering techniques unlock sophisticated AI model capabilities, enabling complex reasoning, structured problem solving and superior quality output.",
+      "topics": ["CoT reasoning", "Multi-step prompts", "Self-consistency", "Prompt chaining"],
+      "sections": [
+        {
+          "title": "Chain of Thought (CoT)",
+          "content": "Instead of asking directly for the answer, guide the model to \"think out loud\" showing the reasoning steps. Add \"Think step by step\" or \"Show your reasoning\" to the prompt.",
+          "example": "Without CoT: \"What is 23 × 47?\"\n\nWith CoT: \"Calculate 23 × 47. Show each step of the calculation:\n1. Break down the multiplication\n2. Execute partial calculations\n3. Sum the results\n4. Provide the final answer\""
+        },
+        {
+          "title": "Few-Shot Learning",
+          "content": "Provide 2-5 examples of the desired output format before making the actual request. The model will learn the pattern and replicate it. Extremely effective for tasks with specific formatting."
+        },
+        {
+          "title": "Tree of Thoughts",
+          "content": "Explore multiple reasoning paths in parallel, evaluate each path and choose the best. Useful for complex decisions or problems with multiple possible solutions.",
+          "example": "Problem: \"How to increase sales by 30%?\"\n\nPath 1: Pricing optimization\n→ Pros: Immediate, controllable\n→ Cons: Risk of margin reduction\n\nPath 2: Channel expansion\n→ Pros: New segments\n→ Cons: High initial investment"
+        },
+        {
+          "title": "Prompt Chaining",
+          "content": "Divide complex tasks into sequences of connected prompts. The output of one prompt becomes input for the next. Allows handling tasks that exceed token limits or require multiple elaborations.",
+          "example": "Step 1: \"Summarize this 50-page report\"\n→ Output: 2-page summary\n\nStep 2: \"From this summary, extract 5 key insights\"\n→ Output: List of 5 points\n\nStep 3: \"For each insight, create a slide with title and bullet points\"\n→ Output: 5 formatted slides"
+        }
+      ]
+    },
+    "ottimizzazione": {
+      "title": "Optimization and Testing",
+      "description": "How to test, measure and optimize your prompts for consistent, high-quality results.",
+      "introduction": "Systematic prompt optimization through testing and measurement is essential for achieving consistent, high-quality results in production.",
+      "topics": ["A/B testing", "Quality metrics", "Iteration", "Versioning"],
+      "sections": [
+        {
+          "title": "A/B Testing Prompts",
+          "content": "Test prompt variants on the same input to compare results. Change one element at a time (temperature, structure, examples) to isolate the impact of each change.",
+          "example": "Variant A: \"Write a professional email\"\nVariant B: \"Write a professional email in a friendly but formal tone\"\nVariant C: \"Write a professional email. Use this template: [Greeting]-[Content]-[CTA]-[Closing]\"\n\nTest on 10 different cases and measure which produces better outputs"
+        },
+        {
+          "title": "Quality Metrics",
+          "content": "Define objective metrics: accuracy (correct content), relevance (answers the question), completeness (includes all elements), format (follows specifications), tone (appropriate to context).",
+          "example": "Scorecard (1-5):\n✓ Accuracy: 5/5 (correct facts)\n✓ Relevance: 4/5 (slight deviation)\n✓ Completeness: 5/5 (all points)\n✓ Format: 3/5 (partial formatting)\n✓ Tone: 5/5 (perfectly professional)\n\nTotal score: 22/25 (88%)"
+        },
+        {
+          "title": "Systematic Iteration",
+          "content": "Proceed with cycles: Test → Measure → Analyze → Modify → Repeat. Document each iteration and results. Maintain a baseline to compare improvements.",
+          "example": "Baseline (v1.0): Score 65%\n→ Added examples (v1.1): Score 72% (+7%)\n→ Specified format (v1.2): Score 78% (+6%)\n→ Optimized temperature (v1.3): Score 85% (+7%)\n→ Refined context (v2.0): Score 91% (+6%)"
+        },
+        {
+          "title": "Versioning and Documentation",
+          "content": "Use semantic versioning (v1.0, v1.1, v2.0) for prompts. Document: purpose, parameters, input/output examples, performance, modification dates. Keep previous versions for rollback."
+        }
+      ]
+    },
+    "best-practices": {
+      "title": "Best Practices",
+      "description": "Golden rules, proven patterns and practical tips for writing prompts that always work.",
+      "introduction": "Following established best practices in prompt engineering ensures better, more consistent and predictable results in every situation.",
+      "topics": ["Clarity", "Specificity", "Context", "Output format"],
+      "sections": [
+        {
+          "title": "Be Clear and Specific",
+          "content": "Avoid ambiguity. Use precise language. Specify exactly what you want, in what format, with what tone. More details = better results.",
+          "example": "Bad: \"Write something about marketing\"\n\nGood: \"Write an 800-word article about digital marketing for B2C e-commerce. Include: introduction (100 words), 3 strategies with examples (200 words each), conclusion with CTA (100 words). Tone: professional but accessible. Target: Italian small business owners.\""
+        },
+        {
+          "title": "Provide Sufficient Context",
+          "content": "The model doesn't know your background, industry, audience or objectives. Always provide relevant context: who you are, who the output is for, what the purpose is.",
+          "example": "Bad: \"Create a presentation\"\n\nGood: \"I'm the CMO of a B2B SaaS startup in the HR tech sector. I need to present our new AI recruiting feature to 50 HR managers from Fortune 500 companies. Create a 15-slide presentation structure for a 20-minute session.\""
+        },
+        {
+          "title": "Specify Output Format",
+          "content": "Don't let the model decide the format. Specify: numbered list, bullet points, JSON, table, narrative paragraph, etc. Include an example if possible."
+        },
+        {
+          "title": "Use Delimiters and Structure",
+          "content": "Use clear delimiters (###, ---, \"\"\") to separate prompt sections. Use numbers for lists. This helps the model distinguish instructions, examples and input."
+        },
+        {
+          "title": "Iterate and Refine",
+          "content": "The first prompt is rarely perfect. Analyze the output, identify what's missing or wrong, and refine. It's a normal and necessary iterative process.",
+          "example": "V1: Output too generic\n→ Add specific examples\n\nV2: Tone too formal\n→ Specify \"conversational tone\"\n\nV3: Missing technical details\n→ Add \"include technical specifications\"\n\nV4: Perfect!"
+        },
+        {
+          "title": "Manage Expectations",
+          "content": "AI models have limits: they can invent facts (hallucination), don't know recent events, don't have real opinions. Don't ask for the impossible and always validate critical outputs."
+        }
+      ]
+    },
+    "casi-uso": {
+      "title": "Practical Use Cases",
+      "description": "Real application examples: content marketing, technical documentation, customer service and coding assistant.",
+      "introduction": "Practical and concrete examples of how to apply prompt engineering frameworks in real professional scenarios.",
+      "topics": ["Marketing copy", "Code generation", "Data analysis", "Creative writing"],
+      "sections": [
+        {
+          "title": "Content Marketing",
+          "content": "Use frameworks like AIDA or ROSES to create engaging marketing content. Always specify audience, tone, length and desired CTA."
+        },
+        {
+          "title": "Code Generation",
+          "content": "For generating code, be extremely specific: language, version, libraries, patterns, error handling, tests. Use expected input/output examples."
+        },
+        {
+          "title": "Data Analysis",
+          "content": "For data analysis, provide context about the dataset, important metrics and type of insights sought. Specify output format (table, graph, narrative)."
+        },
+        {
+          "title": "Customer Service",
+          "content": "For automating customer service responses, define tone, company policies, response template. Use Few-Shot with real conversation examples."
+        }
+      ]
+    },
+    "troubleshooting": {
+      "title": "Troubleshooting",
+      "description": "Quick solutions to the most common problems: inconsistent outputs, hallucinations, formatting and model limits.",
+      "introduction": "When prompts don't work as expected, systematic diagnosis and applying the right troubleshooting techniques solve most problems.",
+      "topics": ["Debugging prompts", "Hallucination fix", "Format enforcement", "Edge cases"],
+      "sections": [
+        {
+          "title": "Inconsistent Outputs",
+          "content": "If you get different results every time: reduce temperature (0.2-0.5), add more constraints and examples, use structured format, specify exact length.",
+          "example": "Problem: Each run produces different length\n\nSolution:\nBad: \"Write a summary\"\nGood: \"Write a summary of EXACTLY 150 words (±5 words). If the count isn't exact, rephrase.\"\n\nAdd: temperature=0.3, top_p=0.9"
+        },
+        {
+          "title": "Hallucinations (Invented Facts)",
+          "content": "The model invents information? Ask for sources, use \"based only on\", provide complete context, enable \"search\" if available, always validate critical outputs.",
+          "example": "Problem: Invents statistics or quotes\n\nSolution:\n\"Analyze this report. IMPORTANT:\n- Use ONLY data present in the provided document\n- If information is not in the text, write 'N/A'\n- Do NOT make assumptions or estimates\n- Cite the exact section for each datum\""
+        },
+        {
+          "title": "Format Not Followed",
+          "content": "If the model ignores the requested format: use clear delimiters, provide exact format example, require validation, use regex or JSON schema for parsing."
+        },
+        {
+          "title": "Handling Edge Cases",
+          "content": "For unexpected inputs or edge cases: add input validation, specify behavior for edge cases, test on diverse dataset.",
+          "example": "Common edge cases:\n\n1. Empty input\n→ \"If input is empty, return: {error: 'No input provided'}\"\n\n2. Input too long\n→ \"If input > 5000 words, summarize first, then process\"\n\n3. Unexpected language\n→ \"If input is not in English, translate first, then process\""
+        },
+        {
+          "title": "Token Limits",
+          "content": "If you exceed limits: use chunking (divide input), summarize progressively, use models with larger context window, implement prompt chaining."
+        },
+        {
+          "title": "Systematic Debugging",
+          "content": "Methodical approach: 1) Isolate the problem (which part fails?), 2) Simplify prompt to minimum, 3) Add complexity gradually, 4) Test each change, 5) Document what works."
+        }
+      ]
+    }
+  }
+}

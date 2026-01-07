@@ -1,7 +1,9 @@
 <script setup lang="ts">
 import { RouterLink } from 'vue-router'
 import { Heart } from 'lucide-vue-next'
+import { useI18n } from 'vue-i18n'
 
+const { t } = useI18n()
 const currentYear = new Date().getFullYear()
 </script>
 
@@ -37,17 +39,17 @@ const currentYear = new Date().getFullYear()
         </RouterLink>
 
         <p class="text-sm text-muted-foreground text-center max-w-md">
-          La piattaforma professionale per scoprire e padroneggiare i framework di prompt engineering più efficaci
+          {{ t('footer.description') }}
         </p>
 
         <!-- Bottom bar -->
         <div class="w-full pt-4 border-t">
           <div class="flex flex-col items-center space-y-2">
             <p class="text-sm text-muted-foreground text-center flex items-center justify-center flex-wrap gap-1">
-              © {{ currentYear }} Promptify. Creato con <Heart class="h-4 w-4 text-red-500" /> per la community AI
+              © {{ currentYear }} Promptify. {{ t('footer.createdWith') }} <Heart class="h-4 w-4 text-red-500" /> {{ t('footer.forCommunity') }}
             </p>
             <p class="text-xs text-muted-foreground/70 text-center">
-              Sviluppato da <span class="font-medium">Claude Sonnet 4.5</span>, <span class="font-medium">GLM 4.6</span> e <span class="font-medium">Gemini 2.5 Pro</span>
+              {{ t('footer.developedBy') }} <span class="font-medium">Claude Sonnet 4.5</span>, <span class="font-medium">GLM 4.6</span> e <span class="font-medium">Gemini 2.5 Pro</span>
             </p>
           </div>
         </div>

@@ -1,0 +1,234 @@
+{
+  "items": {
+    "introduzione": {
+      "title": "Introduzione ai Prompt",
+      "description": "Scopri i concetti fondamentali del prompt engineering e come strutturare richieste efficaci per ottenere risultati superiori.",
+      "introduction": "Il prompt engineering è l'arte e la scienza di comunicare efficacemente con i modelli di linguaggio AI. Un buon prompt può fare la differenza tra una risposta generica e un risultato eccezionale.",
+      "topics": ["Cos'è un prompt", "Struttura base", "Best practices", "Errori comuni"],
+      "sections": [
+        {
+          "title": "Cos'è un Prompt?",
+          "content": "Un prompt è l'input testuale che fornisci a un modello AI per ottenere una risposta. Può essere una semplice domanda, un'istruzione complessa o un template strutturato. La qualità del prompt determina direttamente la qualità dell'output.",
+          "example": "Prompt base: \"Scrivi un articolo sul marketing\"\nPrompt migliorato: \"Scrivi un articolo di 500 parole sul marketing digitale per PMI, con focus su social media e SEO. Tono professionale ma accessibile, include 3 esempi pratici.\""
+        },
+        {
+          "title": "Elementi di un Buon Prompt",
+          "content": "Un prompt efficace contiene: Contesto (chi sei, qual è la situazione), Compito (cosa vuoi che faccia il modello), Vincoli (limitazioni, formato, lunghezza), Esempi (quando possibile) e Output desiderato (formato specifico della risposta).",
+          "example": "Contesto: \"Sono un marketing manager di una startup tech\"\nCompito: \"Crea 5 headline per una campagna LinkedIn\"\nVincoli: \"Max 100 caratteri, tono innovativo\"\nOutput: \"Lista numerata con rationale per ogni headline\""
+        },
+        {
+          "title": "Errori Comuni da Evitare",
+          "content": "Evita prompt troppo vaghi (\"dimmi qualcosa su X\"), senza contesto, con istruzioni contraddittorie, o aspettative non realistiche. Ricorda: il modello non conosce il tuo background o le tue esigenze specifiche se non gliele comunichi.",
+          "example": "Male: \"Scrivi codice\"\nBene: \"Scrivi una funzione Python che ordina una lista di dizionari per chiave 'date' in ordine decrescente. Includi docstring e type hints.\""
+        },
+        {
+          "title": "Iterazione e Raffinamento",
+          "content": "Il primo prompt raramente è perfetto. Parti con una versione base, analizza l'output, identifica cosa manca o cosa va migliorato, e raffina il prompt. Questo processo iterativo è fondamentale per ottenere risultati ottimali.",
+          "example": "Iterazione 1: \"Scrivi una email\"\nIterazione 2: \"Scrivi una email professionale\"\nIterazione 3: \"Scrivi una email professionale di follow-up post-meeting, tono cordiale, max 150 parole, con CTA per fissare prossimo appuntamento\""
+        }
+      ]
+    },
+    "integrazione-llm": {
+      "title": "Integrazione con LLM",
+      "description": "Impara a utilizzare i framework con OpenAI, Gemini, Claude e ZAI. Configurazione API, parametri e ottimizzazione.",
+      "introduction": "Integrare i framework di prompt con diversi Large Language Models richiede comprensione dei parametri API, gestione dei token e configurazione ottimale per ogni provider.",
+      "topics": ["Setup API keys", "Temperature & Top-p", "System prompts", "Token management"],
+      "sections": [
+        {
+          "title": "Setup API Keys",
+          "content": "Ogni provider richiede una API key per autenticare le richieste. Conserva le chiavi in modo sicuro usando variabili d'ambiente o gestori di segreti. Non includere mai le API keys direttamente nel codice."
+        },
+        {
+          "title": "Temperature e Top-p",
+          "content": "Temperature (0-2) controlla la creatività: valori bassi (0.2-0.5) per task deterministici, valori alti (0.7-1.5) per contenuti creativi. Top-p (0-1) è un'alternativa che controlla la diversità delle risposte tramite nucleus sampling.",
+          "example": "Temperature 0.2: Perfetto per traduzioni, analisi dati, codice\nTemperature 0.8: Ideale per brainstorming, scrittura creativa\nTemperature 1.5: Massima creatività per poesie, storytelling"
+        },
+        {
+          "title": "System Prompts",
+          "content": "I system prompts definiscono il comportamento generale del modello prima di ogni conversazione. Usa system prompts per impostare ruolo, tono, stile e vincoli globali che valgono per tutta la sessione."
+        },
+        {
+          "title": "Token Management",
+          "content": "Ogni modello ha limiti di token (input + output). Monitora l'uso dei token per ottimizzare costi e performance. Usa chunking per documenti lunghi e riassumi conversazioni precedenti quando necessario.",
+          "example": "GPT-4: 8K-128K token\nGPT-3.5: 4K-16K token\nGemini Pro: fino a 1M token\n\n1 token ≈ 0.75 parole in inglese\n1 token ≈ 0.5 parole in italiano (più caratteri)"
+        }
+      ]
+    },
+    "scegliere-framework": {
+      "title": "Scegliere il Framework Giusto",
+      "description": "Guida pratica per selezionare il framework più adatto al tuo caso d'uso: business, creativo, tecnico o problem solving.",
+      "introduction": "Con oltre 30 framework disponibili, scegliere quello giusto può sembrare complesso. Questa guida ti aiuterà a identificare il framework perfetto per ogni situazione.",
+      "topics": ["Framework per categoria", "Quando usare cosa", "Comparazioni", "Casi d'uso"],
+      "sections": [
+        {
+          "title": "Framework per Principianti",
+          "content": "Se stai iniziando con il prompt engineering, parti con framework semplici e intuitivi come APE (Action-Purpose-Expectation), RTF (Role-Task-Finish) o TAG (Task-Action-Goal). Questi hanno pochi elementi e sono facili da ricordare.",
+          "example": "APE - Perfetto per content creation rapida\nRTF - Ideale per task con deliverable chiaro\nTAG - Ottimo per definire obiettivi specifici"
+        },
+        {
+          "title": "Framework Business e Professionale",
+          "content": "Per contesti aziendali usa COAST (Context-Objective-Audience-Style-Tone), COSTAR per progetti complessi o TRACE per task professionali avanzati. Questi framework includono elementi come audience e tone essenziali nel business.",
+          "example": "Report aziendali: COSTAR\nPresentazioni clienti: COAST\nDocumentazione tecnica: RASCEF\nStrategia marketing: AIDA"
+        },
+        {
+          "title": "Framework Creativi",
+          "content": "Per contenuti creativi e marketing scegli AIDA (Attention-Interest-Desire-Action), ROSES (Role-Objective-Style-Example-Scenario) o framework con personalità come CRISPE. Questi enfatizzano stile e tono.",
+          "example": "Copy pubblicitario: AIDA\nStorytelling: ROSES\nPersonal branding: CRISPE\nSocial media: TRACI"
+        },
+        {
+          "title": "Framework Avanzati",
+          "content": "Per ragionamento complesso usa Chain of Thought o Tree of Thoughts. Per task multi-step SPARC System. Per apprendimento contestuale Few-Shot Learning. Questi richiedono più esperienza ma offrono risultati superiori.",
+          "example": "Problemi matematici: Chain of Thought\nDecisioni complesse: Tree of Thoughts\nSistemi multi-agente: SPARC\nTask con esempi: Few-Shot Learning"
+        }
+      ]
+    },
+    "prompt-avanzati": {
+      "title": "Tecniche Avanzate",
+      "description": "Chain of Thought, Few-Shot Learning, Tree of Thoughts e altre tecniche avanzate per task complessi.",
+      "introduction": "Le tecniche avanzate di prompt engineering sbloccano capacità sofisticate dei modelli AI, permettendo ragionamento complesso, problem solving strutturato e output di qualità superiore.",
+      "topics": ["CoT reasoning", "Multi-step prompts", "Self-consistency", "Prompt chaining"],
+      "sections": [
+        {
+          "title": "Chain of Thought (CoT)",
+          "content": "Invece di chiedere direttamente la risposta, guida il modello a \"pensare ad alta voce\" mostrando i passaggi del ragionamento. Aggiungi \"Pensa passo dopo passo\" o \"Mostra il tuo ragionamento\" al prompt.",
+          "example": "Senza CoT: \"Quanto fa 23 × 47?\"\n\nCon CoT: \"Calcola 23 × 47. Mostra ogni passaggio del calcolo:\n1. Scomponi la moltiplicazione\n2. Esegui i calcoli parziali\n3. Somma i risultati\n4. Fornisci la risposta finale\""
+        },
+        {
+          "title": "Few-Shot Learning",
+          "content": "Fornisci 2-5 esempi del formato di output desiderato prima di fare la richiesta vera. Il modello imparerà il pattern e lo replicherà. Estremamente efficace per task con formato specifico."
+        },
+        {
+          "title": "Tree of Thoughts",
+          "content": "Esplora multiple vie di ragionamento in parallelo, valuta ogni percorso e scegli il migliore. Utile per decisioni complesse o problemi con più soluzioni possibili.",
+          "example": "Problema: \"Come aumentare le vendite del 30%?\"\n\nPercorso 1: Ottimizzazione pricing\n→ Pro: Immediato, controllabile\n→ Contro: Rischio riduzione margini\n\nPercorso 2: Espansione canali\n→ Pro: Nuovi segmenti\n→ Contro: Investimento iniziale alto"
+        },
+        {
+          "title": "Prompt Chaining",
+          "content": "Dividi task complessi in sequenze di prompt collegati. L'output di un prompt diventa input del successivo. Permette di gestire task che superano i limiti di token o richiedono elaborazioni multiple.",
+          "example": "Step 1: \"Riassumi questo report di 50 pagine\"\n→ Output: Riassunto 2 pagine\n\nStep 2: \"Da questo riassunto, estrai 5 insight chiave\"\n→ Output: Lista 5 punti\n\nStep 3: \"Per ogni insight, crea una slide con titolo e bullet point\"\n→ Output: 5 slide formattate"
+        }
+      ]
+    },
+    "ottimizzazione": {
+      "title": "Ottimizzazione e Testing",
+      "description": "Come testare, misurare e ottimizzare i tuoi prompt per ottenere risultati consistenti e di alta qualità.",
+      "introduction": "L'ottimizzazione sistematica dei prompt attraverso testing e misurazione è essenziale per ottenere risultati consistenti e di alta qualità in produzione.",
+      "topics": ["A/B testing", "Metriche di qualità", "Iterazione", "Versioning"],
+      "sections": [
+        {
+          "title": "A/B Testing dei Prompt",
+          "content": "Testa varianti del prompt sullo stesso input per comparare risultati. Cambia un elemento alla volta (temperatura, struttura, esempi) per isolare l'impatto di ogni modifica.",
+          "example": "Variante A: \"Scrivi una email professionale\"\nVariante B: \"Scrivi una email professionale in tono cordiale ma formale\"\nVariante C: \"Scrivi una email professionale. Usa questo template: [Saluto]-[Contenuto]-[CTA]-[Chiusura]\"\n\nTesta su 10 casi diversi e misura quale produce output migliori"
+        },
+        {
+          "title": "Metriche di Qualità",
+          "content": "Definisci metriche oggettive: accuratezza (contenuto corretto), rilevanza (risponde alla domanda), completezza (include tutti gli elementi), formato (rispetta le specifiche), tono (appropriato al contesto).",
+          "example": "Scorecard (1-5):\n✓ Accuratezza: 5/5 (fatti corretti)\n✓ Rilevanza: 4/5 (leggera deviazione)\n✓ Completezza: 5/5 (tutti i punti)\n✓ Formato: 3/5 (formattazione parziale)\n✓ Tono: 5/5 (perfettamente professionale)\n\nScore totale: 22/25 (88%)"
+        },
+        {
+          "title": "Iterazione Sistematica",
+          "content": "Procedi con cicli: Test → Misura → Analizza → Modifica → Ripeti. Documenta ogni iterazione e i risultati. Mantieni una baseline per confrontare i miglioramenti.",
+          "example": "Baseline (v1.0): Score 65%\n→ Aggiunti esempi (v1.1): Score 72% (+7%)\n→ Specificato formato (v1.2): Score 78% (+6%)\n→ Ottimizzata temperature (v1.3): Score 85% (+7%)\n→ Raffinato contesto (v2.0): Score 91% (+6%)"
+        },
+        {
+          "title": "Versioning e Documentazione",
+          "content": "Usa versioning semantico (v1.0, v1.1, v2.0) per i prompt. Documenta: scopo, parametri, esempi di input/output, performance, date modifiche. Conserva le versioni precedenti per rollback."
+        }
+      ]
+    },
+    "best-practices": {
+      "title": "Best Practices",
+      "description": "Regole d'oro, pattern comprovati e suggerimenti pratici per scrivere prompt che funzionano sempre.",
+      "introduction": "Seguire best practices consolidate nel prompt engineering garantisce risultati migliori, più consistenti e predicibili in ogni situazione.",
+      "topics": ["Chiarezza", "Specificità", "Contesto", "Formato output"],
+      "sections": [
+        {
+          "title": "Sii Chiaro e Specifico",
+          "content": "Evita ambiguità. Usa linguaggio preciso. Specifica esattamente cosa vuoi, in che formato, con quale tono. Più dettagli = risultati migliori.",
+          "example": "Male: \"Scrivi qualcosa sul marketing\"\n\nBene: \"Scrivi un articolo di 800 parole sul marketing digitale per e-commerce B2C. Include: introduzione (100 parole), 3 strategie con esempi (200 parole ciascuna), conclusione con CTA (100 parole). Tono: professionale ma accessibile. Target: piccoli imprenditori italiani.\""
+        },
+        {
+          "title": "Fornisci Contesto Sufficiente",
+          "content": "Il modello non conosce il tuo background, settore, audience o obiettivi. Fornisci sempre contesto rilevante: chi sei, per chi è l'output, qual è lo scopo.",
+          "example": "Male: \"Crea una presentazione\"\n\nBene: \"Sono il CMO di una startup SaaS B2B nel settore HR tech. Devo presentare la nostra nuova feature di AI recruiting a 50 HR manager di aziende Fortune 500. Crea una struttura di presentazione di 15 slide per una sessione di 20 minuti.\""
+        },
+        {
+          "title": "Specifica il Formato Output",
+          "content": "Non lasciare che il modello decida il formato. Specifica: lista numerata, bullet point, JSON, tabella, paragrafo narrativo, ecc. Includi un esempio se possibile."
+        },
+        {
+          "title": "Usa Delimitatori e Struttura",
+          "content": "Usa delimitatori chiari (###, ---, \"\"\") per separare sezioni del prompt. Usa numeri per liste. Questo aiuta il modello a distinguere istruzioni, esempi e input."
+        },
+        {
+          "title": "Itera e Raffina",
+          "content": "Il primo prompt raramente è perfetto. Analizza l'output, identifica cosa manca o va male, e raffina. È un processo iterativo normale e necessario.",
+          "example": "V1: Output troppo generico\n→ Aggiungi esempi specifici\n\nV2: Tono troppo formale\n→ Specifica \"tono conversazionale\"\n\nV3: Mancano dettagli tecnici\n→ Aggiungi \"includi specifiche tecniche\"\n\nV4: Perfetto!"
+        },
+        {
+          "title": "Gestisci le Aspettative",
+          "content": "I modelli AI hanno limiti: possono inventare fatti (hallucination), non conoscono eventi recenti, non hanno opinioni reali. Non chiedere l'impossibile e valida sempre output critici."
+        }
+      ]
+    },
+    "casi-uso": {
+      "title": "Casi d'Uso Pratici",
+      "description": "Esempi reali di applicazione: content marketing, documentazione tecnica, customer service e coding assistant.",
+      "introduction": "Esempi pratici e concreti di come applicare i framework di prompt engineering in scenari reali del mondo professionale.",
+      "topics": ["Marketing copy", "Code generation", "Data analysis", "Creative writing"],
+      "sections": [
+        {
+          "title": "Content Marketing",
+          "content": "Usa framework come AIDA o ROSES per creare contenuti marketing coinvolgenti. Specifica sempre audience, tono, lunghezza e CTA desiderato."
+        },
+        {
+          "title": "Code Generation",
+          "content": "Per generare codice, sii estremamente specifico: linguaggio, versione, librerie, pattern, gestione errori, test. Usa esempi di input/output attesi."
+        },
+        {
+          "title": "Data Analysis",
+          "content": "Per analisi dati, fornisci contesto sul dataset, metriche importanti e tipo di insight cercati. Specifica formato output (tabella, grafico, narrative)."
+        },
+        {
+          "title": "Customer Service",
+          "content": "Per automatizzare risposte customer service, definisci tono, policy aziendali, template risposta. Usa Few-Shot con esempi di conversazioni reali."
+        }
+      ]
+    },
+    "troubleshooting": {
+      "title": "Risoluzione Problemi",
+      "description": "Soluzioni rapide ai problemi più comuni: output inconsistenti, hallucinations, formattazione e limiti dei modelli.",
+      "introduction": "Quando i prompt non funzionano come previsto, una diagnosi sistematica e l'applicazione delle giuste tecniche di troubleshooting risolvono la maggior parte dei problemi.",
+      "topics": ["Debugging prompts", "Hallucination fix", "Format enforcement", "Edge cases"],
+      "sections": [
+        {
+          "title": "Output Inconsistenti",
+          "content": "Se ottieni risultati diversi ogni volta: riduci temperature (0.2-0.5), aggiungi più vincoli e esempi, usa formato strutturato, specifica lunghezza esatta.",
+          "example": "Problema: Ogni run produce lunghezza diversa\n\nSoluzione:\nMale: \"Scrivi un riassunto\"\nBene: \"Scrivi un riassunto di ESATTAMENTE 150 parole (±5 parole). Se il conteggio non è esatto, riformula.\"\n\nAggiungi: temperature=0.3, top_p=0.9"
+        },
+        {
+          "title": "Hallucinations (Fatti Inventati)",
+          "content": "Il modello inventa informazioni? Chiedi fonti, usa \"basati solo su\", fornisci contesto completo, abilita \"search\" se disponibile, valida sempre output critici.",
+          "example": "Problema: Inventa statistiche o citazioni\n\nSoluzione:\n\"Analizza questo report. IMPORTANTE:\n- Usa SOLO dati presenti nel documento fornito\n- Se un'informazione non è nel testo, scrivi 'N/A'\n- NON fare assunzioni o stime\n- Cita la sezione esatta per ogni dato\""
+        },
+        {
+          "title": "Formato Non Rispettato",
+          "content": "Se il modello ignora il formato richiesto: usa delimitatori chiari, fornisci esempio esatto del formato, richiedi validazione, usa regex o schema JSON per parsing."
+        },
+        {
+          "title": "Gestione Edge Cases",
+          "content": "Per input inaspettati o edge cases: aggiungi validazione input, specifica comportamento per casi limite, testa su dataset diversificato.",
+          "example": "Edge cases comuni:\n\n1. Input vuoto\n→ \"Se input è vuoto, ritorna: {error: 'No input provided'}\"\n\n2. Input troppo lungo\n→ \"Se input > 5000 parole, riassumi prima, poi processa\"\n\n3. Lingua inaspettata\n→ \"Se input non è in italiano, prima traduci, poi processa\""
+        },
+        {
+          "title": "Limiti di Token",
+          "content": "Se superi i limiti: usa chunking (dividi input), riassumi progressivamente, usa modelli con context window maggiore, implementa prompt chaining."
+        },
+        {
+          "title": "Debugging Sistematico",
+          "content": "Approccio metodico: 1) Isola il problema (quale parte fallisce?), 2) Semplifica il prompt al minimo, 3) Aggiungi complessità gradualmente, 4) Testa ogni modifica, 5) Documenta cosa funziona."
+        }
+      ]
+    }
+  }
+}
