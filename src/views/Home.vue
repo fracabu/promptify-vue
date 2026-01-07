@@ -13,7 +13,7 @@ import Button3D from '../components/ui/Button3D.vue'
 import Icon3D from '../components/ui/Icon3D.vue'
 import { frameworks, macroCategories } from '../data/frameworks'
 
-const { t } = useI18n()
+const { t, tm } = useI18n()
 
 // Helper functions for translated content
 const getFrameworkTitle = (id: string) => t(`frameworks.items.${id}.title`)
@@ -117,7 +117,7 @@ const formatTitle = (title: string) => {
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <!-- Left Column - Text & CTA -->
           <div class="space-y-8 animate-fade-in">
-            <h1 class="text-5xl md:text-7xl font-bold leading-tight pb-2 bg-clip-text text-transparent bg-gradient-to-r from-purple-600 via-blue-600 to-orange-600 dark:from-purple-400 dark:via-blue-400 dark:to-orange-400">
+            <h1 class="text-5xl md:text-7xl font-bold leading-tight pb-3 bg-clip-text text-transparent bg-gradient-to-r from-purple-600 via-blue-600 to-orange-600 dark:from-purple-400 dark:via-blue-400 dark:to-orange-400">
               {{ t('hero.title') }}
             </h1>
             <p class="text-xl md:text-2xl text-muted-foreground leading-relaxed font-light animate-fade-in" style="animation-delay: 0.2s; opacity: 0; animation-fill-mode: forwards;">
@@ -181,7 +181,7 @@ const formatTitle = (title: string) => {
     <!-- Come Funziona Section -->
     <div id="how-it-works" class="py-20 px-4 pb-32 bg-gradient-to-b from-background via-purple-50/20 to-background dark:via-purple-950/10">
       <div class="container mx-auto max-w-6xl">
-        <h2 class="text-5xl md:text-7xl font-bold text-center mb-6 pb-2 bg-clip-text text-transparent bg-gradient-to-r from-purple-600 via-blue-600 to-orange-600 dark:from-purple-400 dark:via-blue-400 dark:to-orange-400 animate-fade-in">
+        <h2 class="text-5xl md:text-7xl font-bold text-center mb-6 pb-3 bg-clip-text text-transparent bg-gradient-to-r from-purple-600 via-blue-600 to-orange-600 dark:from-purple-400 dark:via-blue-400 dark:to-orange-400 animate-fade-in">
           {{ t('howItWorks.title') }}
         </h2>
         <p class="text-xl md:text-2xl text-muted-foreground text-center mb-16 max-w-3xl mx-auto font-light leading-relaxed">
@@ -250,34 +250,40 @@ const formatTitle = (title: string) => {
             <svg class="w-6 h-6 text-purple-600 dark:text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
             </svg>
-            Come inserire le chiavi API
+            {{ t('howItWorks.apiKeysTitle') }}
           </h3>
           <div class="grid md:grid-cols-3 gap-6 mb-6">
             <div>
-              <h4 class="font-semibold mb-2 text-foreground">OpenAI (GPT-5, GPT-4.1)</h4>
+              <h4 class="font-semibold mb-2 text-foreground">{{ t('howItWorks.openai.title') }}</h4>
               <ol class="text-sm text-muted-foreground space-y-1 list-decimal list-inside">
-                <li>Vai su <a href="https://platform.openai.com/api-keys" target="_blank" class="text-purple-600 dark:text-purple-400 hover:underline">platform.openai.com</a></li>
-                <li>Crea una nuova API key</li>
-                <li>Copia la chiave che inizia con "sk-proj-"</li>
-                <li>Incollala nelle impostazioni</li>
+                <li v-for="(step, idx) in (tm('howItWorks.openai.steps') as string[])" :key="idx">
+                  <template v-if="idx === 0">
+                    <span v-html="step.replace('platform.openai.com', '<a href=&quot;https://platform.openai.com/api-keys&quot; target=&quot;_blank&quot; class=&quot;text-purple-600 dark:text-purple-400 hover:underline&quot;>platform.openai.com</a>')"></span>
+                  </template>
+                  <template v-else>{{ step }}</template>
+                </li>
               </ol>
             </div>
             <div>
-              <h4 class="font-semibold mb-2 text-foreground">Google Gemini</h4>
+              <h4 class="font-semibold mb-2 text-foreground">{{ t('howItWorks.gemini.title') }}</h4>
               <ol class="text-sm text-muted-foreground space-y-1 list-decimal list-inside">
-                <li>Vai su <a href="https://aistudio.google.com/apikey" target="_blank" class="text-purple-600 dark:text-purple-400 hover:underline">aistudio.google.com</a></li>
-                <li>Genera una nuova API key</li>
-                <li>Copia la chiave</li>
-                <li>Incollala nelle impostazioni</li>
+                <li v-for="(step, idx) in (tm('howItWorks.gemini.steps') as string[])" :key="idx">
+                  <template v-if="idx === 0">
+                    <span v-html="step.replace('aistudio.google.com', '<a href=&quot;https://aistudio.google.com/apikey&quot; target=&quot;_blank&quot; class=&quot;text-purple-600 dark:text-purple-400 hover:underline&quot;>aistudio.google.com</a>')"></span>
+                  </template>
+                  <template v-else>{{ step }}</template>
+                </li>
               </ol>
             </div>
             <div>
-              <h4 class="font-semibold mb-2 text-foreground">ZAI (GLM-4.6)</h4>
+              <h4 class="font-semibold mb-2 text-foreground">{{ t('howItWorks.zai.title') }}</h4>
               <ol class="text-sm text-muted-foreground space-y-1 list-decimal list-inside">
-                <li>Vai su <a href="https://open.bigmodel.cn" target="_blank" class="text-purple-600 dark:text-purple-400 hover:underline">open.bigmodel.cn</a></li>
-                <li>Registrati e crea una key</li>
-                <li>Copia la tua API key</li>
-                <li>Incollala nelle impostazioni</li>
+                <li v-for="(step, idx) in (tm('howItWorks.zai.steps') as string[])" :key="idx">
+                  <template v-if="idx === 0">
+                    <span v-html="step.replace('open.bigmodel.cn', '<a href=&quot;https://open.bigmodel.cn&quot; target=&quot;_blank&quot; class=&quot;text-purple-600 dark:text-purple-400 hover:underline&quot;>open.bigmodel.cn</a>')"></span>
+                  </template>
+                  <template v-else>{{ step }}</template>
+                </li>
               </ol>
             </div>
           </div>
@@ -286,9 +292,7 @@ const formatTitle = (title: string) => {
               <svg class="w-5 h-5 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
                 <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd" />
               </svg>
-              <span>
-                <strong>Privacy garantita:</strong> Le tue chiavi API vengono salvate solo nel localStorage del tuo browser e non vengono mai inviate ai nostri server. Sono utilizzate solo per comunicare direttamente con i provider AI che hai scelto.
-              </span>
+              <span>{{ t('howItWorks.privacyNote') }}</span>
             </p>
           </div>
         </div>
@@ -298,7 +302,7 @@ const formatTitle = (title: string) => {
     <!-- Macro Categories Section -->
     <div id="categories" class="min-h-screen flex items-center justify-center py-20 px-4">
       <div class="container mx-auto relative">
-        <h2 class="text-5xl md:text-7xl font-bold text-center mb-12 pb-2 bg-clip-text text-transparent bg-gradient-to-r from-purple-600 via-blue-600 to-orange-600 dark:from-purple-400 dark:via-blue-400 dark:to-orange-400 animate-fade-in">
+        <h2 class="text-5xl md:text-7xl font-bold text-center mb-12 pb-3 bg-clip-text text-transparent bg-gradient-to-r from-purple-600 via-blue-600 to-orange-600 dark:from-purple-400 dark:via-blue-400 dark:to-orange-400 animate-fade-in">
           {{ t('categories.title') }}
         </h2>
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 px-4">
@@ -334,7 +338,7 @@ const formatTitle = (title: string) => {
     <div id="frameworks" class="py-20 px-4">
       <div class="container mx-auto">
         <div class="text-center mb-12 animate-fade-in">
-          <h2 class="text-5xl md:text-7xl font-bold mb-6 pb-2 bg-clip-text text-transparent bg-gradient-to-r from-purple-600 via-blue-600 to-orange-600 dark:from-purple-400 dark:via-blue-400 dark:to-orange-400">
+          <h2 class="text-5xl md:text-7xl font-bold mb-6 pb-3 bg-clip-text text-transparent bg-gradient-to-r from-purple-600 via-blue-600 to-orange-600 dark:from-purple-400 dark:via-blue-400 dark:to-orange-400">
             {{ selectedCategory ? getMacroCategoryName(selectedCategory) : t('categories.allFrameworks') }}
           </h2>
           <p v-if="selectedCategory" class="text-xl md:text-2xl text-muted-foreground mb-6 font-light leading-relaxed">
