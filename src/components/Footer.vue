@@ -32,7 +32,7 @@ const currentYear = new Date().getFullYear()
               </g>
             </svg>
           </div>
-          <span class="text-xl font-bold font-mono tracking-tight">
+          <span class="text-xl font-bold tracking-tight" style="font-family: 'Aldrich', sans-serif;">
             <span class="text-foreground">Prompt</span>
             <span class="text-purple-600 dark:text-purple-400">ify</span>
           </span>

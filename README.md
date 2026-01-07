@@ -32,6 +32,7 @@ Interactive web application to explore and test 30+ Prompt Engineering framework
 - **Multi-Provider** - OpenAI, Google Gemini, ZAI support
 - **Dark/Light Mode** - Theme switching with localStorage persistence
 - **16K Token Responses** - Extended AI response context
+- **i18n Support** - Italian and English languages
 
 ### Framework Categories
 
@@ -52,7 +53,7 @@ npm install
 npm run dev
 ```
 
-Access at `http://localhost:5173`
+Access at `http://localhost:5174`
 
 ---
 
@@ -70,6 +71,7 @@ Applicazione web interattiva per esplorare e testare 30+ framework di Prompt Eng
 - **Multi-Provider** - Supporto OpenAI, Google Gemini, ZAI
 - **Tema Scuro/Chiaro** - Cambio tema con persistenza localStorage
 - **Risposte 16K Token** - Contesto risposte AI esteso
+- **Supporto i18n** - Italiano e Inglese
 
 ### Categorie Framework
 
@@ -90,14 +92,14 @@ npm install
 npm run dev
 ```
 
-Accedi su `http://localhost:5173`
+Accedi su `http://localhost:5174`
 
 ---
 
 ## Tech Stack
 
 - Vue 3.5, TypeScript 5.6, Vite 7.1
-- Tailwind CSS 3.4, Pinia
+- Tailwind CSS 3.4, Pinia, Vue I18n
 - Lucide Icons, Heroicons
 
 ## License

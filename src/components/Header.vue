@@ -57,7 +57,7 @@ const switchLanguage = (langCode: string) => {
               </g>
             </svg>
           </div>
-          <span class="text-[35px] font-bold hidden sm:block leading-none font-mono tracking-tight">
+          <span class="text-[35px] font-bold hidden sm:block leading-none tracking-tight" style="font-family: 'Aldrich', sans-serif;">
             <span class="text-slate-900 dark:text-white">Prompt</span>
             <span class="text-purple-600 dark:text-purple-400">ify</span>
           </span>

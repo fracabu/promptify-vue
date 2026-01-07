@@ -117,7 +117,7 @@ const formatTitle = (title: string) => {
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <!-- Left Column - Text & CTA -->
           <div class="space-y-8 animate-fade-in">
-            <h1 class="text-5xl md:text-7xl font-bold leading-relaxed bg-clip-text text-transparent bg-gradient-to-r from-purple-600 via-blue-600 to-orange-600 dark:from-purple-400 dark:via-blue-400 dark:to-orange-400">
+            <h1 class="text-5xl md:text-7xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-purple-600 via-blue-600 to-orange-600 dark:from-purple-400 dark:via-blue-400 dark:to-orange-400" style="font-family: 'Aldrich', sans-serif; line-height: 1.3; padding-bottom: 0.15em;">
               {{ t('hero.title') }}
             </h1>
             <p class="text-xl md:text-2xl text-muted-foreground leading-relaxed font-light animate-fade-in" style="animation-delay: 0.2s; opacity: 0; animation-fill-mode: forwards;">
@@ -181,7 +181,7 @@ const formatTitle = (title: string) => {
     <!-- Come Funziona Section -->
     <div id="how-it-works" class="py-20 px-4 pb-32 bg-gradient-to-b from-background via-purple-50/20 to-background dark:via-purple-950/10">
       <div class="container mx-auto max-w-6xl">
-        <h2 class="text-5xl md:text-7xl font-bold text-center mb-6 pb-4 bg-clip-text text-transparent bg-gradient-to-r from-purple-600 via-blue-600 to-orange-600 dark:from-purple-400 dark:via-blue-400 dark:to-orange-400 animate-fade-in">
+        <h2 class="text-5xl md:text-7xl font-bold text-center mb-6 bg-clip-text text-transparent bg-gradient-to-r from-purple-600 via-blue-600 to-orange-600 dark:from-purple-400 dark:via-blue-400 dark:to-orange-400 animate-fade-in" style="font-family: 'Aldrich', sans-serif; line-height: 1.3; padding-bottom: 0.15em;">
           {{ t('howItWorks.title') }}
         </h2>
         <p class="text-xl md:text-2xl text-muted-foreground text-center mb-16 max-w-3xl mx-auto font-light leading-relaxed">
@@ -302,7 +302,7 @@ const formatTitle = (title: string) => {
     <!-- Macro Categories Section -->
     <div id="categories" class="min-h-screen flex items-center justify-center py-20 px-4">
       <div class="container mx-auto relative">
-        <h2 class="text-5xl md:text-7xl font-bold text-center mb-12 pb-4 bg-clip-text text-transparent bg-gradient-to-r from-purple-600 via-blue-600 to-orange-600 dark:from-purple-400 dark:via-blue-400 dark:to-orange-400 animate-fade-in">
+        <h2 class="text-5xl md:text-7xl font-bold text-center mb-12 bg-clip-text text-transparent bg-gradient-to-r from-purple-600 via-blue-600 to-orange-600 dark:from-purple-400 dark:via-blue-400 dark:to-orange-400 animate-fade-in" style="font-family: 'Aldrich', sans-serif; line-height: 1.3; padding-bottom: 0.15em;">
           {{ t('categories.title') }}
         </h2>
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 px-4">
@@ -338,7 +338,7 @@ const formatTitle = (title: string) => {
     <div id="frameworks" class="py-20 px-4">
       <div class="container mx-auto">
         <div class="text-center mb-12 animate-fade-in">
-          <h2 class="text-5xl md:text-7xl font-bold mb-6 pb-4 bg-clip-text text-transparent bg-gradient-to-r from-purple-600 via-blue-600 to-orange-600 dark:from-purple-400 dark:via-blue-400 dark:to-orange-400">
+          <h2 class="text-5xl md:text-7xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-purple-600 via-blue-600 to-orange-600 dark:from-purple-400 dark:via-blue-400 dark:to-orange-400" style="font-family: 'Aldrich', sans-serif; line-height: 1.3; padding-bottom: 0.15em;">
             {{ selectedCategory ? getMacroCategoryName(selectedCategory) : t('categories.allFrameworks') }}
           </h2>
           <p v-if="selectedCategory" class="text-xl md:text-2xl text-muted-foreground mb-6 font-light leading-relaxed">

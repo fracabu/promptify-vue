@@ -39,6 +39,19 @@ Promptify Vue is a Vue 3 + TypeScript application for exploring and testing 30+ 
 - Hash-based navigation for SPA
 - Hash anchors (`/#categories`, `/#how-it-works`) scroll to sections on Home
 
+**Internationalization (i18n)**:
+- Vue I18n in Composition API mode (`legacy: false`)
+- Supported locales: Italian (`it`, default fallback), English (`en`)
+- Locale files in `src/locales/{locale}/`:
+  - `ui.json` - UI strings
+  - `frameworks.json` - Framework translations
+  - `guides.json` - Guide content
+- Locale preference saved to localStorage, with browser detection fallback
+- Use `setLocale()` and `getCurrentLocale()` from `src/i18n.ts`
+
+**Deployment**:
+- Vercel configured via `vercel.json` for SPA routing (rewrites all paths to index.html)
+
 ### Framework Categories
 
 Frameworks are categorized as: Creativo, Analitico, Strutturato, Comunicativo, Tecnico, Innovativo, Marketing
@@ -54,6 +67,11 @@ Three signature frameworks have `createdBy` field: CALIBRO (GPT-5), BCM (GLM-4.6
 - Add to `frameworks` array in `src/data/frameworks.ts`
 - Must match `Framework` interface with required fields: id, title, description, icon, color, category, difficulty, explanation, example, template
 - Template must contain `{input}` placeholder
+- Add translations to `src/locales/it/frameworks.json` and `src/locales/en/frameworks.json`
+
+**Adding UI translations**:
+- UI strings go in `src/locales/{locale}/ui.json`
+- Guide content goes in `src/locales/{locale}/guides.json`
 
 **API calls**:
 - All providers use max_tokens: 16000
