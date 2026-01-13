@@ -17,13 +17,18 @@ import Alert from '../components/ui/Alert.vue'
 import Progress from '../components/ui/Progress.vue'
 import { ArrowLeft, Play, Copy, Check, AlertCircle } from 'lucide-vue-next'
 
-const { t } = useI18n()
+const { t, te, locale } = useI18n()
 
 // Helper functions for translated content
 const getFrameworkTitle = (id: string) => t(`frameworks.items.${id}.title`)
 const getFrameworkDescription = (id: string) => t(`frameworks.items.${id}.description`)
 const getFrameworkExplanation = (id: string) => t(`frameworks.items.${id}.explanation`)
 const getFrameworkExample = (id: string) => t(`frameworks.items.${id}.example`)
+// Returns undefined if translation doesn't exist, so fallback works
+const getFrameworkTemplate = (id: string) => {
+  const key = `frameworks.items.${id}.template`
+  return te(key) ? t(key) : undefined
+}
 const getTranslatedDifficulty = (difficulty: string) => {
   const map: Record<string, string> = {
     'Facile': t('difficulty.easy'),
@@ -63,17 +68,17 @@ const providers = [
 const modelsByProvider = computed(() => {
   const models = {
     openai: [
-      { value: 'gpt-5-2025-08-07', label: 'GPT-5 (Più recente)' },
-      { value: 'gpt-5-mini-2025-08-07', label: 'GPT-5 Mini (Veloce)' },
-      { value: 'gpt-4.1-2025-04-14', label: 'GPT-4.1' }
+      { value: 'gpt-5-2025-08-07', label: t('models.gpt5Latest') },
+      { value: 'gpt-5-mini-2025-08-07', label: t('models.gpt5Mini') },
+      { value: 'gpt-4.1-2025-04-14', label: t('models.gpt41') }
     ],
     gemini: [
-      { value: 'gemini-2.5-flash', label: 'Gemini 2.5 Flash (Veloce)' },
-      { value: 'gemini-2.5-pro', label: 'Gemini 2.5 Pro (Più potente)' }
+      { value: 'gemini-2.5-flash', label: t('models.geminiFlash') },
+      { value: 'gemini-2.5-pro', label: t('models.geminiPro') }
     ],
     zai: [
-      { value: 'z-ai/glm-4.6', label: 'GLM-4.6' },
-      { value: 'z-ai/glm-4.5', label: 'GLM-4.5' }
+      { value: 'z-ai/glm-4.6', label: t('models.glm46') },
+      { value: 'z-ai/glm-4.5', label: t('models.glm45') }
     ]
   }
   return models[selectedProvider.value] || []
@@ -102,8 +107,9 @@ const generatePromptPreview = () => {
     return
   }
 
-  const template = currentFramework.template || ''
-  
+  // Use translated template
+  const template = getFrameworkTemplate(currentFramework.id) || currentFramework.template || ''
+
   // Replace {input} placeholder with actual user input
   generatedPrompt.value = template.replace(/{input}/g, userInput.value)
 }
@@ -168,25 +174,31 @@ const handleTest = async () => {
   generatePromptPreview()
 
   try {
+    // Use translated values for API call
+    const translatedTemplate = getFrameworkTemplate(framework.value.id) || framework.value.template
+    const translatedExplanation = getFrameworkExplanation(framework.value.id)
+    const translatedTitle = getFrameworkTitle(framework.value.id)
+
     const response = await testFramework({
       framework: framework.value.id,
-      frameworkName: framework.value.title,
-      frameworkExplanation: framework.value.explanation,
+      frameworkName: translatedTitle,
+      frameworkExplanation: translatedExplanation,
       input: userInput.value,
-      template: framework.value.template,
+      template: translatedTemplate,
       provider: selectedProvider.value,
       model: selectedModel.value,
-      apiKey: apiKeysStore.getKey(selectedProvider.value)
+      apiKey: apiKeysStore.getKey(selectedProvider.value),
+      locale: locale.value as 'it' | 'en'
     })
 
     if (response.success && response.result) {
       result.value = response.result
     } else {
-      error.value = response.error || 'Errore sconosciuto'
+      error.value = response.error || t('common.unknownError')
       suggestion.value = response.suggestion || ''
     }
   } catch (err: any) {
-    error.value = err.message || 'Errore durante il test'
+    error.value = err.message || t('common.testError')
   } finally {
     stopProgressSimulation()
     isLoading.value = false
@@ -300,7 +312,7 @@ const copyResult = async () => {
       <div v-if="framework.template" class="mb-8 animate-fade-in" style="animation-delay: 0.3s; opacity: 0; animation-fill-mode: forwards;">
         <Card class="p-6 hover:shadow-lg transition-all duration-300">
           <h2 class="text-2xl font-bold mb-4">{{ t('framework.template') }}</h2>
-          <pre class="text-sm text-muted-foreground whitespace-pre-wrap bg-muted p-4 rounded-lg overflow-x-auto">{{ framework.template }}</pre>
+          <pre class="text-sm text-muted-foreground whitespace-pre-wrap bg-muted p-4 rounded-lg overflow-x-auto">{{ getFrameworkTemplate(framework.id) || framework.template }}</pre>
         </Card>
       </div>
 

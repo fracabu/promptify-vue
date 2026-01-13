@@ -9,6 +9,13 @@ export interface TestFrameworkRequest {
   provider: ApiProvider
   model?: string
   apiKey: string
+  locale?: 'it' | 'en'
+}
+
+// System prompts by locale
+const systemPrompts = {
+  it: 'Sei un assistente AI specializzato nel prompt engineering. Rispondi sempre applicando correttamente i framework e fornendo risposte dettagliate e complete.',
+  en: 'You are an AI assistant specialized in prompt engineering. Always respond by correctly applying the frameworks and providing detailed and complete answers.'
 }
 
 export interface TestFrameworkResponse {
@@ -19,7 +26,7 @@ export interface TestFrameworkResponse {
 }
 
 // OpenAI API call
-async function callOpenAI(prompt: string, apiKey: string, model: string = 'gpt-5-2025-08-07'): Promise<string> {
+async function callOpenAI(prompt: string, apiKey: string, model: string = 'gpt-5-2025-08-07', locale: 'it' | 'en' = 'it'): Promise<string> {
   const response = await fetch('https://api.openai.com/v1/chat/completions', {
     method: 'POST',
     headers: {
@@ -31,7 +38,7 @@ async function callOpenAI(prompt: string, apiKey: string, model: string = 'gpt-5
       messages: [
         {
           role: 'system',
-          content: 'Sei un assistente AI specializzato nel prompt engineering. Rispondi sempre applicando correttamente i framework e fornendo risposte dettagliate e complete.'
+          content: systemPrompts[locale]
         },
         {
           role: 'user',
@@ -53,7 +60,7 @@ async function callOpenAI(prompt: string, apiKey: string, model: string = 'gpt-5
 }
 
 // Gemini API call
-async function callGemini(prompt: string, apiKey: string, model: string = 'gemini-2.5-flash'): Promise<string> {
+async function callGemini(prompt: string, apiKey: string, model: string = 'gemini-2.5-flash', locale: 'it' | 'en' = 'it'): Promise<string> {
   const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${apiKey}`, {
     method: 'POST',
     headers: {
@@ -62,7 +69,7 @@ async function callGemini(prompt: string, apiKey: string, model: string = 'gemin
     body: JSON.stringify({
       contents: [{
         parts: [{
-          text: `Sei un assistente AI specializzato nel prompt engineering. Rispondi sempre applicando correttamente i framework e fornendo risposte dettagliate e complete.\n\n${prompt}`
+          text: `${systemPrompts[locale]}\n\n${prompt}`
         }]
       }],
       generationConfig: {
@@ -82,7 +89,7 @@ async function callGemini(prompt: string, apiKey: string, model: string = 'gemin
 }
 
 // ZAI API call
-async function callZAI(prompt: string, apiKey: string, model: string = 'z-ai/glm-4.6'): Promise<string> {
+async function callZAI(prompt: string, apiKey: string, model: string = 'z-ai/glm-4.6', locale: 'it' | 'en' = 'it'): Promise<string> {
   try {
     const response = await fetch('https://api.zukijourney.com/v1/chat/completions', {
       method: 'POST',
@@ -95,7 +102,7 @@ async function callZAI(prompt: string, apiKey: string, model: string = 'z-ai/glm
         messages: [
           {
             role: 'system',
-            content: 'Sei un assistente AI specializzato nel prompt engineering. Rispondi sempre applicando correttamente i framework e fornendo risposte dettagliate e complete.'
+            content: systemPrompts[locale]
           },
           {
             role: 'user',
@@ -122,36 +129,63 @@ async function callZAI(prompt: string, apiKey: string, model: string = 'z-ai/glm
   }
 }
 
+// Prompt templates by locale
+const promptTemplates = {
+  it: {
+    usingFramework: 'Stai utilizzando il framework di prompt engineering',
+    frameworkExplanation: 'SPIEGAZIONE DEL FRAMEWORK',
+    instructions: 'ISTRUZIONI',
+    applyFramework: 'Applica questo framework alla richiesta dell\'utente seguendo la struttura e i principi spiegati sopra.',
+    useTemplate: 'Usa questo template come guida',
+    userRequest: 'RICHIESTA DELL\'UTENTE',
+    provideResponse: 'Fornisci una risposta dettagliata e ben strutturata applicando correttamente il framework.',
+    missingApiKey: 'Chiave API mancante',
+    configureApiKey: 'Configura la chiave API nelle impostazioni'
+  },
+  en: {
+    usingFramework: 'You are using the prompt engineering framework',
+    frameworkExplanation: 'FRAMEWORK EXPLANATION',
+    instructions: 'INSTRUCTIONS',
+    applyFramework: 'Apply this framework to the user\'s request following the structure and principles explained above.',
+    useTemplate: 'Use this template as a guide',
+    userRequest: 'USER REQUEST',
+    provideResponse: 'Provide a detailed and well-structured response by correctly applying the framework.',
+    missingApiKey: 'Missing API key',
+    configureApiKey: 'Configure the API key in settings'
+  }
+}
+
 // Main test framework function
 export async function testFramework(request: TestFrameworkRequest): Promise<TestFrameworkResponse> {
   try {
-    const { frameworkName, frameworkExplanation, input, template, provider, model, apiKey } = request
+    const { frameworkName, frameworkExplanation, input, template, provider, model, apiKey, locale = 'it' } = request
+    const texts = promptTemplates[locale]
 
     if (!apiKey) {
       return {
         success: false,
-        error: 'Chiave API mancante',
-        suggestion: 'Configura la chiave API nelle impostazioni'
+        error: texts.missingApiKey,
+        suggestion: texts.configureApiKey
       }
     }
 
     // Build enriched prompt with framework context
     let enrichedPrompt = ''
-    
-    if (frameworkName && frameworkExplanation) {
-      enrichedPrompt = `Stai utilizzando il framework di prompt engineering: "${frameworkName}"
 
-SPIEGAZIONE DEL FRAMEWORK:
+    if (frameworkName && frameworkExplanation) {
+      enrichedPrompt = `${texts.usingFramework}: "${frameworkName}"
+
+${texts.frameworkExplanation}:
 ${frameworkExplanation}
 
-ISTRUZIONI:
-Applica questo framework alla richiesta dell'utente seguendo la struttura e i principi spiegati sopra.
-${template ? `Usa questo template come guida: ${template}` : ''}
+${texts.instructions}:
+${texts.applyFramework}
+${template ? `${texts.useTemplate}: ${template}` : ''}
 
-RICHIESTA DELL'UTENTE:
+${texts.userRequest}:
 ${input}
 
-Fornisci una risposta dettagliata e ben strutturata applicando correttamente il framework.`
+${texts.provideResponse}`
     } else {
       // Fallback to basic template application
       enrichedPrompt = template ? template.replace('{input}', input) : input
@@ -162,13 +196,13 @@ Fornisci una risposta dettagliata e ben strutturata applicando correttamente il 
     // Call appropriate provider
     switch (provider) {
       case 'openai':
-        result = await callOpenAI(enrichedPrompt, apiKey, model || 'gpt-5-2025-08-07')
+        result = await callOpenAI(enrichedPrompt, apiKey, model || 'gpt-5-2025-08-07', locale)
         break
       case 'gemini':
-        result = await callGemini(enrichedPrompt, apiKey, model || 'gemini-2.5-flash')
+        result = await callGemini(enrichedPrompt, apiKey, model || 'gemini-2.5-flash', locale)
         break
       case 'zai':
-        result = await callZAI(enrichedPrompt, apiKey, model || 'z-ai/glm-4.6')
+        result = await callZAI(enrichedPrompt, apiKey, model || 'z-ai/glm-4.6', locale)
         break
       default:
         throw new Error(`Provider ${provider} non supportato`)

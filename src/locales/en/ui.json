@@ -183,7 +183,8 @@
     "select": "Select...",
     "loading": "Loading...",
     "error": "Error",
-    "unknownError": "Unknown error"
+    "unknownError": "Unknown error",
+    "testError": "Error during test"
   },
   "language": {
     "it": "Italiano",

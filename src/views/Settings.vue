@@ -10,7 +10,7 @@ import Button from '../components/ui/Button.vue'
 import Badge from '../components/ui/Badge.vue'
 import { Key, Trash2, Save, Eye, EyeOff } from 'lucide-vue-next'
 
-const { t } = useI18n()
+const { t, tm } = useI18n()
 const apiKeysStore = useApiKeysStore()
 
 const providers = computed(() => [
@@ -136,7 +136,7 @@ const toggleShowKey = (provider: ApiProvider) => {
           {{ t('settings.privacyTitle') }}
         </h4>
         <ul class="text-sm text-muted-foreground space-y-1">
-          <li v-for="(item, index) in t('settings.privacyItems')" :key="index">• {{ item }}</li>
+          <li v-for="(item, index) in tm('settings.privacyItems')" :key="index">• {{ item }}</li>
         </ul>
       </div>
     </div>

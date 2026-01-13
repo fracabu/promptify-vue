@@ -1,45 +1,64 @@
 <script setup lang="ts">
 import { ref, computed, watch, onMounted, onUnmounted } from 'vue'
 import { useRouter } from 'vue-router'
+import { useI18n } from 'vue-i18n'
 import { Search, X } from 'lucide-vue-next'
 import { frameworks } from '../data/frameworks'
 import Badge from './ui/Badge.vue'
 
 const router = useRouter()
+const { t } = useI18n()
+
+// Helper functions for translated content
+const getFrameworkTitle = (id: string) => t(`frameworks.items.${id}.title`)
+const getFrameworkDescription = (id: string) => t(`frameworks.items.${id}.description`)
+const getTranslatedCategory = (category: string) => t(`frameworks.categories.${category}`)
+const getTranslatedDifficulty = (difficulty: string) => {
+  const map: Record<string, string> = {
+    'Facile': t('difficulty.easy'),
+    'Medio': t('difficulty.medium'),
+    'Avanzato': t('difficulty.advanced')
+  }
+  return map[difficulty] || difficulty
+}
 const searchQuery = ref('')
 const isOpen = ref(false)
 const selectedIndex = ref(0)
 const searchInputRef = ref<HTMLInputElement | null>(null)
 const dropdownRef = ref<HTMLDivElement | null>(null)
 
-// Computed search results with fuzzy matching
+// Computed search results with fuzzy matching (searches in both original and translated text)
 const searchResults = computed(() => {
   if (!searchQuery.value || searchQuery.value.length < 2) return []
-  
+
   const query = searchQuery.value.toLowerCase()
-  
+
   return frameworks
     .map(framework => {
-      // Calculate relevance score
+      // Calculate relevance score - search in both original and translated
       let score = 0
       const title = framework.title.toLowerCase()
+      const translatedTitle = getFrameworkTitle(framework.id).toLowerCase()
       const description = framework.description.toLowerCase()
+      const translatedDescription = getFrameworkDescription(framework.id).toLowerCase()
       const category = framework.category.toLowerCase()
-      
-      // Exact title match gets highest score
-      if (title === query) score += 100
-      else if (title.startsWith(query)) score += 50
-      else if (title.includes(query)) score += 30
-      
-      // Description match
-      if (description.includes(query)) score += 20
-      
-      // Category match
-      if (category.includes(query)) score += 15
-      
+      const translatedCategory = getTranslatedCategory(framework.category).toLowerCase()
+
+      // Exact title match gets highest score (check both original and translated)
+      if (title === query || translatedTitle === query) score += 100
+      else if (title.startsWith(query) || translatedTitle.startsWith(query)) score += 50
+      else if (title.includes(query) || translatedTitle.includes(query)) score += 30
+
+      // Description match (check both)
+      if (description.includes(query) || translatedDescription.includes(query)) score += 20
+
+      // Category match (check both)
+      if (category.includes(query) || translatedCategory.includes(query)) score += 15
+
       // Difficulty match
-      if (framework.difficulty.toLowerCase().includes(query)) score += 10
-      
+      const translatedDifficulty = getTranslatedDifficulty(framework.difficulty).toLowerCase()
+      if (framework.difficulty.toLowerCase().includes(query) || translatedDifficulty.includes(query)) score += 10
+
       return { framework, score }
     })
     .filter(item => item.score > 0)
@@ -152,7 +171,7 @@ const getDifficultyColor = (difficulty: string) => {
         ref="searchInputRef"
         v-model="searchQuery"
         type="text"
-        placeholder="Cerca framework... (⌘K)"
+        :placeholder="t('search.placeholder')"
         class="w-full pl-10 pr-10 py-2 text-sm rounded-lg border border-input bg-background focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all"
         @keydown="handleKeydown"
         @focus="isOpen = searchQuery.length >= 2 && searchResults.length > 0"
@@ -182,7 +201,7 @@ const getDifficultyColor = (difficulty: string) => {
       >
         <div class="p-2">
           <div class="text-xs text-muted-foreground px-3 py-2 font-semibold">
-            {{ searchResults.length }} {{ searchResults.length === 1 ? 'risultato' : 'risultati' }}
+            {{ t('search.results', { count: searchResults.length }, searchResults.length) }}
           </div>
           <div
             v-for="(framework, index) in searchResults"
@@ -201,17 +220,17 @@ const getDifficultyColor = (difficulty: string) => {
             </div>
             <div class="flex-1 min-w-0">
               <div class="flex items-center justify-between gap-2 mb-1">
-                <h4 class="font-semibold text-sm truncate">{{ framework.title }}</h4>
+                <h4 class="font-semibold text-sm truncate">{{ getFrameworkTitle(framework.id) }}</h4>
                 <Badge :class="getDifficultyColor(framework.difficulty)" class="text-xs flex-shrink-0">
-                  {{ framework.difficulty }}
+                  {{ getTranslatedDifficulty(framework.difficulty) }}
                 </Badge>
               </div>
               <p class="text-xs text-muted-foreground line-clamp-2">
-                {{ framework.description }}
+                {{ getFrameworkDescription(framework.id) }}
               </p>
               <div class="mt-1">
                 <Badge variant="outline" class="text-xs">
-                  {{ framework.category }}
+                  {{ getTranslatedCategory(framework.category) }}
                 </Badge>
               </div>
             </div>
@@ -224,15 +243,15 @@ const getDifficultyColor = (difficulty: string) => {
             <div class="flex items-center gap-3">
               <span class="flex items-center gap-1">
                 <kbd class="px-1.5 py-0.5 bg-background border border-input rounded text-xs">↑↓</kbd>
-                Naviga
+                {{ t('search.navigate') }}
               </span>
               <span class="flex items-center gap-1">
                 <kbd class="px-1.5 py-0.5 bg-background border border-input rounded text-xs">↵</kbd>
-                Apri
+                {{ t('search.open') }}
               </span>
               <span class="flex items-center gap-1">
                 <kbd class="px-1.5 py-0.5 bg-background border border-input rounded text-xs">esc</kbd>
-                Chiudi
+                {{ t('search.close') }}
               </span>
             </div>
           </div>
@@ -254,7 +273,7 @@ const getDifficultyColor = (difficulty: string) => {
         class="absolute z-50 w-full mt-2 bg-white dark:bg-slate-900 border border-input rounded-lg shadow-2xl p-6 text-center"
       >
         <p class="text-sm text-muted-foreground">
-          Nessun framework trovato per "<span class="font-semibold">{{ searchQuery }}</span>"
+          {{ t('search.noResults', { query: searchQuery }) }}
         </p>
       </div>
     </Transition>

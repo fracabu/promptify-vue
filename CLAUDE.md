@@ -33,11 +33,13 @@ Promptify Vue is a Vue 3 + TypeScript application for exploring and testing 30+ 
 
 **Theme System**:
 - Dark/light mode via Tailwind `class` strategy
+- CSS variables defined in `src/style.css` (`:root` for light, `.dark` for dark)
+- Semantic color tokens: `background`, `foreground`, `card`, `primary`, `secondary`, `muted`, `accent`, `destructive`, `border`, `input`, `ring`
 - ThemeToggle component persists preference to localStorage
 
 **Router**:
-- Hash-based navigation for SPA
-- Hash anchors (`/#categories`, `/#how-it-works`) scroll to sections on Home
+- HTML5 history mode (`createWebHistory`) for clean URLs
+- Hash anchors (`/#categories`, `/#how-it-works`) scroll to sections on Home via `scrollBehavior`
 
 **Internationalization (i18n)**:
 - Vue I18n in Composition API mode (`legacy: false`)
