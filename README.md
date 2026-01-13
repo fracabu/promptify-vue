@@ -15,6 +15,7 @@
 <p align="center">
   :gb: <a href="#english">English</a> | :it: <a href="#italiano">Italiano</a>
 </p>
+<img width="1600" height="738" alt="image" src="https://github.com/user-attachments/assets/3dae30f8-33e6-4cd6-937f-e8326193125f" />
 
 ---
 
