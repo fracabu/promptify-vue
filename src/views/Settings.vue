@@ -136,7 +136,7 @@ const toggleShowKey = (provider: ApiProvider) => {
           {{ t('settings.privacyTitle') }}
         </h4>
         <ul class="text-sm text-muted-foreground space-y-1">
-          <li v-for="(item, index) in tm('settings.privacyItems')" :key="index">• {{ item }}</li>
+          <li v-for="(item, index) in (tm('settings.privacyItems') as string[])" :key="index">• {{ item }}</li>
         </ul>
       </div>
     </div>
