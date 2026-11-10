@@ -40,15 +40,30 @@
     "apiKeysTitle": "Come inserire le chiavi API",
     "openai": {
       "title": "OpenAI (GPT-5, GPT-4.1)",
-      "steps": ["Vai su platform.openai.com", "Crea una nuova API key", "Copia la chiave che inizia con \"sk-proj-\"", "Incollala nelle impostazioni"]
+      "steps": [
+        "Vai su platform.openai.com",
+        "Crea una nuova API key",
+        "Copia la chiave che inizia con \"sk-proj-\"",
+        "Incollala nelle impostazioni"
+      ]
     },
     "gemini": {
       "title": "Google Gemini",
-      "steps": ["Vai su aistudio.google.com", "Genera una nuova API key", "Copia la chiave", "Incollala nelle impostazioni"]
+      "steps": [
+        "Vai su aistudio.google.com",
+        "Genera una nuova API key",
+        "Copia la chiave",
+        "Incollala nelle impostazioni"
+      ]
     },
     "zai": {
       "title": "ZAI (GLM-4.6)",
-      "steps": ["Vai su open.bigmodel.cn", "Registrati e crea una key", "Copia la tua API key", "Incollala nelle impostazioni"]
+      "steps": [
+        "Vai su open.bigmodel.cn",
+        "Registrati e crea una key",
+        "Copia la tua API key",
+        "Incollala nelle impostazioni"
+      ]
     },
     "privacyNote": "Privacy garantita: Le tue chiavi API vengono salvate solo nel localStorage del tuo browser e non vengono mai inviate ai nostri server. Sono utilizzate solo per comunicare direttamente con i provider AI che hai scelto."
   },
@@ -189,5 +204,13 @@
   "language": {
     "it": "Italiano",
     "en": "English"
+  },
+  "accessGate": {
+    "title": "Promptify ora è ad accesso riservato.",
+    "description": "Stiamo preparando un piano in abbonamento. Se vuoi usare Promptify, scrivici: ti mandiamo le istruzioni per accedere.",
+    "cta": "Richiedi l'accesso",
+    "orWrite": "Oppure scrivi a",
+    "mailSubject": "Richiesta di accesso a Promptify",
+    "mailBody": "Ciao, vorrei usare Promptify. Potete darmi accesso?\n\nNome:\nUso previsto:"
   }
 }
